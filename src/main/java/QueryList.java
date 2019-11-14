@@ -59,7 +59,7 @@ public class QueryList {
 
     public boolean searchCLients(String userName, String password){
         try {
-            String search = "Select Email, Password From Admins WHERE Email = ? and Password = ?";   //Create string for searching admins
+            String search = "Select Email, Password From Clients WHERE Email = ? and Password = ?";   //Create string for searching admins
             PreparedStatement stmt = mainConnection.prepareStatement(search);   //create the actual statement
             stmt.setString(1, userName);    //Adding the first parameter
             stmt.setString(2, password); //Adding the second parameter
@@ -70,7 +70,9 @@ public class QueryList {
 //            }
             if (res.next()) {    //Simple verification that the person exist on our system. Doesn't actually compare names yet
                 String user = res.getString(1);
+                System.out.println(user);
                 String pass = res.getString(2);
+                System.out.println(pass);
                 if (user.equals(userName)) {  //compare the username found
                     if (pass.equals(password)) { //Compare the password found
                         res.close();    //close connections
