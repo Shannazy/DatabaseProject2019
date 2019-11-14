@@ -26,12 +26,26 @@ public class QueryList {
 //                System.out.println(res.getString(1));   //print the name
 //                System.out.println(res.getString(2));   //print the netid
 //            }
-            if (res.next()){    //Simple verification that the person exist on our system. Doesn't actually compare names yet
-                res.close();
-                connector.closeConnection();
-                return true;
-            }
-            else {
+            if (res.next()) {    //Simple verification that the person exist on our system. Doesn't actually compare names yet
+                String user = res.getString(1);
+                String pass = res.getString(2);
+                if (user.equals(userName)) {  //compare the username found
+                    if (pass.equals(Netid)) { //Compare the password found
+                        res.close();    //close connections
+                        connector.closeConnection();    //close the actual connection to stop from breaking the database
+                        return true;
+                    } else {
+                        res.close();
+                        connector.closeConnection();
+                        return false;
+                    }
+                } else {
+                    res.close();
+                    connector.closeConnection();
+                    return false;
+                }
+
+            } else {
                 res.close();
                 connector.closeConnection();
                 return false;
