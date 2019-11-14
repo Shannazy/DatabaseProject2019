@@ -22,10 +22,7 @@ public class QueryList {
             stmt.setString(1, userName);    //Adding the first parameter
             stmt.setString(2, Netid); //Adding the second parameter
             ResultSet res = stmt.executeQuery();    //Cursor for my query result
-//            while (res.next()) {    //traverse each row
-//                System.out.println(res.getString(1));   //print the name
-//                System.out.println(res.getString(2));   //print the netid
-//            }
+
             if (res.next()){    //Simple verification that the person exist on our system. Doesn't actually compare names yet
                 res.close();
                 connector.closeConnection();
