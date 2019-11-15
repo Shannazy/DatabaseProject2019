@@ -1,7 +1,0 @@
-*.txt
-target/
-.idea/
-src/test/
-.classpath
-.project
-.settings
