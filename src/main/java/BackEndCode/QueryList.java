@@ -7,8 +7,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class QueryList {
-    Connection mainConnection;
-    Database_Connections connector;
+    private Connection mainConnection;
+    private Database_Connections connector;
 
     public QueryList(Database_Connections connector) {
         this.connector = connector;
@@ -19,7 +19,7 @@ public class QueryList {
 
     public boolean searchAdmins(String userName, String Netid) {
 
-        try {
+        try{
             String search = "Select * From Admins WHERE Full_Name = ? and Netid = ?";   //Create string for searching admins
             PreparedStatement stmt = mainConnection.prepareStatement(search);   //create the actual statement
             stmt.setString(1, userName);    //Adding the first parameter
