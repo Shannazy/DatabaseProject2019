@@ -1,7 +1,10 @@
+package BackEndCode;
+
+import BackEndCode.Database_Connections;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
 public class QueryList {
     Connection mainConnection;
