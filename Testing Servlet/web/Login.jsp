@@ -17,18 +17,16 @@
 <main>
     <section class="login">
         <form action="LoginServlet" method="post" class="login-form" id="login-form">
-            <label id="user-name-label" for="username">Username: </label>
+            <label id="user-name-label" for="username">Username</label>
             <input type="text" id="username" name = "User">
-            <label id="password-label" for="password">Password: </label>
+            <label id="password-label" for="password">Password</label>
             <input type="password" id="password" name = "Password">
             <button type="submit" form="login-form" value="Login" id="login-button">Login</button>
+            <div class="register">
+                <a href="Register.jsp">Register</a>
+            </div>
         </form>
     </section>
-    <nav>
-        <a href="Register.jsp">
-            <div class="nav-link">Register</div>
-        </a>
-    </nav>
 </main>
 </body>
 </html>

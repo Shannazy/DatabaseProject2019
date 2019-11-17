@@ -7,19 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df0b40f9-93c5-4fcb-84db-3340dae45b61" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/RegisterServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/Register.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/Register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_48.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_48.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/css/register.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/QueryList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/QueryList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/BackEndStuff/QueryListTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/BackEndStuff/QueryListTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Page404.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Page404.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Welcome.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/RegisterServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/Login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Page404.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Page404.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Welcome.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/login.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,9 +35,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
-        <option value="CSS File" />
         <option value="Class" />
         <option value="Jsp File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -225,8 +226,8 @@
     <list>
       <item itemvalue="JUnit.DatabaseConnectionTest.getConnected" />
       <item itemvalue="JUnit.QueryListTest.searchAdmins" />
-      <item itemvalue="Tomcat Server.Tomcat 9.0.27" />
       <item itemvalue="JUnit.QueryListTest.registerClient" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.27" />
     </list>
     <recent_temporary>
       <list>
@@ -305,11 +306,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java</url>
           <line>17</line>
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/BackEndStuff/RegisterServlet.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

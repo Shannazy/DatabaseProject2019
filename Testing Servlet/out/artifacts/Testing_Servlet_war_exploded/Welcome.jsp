@@ -11,6 +11,7 @@
     <title>Welcome</title>
     <link href="./css/index.css" rel="stylesheet" type="text/css">
     <link href="./css/welcome.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body>
 <nav>
@@ -18,7 +19,7 @@
         <div class="nav-link">Home</div>
     </a>
     <a href="Login.jsp">
-        <div class="nav-link">Back to Login</div>
+        <div class="nav-link">Logout</div>
     </a>
 </nav>
 <main>

@@ -5,7 +5,7 @@ body {
 }
 
 .login {
-    min-width: 300px;
+    min-width: 500px;
     min-height: 300px;
     display: flex;
     align-items: center;
@@ -15,11 +15,13 @@ body {
     background-color: #f2f2f2;
 }
 .login-form {
+    min-width: 400px;
     display: grid;
     grid-template-areas:
     "u-label username"
     "p-label password"
-    "l-button l-button";
+    "l-button l-button"
+    "r-link r-link";
     grid-column-gap: 10px;
     grid-row-gap: 10px;
 }
@@ -45,6 +47,13 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+}
+section, .register {
+    grid-area: r-link;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
 }
 input[type=text], input[type=password] {
     border: 1px solid #e0e0e0;

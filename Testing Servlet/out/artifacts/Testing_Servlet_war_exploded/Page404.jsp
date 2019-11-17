@@ -11,6 +11,7 @@
     <title>Error</title>
     <link href="./css/index.css" rel="stylesheet" type="text/css">
     <link href="./css/welcome.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body>
 <nav>
