@@ -9,8 +9,22 @@
 <html>
 <head>
     <title>Welcome</title>
+    <link href="./css/index.css" rel="stylesheet" type="text/css">
+    <link href="./css/welcome.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-Successful Login
+<nav>
+    <a href="Welcome.jsp">
+        <div class="nav-link">Home</div>
+    </a>
+    <a href="Login.jsp">
+        <div class="nav-link">Back to Login</div>
+    </a>
+</nav>
+<main>
+    <section>
+        <p class="success">Successful Login!</p>
+    </section>
+</main>
 </body>
 </html>

@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>Login</title>
+    <link href="./css/index.css" rel="stylesheet" type="text/css">
     <link href="./css/login.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
