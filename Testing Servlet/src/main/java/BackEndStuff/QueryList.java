@@ -3,6 +3,7 @@ package BackEndStuff;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class QueryList {
     Connection mainConnection;
@@ -58,7 +59,7 @@ public class QueryList {
         }
     }
 
-    public boolean searchCLients(String userName, String password){
+    public boolean searchclients(String userName, String password) {
         try {
             connector.getConnected();
             mainConnection = connector.getMainConnector();
@@ -80,21 +81,25 @@ public class QueryList {
                 if (user.equals(userName)) {  //compare the username found
                     if (pass.equals(password)) { //Compare the password found
                         res.close();    //close connections
+                        stmt.close();
                         connector.closeConnection();    //close the actual connection to stop from breaking the database
                         return true;
                     } else {
                         res.close();
+                        stmt.close();
                         connector.closeConnection();
                         return false;
                     }
                 } else {
                     res.close();
+                    stmt.close();
                     connector.closeConnection();
                     return false;
                 }
 
             } else {
                 res.close();
+                stmt.close();
                 connector.closeConnection();
                 return false;
 
@@ -104,5 +109,27 @@ public class QueryList {
             return false;
         }
 
+    }
+
+    public boolean registerClient(String email, String Name, String phone,
+                                  String CreationDate, String pass, String DOB) {
+        try {
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            String insert = "INSERT INTO Clients value(?,?,?,?,?,?)";
+            PreparedStatement register = mainConnection.prepareStatement(insert);
+            register.setString(1, email);
+            register.setString(2, Name);
+            register.setString(3, phone);
+            register.setString(4, CreationDate);
+            register.setString(5, pass);
+            register.setString(6, DOB);
+            register.executeUpdate();
+            register.close();
+            connector.closeConnection();
+            return true;
+        } catch (SQLException e) {
+            return false;
+        }
     }
 }

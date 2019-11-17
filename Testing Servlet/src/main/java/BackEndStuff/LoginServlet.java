@@ -17,7 +17,7 @@ public class LoginServlet extends HttpServlet {
         if(searcher.searchAdmins(username, pass)){
             response.sendRedirect("Welcome.jsp");
         }
-        else if (searcher.searchCLients(username, pass)){
+        else if (searcher.searchclients(username, pass)){
             response.sendRedirect("Welcome.jsp");
         }
         else{

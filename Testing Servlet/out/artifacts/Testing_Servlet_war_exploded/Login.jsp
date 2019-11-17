@@ -24,6 +24,11 @@
             <button type="submit" form="login-form" value="Login" id="login-button">Login</button>
         </form>
     </section>
+    <nav>
+        <a href="Register.jsp">
+            <div class="nav-link">Register</div>
+        </a>
+    </nav>
 </main>
 </body>
 </html>
