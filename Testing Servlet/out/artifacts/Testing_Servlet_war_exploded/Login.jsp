@@ -17,8 +17,8 @@
 <main>
     <section class="login">
         <form action="LoginServlet" method="post" class="login-form" id="login-form">
-            <label id="user-name-label" for="user-name">Username: </label>
-            <input type="text" id="user-name" name = "User">
+            <label id="user-name-label" for="username">Username: </label>
+            <input type="text" id="username" name = "User">
             <label id="password-label" for="password">Password: </label>
             <input type="password" id="password" name = "Password">
             <button type="submit" form="login-form" value="Login" id="login-button">Login</button>

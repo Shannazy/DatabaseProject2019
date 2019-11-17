@@ -7,15 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df0b40f9-93c5-4fcb-84db-3340dae45b61" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/web/css/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/css/welcome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Page404.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Welcome.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/css/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/Login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Welcome.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/faces-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/faces-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,9 +23,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="JUnit5 Test Class" />
         <option value="CSS File" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -222,7 +219,9 @@
       <workItem from="1573929567426" duration="87000" />
       <workItem from="1573929748035" duration="4078000" />
       <workItem from="1573940195745" duration="541000" />
-      <workItem from="1573947922096" duration="5000000" />
+      <workItem from="1573947922096" duration="5181000" />
+      <workItem from="1573953750461" duration="7000" />
+      <workItem from="1573953871933" duration="701000" />
     </task>
     <servers />
   </component>
