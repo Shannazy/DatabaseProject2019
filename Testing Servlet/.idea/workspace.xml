@@ -2,25 +2,18 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Testing Servlet:war exploded" />
+      <artifact name="Testing Servlet:war" />
+      <artifact name="Testing Servlet:war" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df0b40f9-93c5-4fcb-84db-3340dae45b61" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/web/css/register.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_48.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing Servlet.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Testing Servlet.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Page404.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Page404.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Welcome.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/RegisterServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Page404.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Page404.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Welcome.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +23,9 @@
   </component>
   <component name="ExportToHTMLSettings">
     <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../Testing Servlet\exportToHTML" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Testing Servlet" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -67,11 +63,11 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
-    <property name="last_opened_file_path" value="C:/Program Files/Apache Software Foundation/Tomcat 9.0/lib/mysql-connector-java-5.1.48.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.2137931" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -152,11 +148,12 @@
       </method>
     </configuration>
     <configuration name="Tomcat 9.0.27" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.27" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/Testing_Servlet_war_exploded/Login.jsp" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/Testing_Servlet_war/Testing_Servlet_war.war" />
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="Testing Servlet:war exploded">
+        <artifact name="Testing Servlet:war">
           <settings>
-            <option name="CONTEXT_PATH" value="/Testing_Servlet_war_exploded" />
+            <option name="CONTEXT_PATH" value="/Testing_Servlet_war" />
           </settings>
         </artifact>
       </deployment>
@@ -219,7 +216,8 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="Testing Servlet:war exploded" />
+          <artifact name="Testing Servlet:war" />
+          <artifact name="Testing Servlet:war" />
         </option>
       </method>
     </configuration>
@@ -231,8 +229,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.QueryListTest.registerClient" />
         <item itemvalue="JUnit.DatabaseConnectionTest.getConnected" />
+        <item itemvalue="JUnit.QueryListTest.registerClient" />
         <item itemvalue="JUnit.QueryListTest.searchAdmins" />
       </list>
     </recent_temporary>
@@ -278,11 +276,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/BackEndStuff/DatabaseConnectionTest.java</url>
-          <line>9</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java</url>
           <line>12</line>
