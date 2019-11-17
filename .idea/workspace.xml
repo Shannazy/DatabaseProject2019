@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98e215e3-3976-4e12-b569-d0541bef8172" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BackEndCode/QueryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndCode/QueryList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Database_Connections.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/QueryList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database_Project_2019.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Database_Project_2019.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BackEndCode/Database_Connections.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndCode/Database_Connections.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
