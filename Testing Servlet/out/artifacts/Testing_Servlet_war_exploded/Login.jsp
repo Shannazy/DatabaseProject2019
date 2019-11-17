@@ -9,14 +9,20 @@
 <html>
 <head>
     <title>Login</title>
+    <link href="./css/login.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body>
-<form action="LoginServlet" method="post">
-    Enter User : <input type="text"  name = "User"><br>
-    Enter Password : <input type="password" name = "Password"><br>
-    <input type = "submit" value="Login">
-
-</form>
-
+<main>
+    <section class="login">
+        <form action="LoginServlet" method="post" class="login-form" id="login-form">
+            <label id="user-name-label" for="user-name">Username: </label>
+            <input type="text" id="user-name" name = "User">
+            <label id="password-label" for="password">Password: </label>
+            <input type="password" id="password" name = "Password">
+            <button type="submit" form="login-form" value="Login" id="login-button">Login</button>
+        </form>
+    </section>
+</main>
 </body>
 </html>
