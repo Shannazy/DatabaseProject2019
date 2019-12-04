@@ -1,7 +1,8 @@
-*.txt
-target/
-.idea/
-src/test/
+
+.settings
+.DS_Store
+.idea
+.out
 .classpath
 .project
-.settings
+

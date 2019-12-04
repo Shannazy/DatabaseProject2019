@@ -1,3 +1,5 @@
+package BackEndCode;
+
 import com.sun.org.apache.xpath.internal.operations.Bool;
 
 import java.sql.*;
@@ -20,7 +22,7 @@ public class Database_Connections {
         return mainConnector;
     }
 
-    public Boolean getConnected(){
+    public boolean getConnected(){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             mainConnector = DriverManager.getConnection(url, userName, password);
@@ -32,7 +34,7 @@ public class Database_Connections {
         }
     }
 
-    public Boolean closeConnection(){
+    public boolean closeConnection(){
        try{
            mainConnector.close();
            return true;

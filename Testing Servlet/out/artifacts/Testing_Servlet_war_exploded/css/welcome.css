@@ -1,0 +1,33 @@
+nav {
+    height: 10%;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    background-color: #e0e0e0;
+}
+nav > a + a {
+    border-left: 1px solid #e0e0e0;
+}
+.nav-link {
+    padding: 0px 25px;
+}
+a {
+    height: 100%;
+    min-width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+}
+main {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.success {
+    font-size: 2rem;
+}
