@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="98e215e3-3976-4e12-b569-d0541bef8172" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Database_Project_2019.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Database_Project_2019.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BackEndCode/Database_Connections.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndCode/Database_Connections.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1TfTNj6I0LHnUAnbZZqUV8aN9Hx" />
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.QueryListTest.searchAdmins">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Database_Project_2019" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Database_ConnectionsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Database_Project_2019" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Database_ConnectionsTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Database_ConnectionsTest.getConnected" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Database_Project_2019" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Database_ConnectionsTest" />
+      <option name="METHOD_NAME" value="getConnected" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QueryListTest.searchAdmins" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Database_Project_2019" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="QueryListTest" />
+      <option name="METHOD_NAME" value="searchAdmins" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QueryListTest.searchCLients" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Database_Project_2019" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="QueryListTest" />
+      <option name="METHOD_NAME" value="searchCLients" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.QueryListTest.searchAdmins" />
+        <item itemvalue="JUnit.Database_ConnectionsTest.getConnected" />
+        <item itemvalue="JUnit.QueryListTest.searchCLients" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.Database_ConnectionsTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="98e215e3-3976-4e12-b569-d0541bef8172" name="Default Changelist" comment="" />
+      <created>1573502996810</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1573502996810</updated>
+      <workItem from="1573850118500" duration="1585000" />
+      <workItem from="1573853876389" duration="812000" />
+      <workItem from="1573857203617" duration="439000" />
+    </task>
+    <task id="LOCAL-00001" summary="Delete the comment">
+      <created>1573697557354</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1573697557354</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="QueryListTest_searchAdmins - 2019.11.14 at 11h 13m 21s.xml">
+      <configuration name="QueryListTest.searchAdmins" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="QueryListTest_searchAdmins - 2019.11.14 at 12h 15m 39s.xml">
+      <configuration name="QueryListTest.searchAdmins" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="QueryListTest_searchAdmins - 2019.11.14 at 12h 17m 42s.xml">
+      <configuration name="QueryListTest.searchAdmins" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="QueryListTest_searchCLients - 2019.11.14 at 18h 29m 09s.xml">
+      <configuration name="QueryListTest.searchCLients" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="QueryListTest_searchCLients - 2019.11.14 at 18h 30m 12s.xml">
+      <configuration name="QueryListTest.searchCLients" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="QueryListTest_searchCLients - 2019.11.14 at 18h 31m 09s.xml">
+      <configuration name="QueryListTest.searchCLients" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Database_ConnectionsTest_getConnected - 2019.11.15 at 12h 41m 41s.xml">
+      <configuration name="Database_ConnectionsTest.getConnected" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Database_ConnectionsTest_getConnected - 2019.11.15 at 12h 42m 11s.xml">
+      <configuration name="Database_ConnectionsTest.getConnected" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="QueryListTest_searchAdmins - 2019.11.15 at 14h 24m 35s.xml">
+      <configuration name="QueryListTest.searchAdmins" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="QueryListTest_searchAdmins - 2019.11.15 at 15h 20m 57s.xml">
+      <configuration name="QueryListTest.searchAdmins" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Delete the comment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete the comment" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/QueryListTest.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="connector" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>connector</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+</project>
