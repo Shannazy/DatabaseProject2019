@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Testing Servlet:war" />
-      <artifact name="Testing Servlet:war" />
+      <artifact name="Testing Servlet:war2" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df0b40f9-93c5-4fcb-84db-3340dae45b61" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/META-INF/application.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war/Testing Servlet_war.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war/Testing Servlet_war.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing Servlet.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Testing Servlet.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,8 +51,11 @@
     </option>
   </component>
   <component name="ProjectId" id="1Ti1pDYAQXJl5mbJ77bUAVBlz0i" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -64,7 +67,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2137931" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -251,6 +254,10 @@
       <workItem from="1573970342098" duration="49000" />
       <workItem from="1574005083322" duration="7039000" />
       <workItem from="1574039331157" duration="1343000" />
+      <workItem from="1574280163331" duration="923000" />
+      <workItem from="1575336234739" duration="1355000" />
+      <workItem from="1575396841750" duration="159000" />
+      <workItem from="1575397009754" duration="647000" />
     </task>
     <servers />
   </component>
@@ -269,6 +276,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -296,6 +306,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java</url>
           <line>17</line>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/BackEndStuff/RegisterServlet.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/BackEndStuff/RegisterServlet.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
