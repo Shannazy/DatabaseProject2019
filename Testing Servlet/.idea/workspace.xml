@@ -3,13 +3,32 @@
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="Testing Servlet:war" />
-      <artifact name="Testing Servlet:war" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df0b40f9-93c5-4fcb-84db-3340dae45b61" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/LoginServlet.class" afterDir="false" />
+    <list default="true" id="df0b40f9-93c5-4fcb-84db-3340dae45b61" name="Default Changelist" comment="Now able to save the users for the current session.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Database_Site/Database_Site.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Database_Site/Testing Servlet_war.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war/Testing Servlet_war.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war/Testing Servlet_war.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Login.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Page404.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Register.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/Register.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/DatabaseConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/LoginServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/QueryList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/RegisterServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/faces-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Welcome.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/css/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/css/login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/css/register.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/css/welcome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Welcome.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -216,7 +235,6 @@
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="Testing Servlet:war" />
-          <artifact name="Testing Servlet:war" />
         </option>
       </method>
     </configuration>
@@ -259,7 +277,11 @@
       <workItem from="1575396841750" duration="159000" />
       <workItem from="1575397009754" duration="647000" />
       <workItem from="1575491728481" duration="1754000" />
-      <workItem from="1575494761336" duration="1970000" />
+      <workItem from="1575494761336" duration="2332000" />
+      <workItem from="1575560934764" duration="4607000" />
+      <workItem from="1575574783842" duration="534000" />
+      <workItem from="1575585837065" duration="1208000" />
+      <workItem from="1575918943908" duration="7891000" />
     </task>
     <task id="LOCAL-00001" summary="Now able to save the users for the current session.">
       <created>1575496582820</created>
@@ -313,11 +335,6 @@
           <url>file://$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java</url>
           <line>20</line>
           <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/BackEndStuff/RegisterServlet.java</url>
