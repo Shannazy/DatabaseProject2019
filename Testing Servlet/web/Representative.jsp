@@ -11,7 +11,6 @@
 <body>
 <jsp:include page="Header.jsp"/>
 <main>
-    <jsp:include page="Search.jsp"/>
 </main>
 </body>
 </html>

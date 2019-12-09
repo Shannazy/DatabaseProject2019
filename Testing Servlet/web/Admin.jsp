@@ -11,8 +11,6 @@
 <body>
 <jsp:include page="Header.jsp"/>
 <main>
-    <section>
-    </section>
 </main>
 </body>
 </html>
