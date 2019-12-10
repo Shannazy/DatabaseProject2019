@@ -8,8 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="df0b40f9-93c5-4fcb-84db-3340dae45b61" name="Default Changelist" comment="Now able to save the users for the current session.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war/Testing Servlet_war.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war/Testing Servlet_war.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,15 +73,15 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="BackEndStuff" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web" />
-      <recent name="$PROJECT_DIR$/web/css" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\shazi\Desktop\Shortcuts\Code Software\Testing Servlet\src\main\java\BackEndStuff" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\shazi\Desktop\Shortcuts\Code Software\Testing Servlet\src\main\java\BackEndStuff" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web" />
+      <recent name="$PROJECT_DIR$/web/css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -97,7 +96,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.27">
+  <component name="RunManager" selected="JUnit.QueryListTest.initialOneWayTicket">
     <configuration name="DatabaseConnectionTest.getConnected" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Testing Servlet" />
       <extension name="coverage">
@@ -109,6 +108,22 @@
       <option name="PACKAGE_NAME" value="BackEndStuff" />
       <option name="MAIN_CLASS_NAME" value="BackEndStuff.DatabaseConnectionTest" />
       <option name="METHOD_NAME" value="getConnected" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QueryListTest.initialOneWayTicket" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Testing Servlet" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="BackEndStuff.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="BackEndStuff" />
+      <option name="MAIN_CLASS_NAME" value="BackEndStuff.QueryListTest" />
+      <option name="METHOD_NAME" value="initialOneWayTicket" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -224,9 +239,11 @@
       <item itemvalue="JUnit.QueryListTest.searchAdmins" />
       <item itemvalue="JUnit.QueryListTest.registerClient" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.27" />
+      <item itemvalue="JUnit.QueryListTest.initialOneWayTicket" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.QueryListTest.initialOneWayTicket" />
         <item itemvalue="JUnit.DatabaseConnectionTest.getConnected" />
         <item itemvalue="JUnit.QueryListTest.registerClient" />
         <item itemvalue="JUnit.QueryListTest.searchAdmins" />
@@ -263,6 +280,7 @@
       <workItem from="1575574783842" duration="534000" />
       <workItem from="1575585837065" duration="1208000" />
       <workItem from="1575918943908" duration="7891000" />
+      <workItem from="1575994027478" duration="762000" />
     </task>
     <task id="LOCAL-00001" summary="Now able to save the users for the current session.">
       <created>1575496582820</created>
@@ -300,7 +318,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java</url>
-          <line>12</line>
+          <line>14</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -313,11 +331,6 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/BackEndStuff/RegisterServlet.java</url>
           <line>24</line>
           <option name="timeStamp" value="11" />
@@ -326,6 +339,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/BackEndStuff/RegisterServlet.java</url>
           <line>17</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
