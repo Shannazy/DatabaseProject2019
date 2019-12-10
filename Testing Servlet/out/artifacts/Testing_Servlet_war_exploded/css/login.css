@@ -1,0 +1,61 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login {
+    min-width: 500px;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+}
+.login-form {
+    min-width: 400px;
+    display: grid;
+    grid-template-areas:
+    "u-label username"
+    "p-label password"
+    "l-button l-button"
+    "r-link r-link";
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+#user-name-label {
+    grid-area: u-label;
+}
+#user-name {
+    grid-area: username;
+}
+#password-label {
+    grid-area: p-label;
+}
+#password {
+    grid-area: password;
+}
+#login-button {
+    grid-area: l-button;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+section, .register {
+    grid-area: r-link;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+input[type=text], input[type=password] {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+}

@@ -2,6 +2,7 @@ package BackEndStuff;
 
 import com.mysql.cj.protocol.Resultset;
 
+import javax.naming.PartialResultException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -140,39 +141,46 @@ public class QueryList {
         }
     }
 
-//    public List<List<String>> initialOneWayTicket(String departureDate, String departureLocation, String destinationLocation ){
-//        List<List<String>> allTickets = new ArrayList();
-//        try{
-//            connector.getConnected();
-//            mainConnection = connector.getMainConnector();
-//            String tickets = "Select * FROM Flight WHERE " +
-//                    "`Departure Date` = ? AND" +
-//                    " `Departure_Location` = ? AND" +
-//                    " `Destination Location` = ?";
-//            PreparedStatement searchFlights = mainConnection.prepareStatement(tickets);
-//            searchFlights.setString(1, departureDate);
-//            searchFlights.setString(2, departureLocation);
-//            searchFlights.setString(3, destinationLocation);
-//            ResultSet res = searchFlights.executeQuery();
-//            while (res.next()){
-//                List<String> thisColumn = new ArrayList<String>();
-//                String flightNum = res.getString("Flight#");
-//                String departDate = String.valueOf(res.getDate("Departure Date"));
-//                String departTime = String.valueOf(res.getTime("Departure Time"));
-//                String departLoc = res.getString("Departure_Location");
-//                String destDate = String.valueOf(res.getDate("Destination Date");
-//                String destTime = String.valueOf(res.getTime("Destination Time"));
-//                String destLoc = res.getString("Destination Location");
-//                String flightClass = res.getString("Class");
-//                String Airline  = res.getString("Airline");
-//                String PlaneID = res.getString("FlightID");
-//                String Price = res.getString("Price");
-//                allTickets.add(thisColumn);
-//            }
-//
-//        } catch (Exception e) {
-//            connector.closeConnection();
-//            return
-//        }
-//    }
+    public List<List<String>> initialOneWayTicket(String departureDate, String departureLocation, String destinationLocation ){
+        List<List<String>> allTickets = new ArrayList<List<String>>();
+        try{
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            String tickets = "Select * FROM Flight WHERE " +
+                    "`Departure Date` = ? AND" +
+                    " `Departure_Location` = ? AND" +
+                    " `Destination Location` = ?";
+            PreparedStatement searchFlights = mainConnection.prepareStatement(tickets);
+            searchFlights.setString(1, departureDate);
+            searchFlights.setString(2, departureLocation);
+            searchFlights.setString(3, destinationLocation);
+            ResultSet res = searchFlights.executeQuery();
+            while (res.next()){
+                List<String> thisColumn = new ArrayList<String>();
+                thisColumn.add(res.getString("Flight#"));
+                thisColumn.add(String.valueOf(res.getDate("Departure Date")));
+                thisColumn.add(String.valueOf(res.getTime("Departure Time")));
+                thisColumn.add(res.getString("Departure_Location"));
+                thisColumn.add(String.valueOf(res.getDate("Destination Date")));
+                thisColumn.add(String.valueOf(res.getTime("Destination Time")));
+                thisColumn.add(res.getString("Destination Location"));
+                thisColumn.add(res.getString("Class"));
+                thisColumn.add(res.getString("Airline"));
+                thisColumn.add(res.getString("FlightID"));
+                thisColumn.add(res.getString("Price"));
+                allTickets.add(thisColumn);
+            }
+            res.close();
+            searchFlights.close();
+            connector.closeConnection();
+            return allTickets;
+        } catch (Exception e) {
+
+            connector.closeConnection();
+            List<String> failed = new ArrayList<String>();
+            failed.add("Something went wrong");
+            allTickets.add(failed);
+            return allTickets;
+        }
+    }
 }
