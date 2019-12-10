@@ -19,11 +19,13 @@ public class LoginServlet extends HttpServlet {
         if(searcher.searchAdmins(username, pass)){
             HttpSession session = request.getSession(true);
             session.setAttribute("username", username);
+            session.setAttribute("role", "admin");
             response.sendRedirect("Welcome.jsp");
         }
         else if (searcher.searchclients(username, pass)){
             HttpSession session = request.getSession(true);
             session.setAttribute("username", username);
+            session.setAttribute("role", "client");
             response.sendRedirect("Welcome.jsp");
         }
         else{
