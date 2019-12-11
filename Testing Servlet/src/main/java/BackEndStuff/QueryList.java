@@ -663,6 +663,32 @@ public class QueryList {
         return greatestRevenue;
 
     }
+
+    public List<List<String>> getSalesReportForMonth(String month) throws SQLException{
+        List<String> months = new ArrayList<String>();
+        months.add("January");
+        months.add("February");
+        months.add("March");
+        months.add("April");
+        months.add("May");
+        months.add("June");
+        months.add("July");
+        months.add("August");
+        months.add("September");
+        months.add("October");
+        months.add("November");
+        months.add("December");
+        String startDate = "";
+        String endDate = "";
+
+        int queryMonth = months.indexOf(month);
+
+        if(queryMonth == 1){
+            startDate = 
+        }
+
+        return null;
+    }
 }
 
 
