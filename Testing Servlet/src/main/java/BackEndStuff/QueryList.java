@@ -569,6 +569,9 @@ public class QueryList {
         while(res.next()){
             airportList.add(res.getString("AirportID"));
         }
+        stmt.close();
+        res.close();
+        connector.closeConnection();
     return airportList;
     }
 
@@ -582,6 +585,9 @@ public class QueryList {
         while(res.next()){
             airlines.add(res.getString("AirportID"));
         }
+        stmt.close();
+        res.close();
+        connector.closeConnection();
         return airlines;
 
     }
@@ -616,6 +622,26 @@ public class QueryList {
         findCustomers.close();
         connector.closeConnection();
         return customerTickets;
+    }
+
+    public boolean addToWaitlist (String flightNum, String userEmail){
+       try{
+           connector.getConnected();
+           mainConnection = connector.getMainConnector();
+           String deletingTable = "INSERT INTO WaitList (ClientEmail, `Departure Date`, `Departure Time`, `Departure Loc`, Class, `Destination Date`, `Destination Loc`, `Destination Time`)\n" +
+                   "SELECT Clients.Email, Flight.`Departure Date`, Flight.`Departure Time`, Flight.Departure_Location, Flight.Class, Flight.`Destination Date`, Flight.`Destination Location`, Flight.`Destination Time` \n" +
+                   "FROM Clients, Flight\n" +
+                   "WHERE Flight.`Flight#`= ?\n" +
+                   "AND Clients.Email = ?;";
+           PreparedStatement inserter = mainConnection.prepareStatement(deletingTable);
+           inserter.setString(1, flightNum);
+           inserter.setString(2, userEmail);
+           inserter.executeUpdate();
+        return true;
+       } catch (Exception e){
+           e.printStackTrace();
+           return false;
+       }
     }
 }
 
