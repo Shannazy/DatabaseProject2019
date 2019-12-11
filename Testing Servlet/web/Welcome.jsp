@@ -24,9 +24,7 @@
 </nav>
 <main>
     <section>
-        <p class="success">Successful Login!
-                ${username}
-        </p>
+        <p class="success">Successful Login!</p>
     </section>
 </main>
 </body>

@@ -197,23 +197,23 @@ public class QueryList {
         PreparedStatement stmt = mainConnection.prepareStatement(search);   //create the actual statement
         stmt.setString(1, username);    //Adding the first parameter
         ResultSet res = stmt.executeQuery();
+        List<String> currentUser = new ArrayList<String>();
 
         if (res.next()) {
-            UserInfo currentUser = new UserInfo(res.getString("Email"),
-                    res.getString("Name"),
-                    (res.getString("Phone")),
-                    (res.getString("Creation_Date")),
-                    (res.getString("DOB")));
+            currentUser.add(res.getString("Email"));
+            currentUser.add(res.getString("Name"));
+            currentUser.add(res.getString("Phone"));
+            currentUser.add(res.getString("Creation_Date"));
+            currentUser.add(res.getString("DOB"));
             stmt.close();
             res.close();
             connector.closeConnection();
             return currentUser;
         } else {
-            UserInfo failedUser = new UserInfo("fail", "fail", "Fail", "Fail", "Fail");
             stmt.close();
             res.close();
             connector.closeConnection();
-            return failedUser;
+            return currentUser;
         }
     }
 
@@ -586,8 +586,38 @@ public class QueryList {
 
     }
 
-    public boolean adminNameUpdate(String newName){
+    public List<List<String>> getGreatestTotalRevenue(String queryType, String input) throws SQLException{
 
+        List<List<String>> customerTickets = new ArrayList<List<String>>();
+        connector.getConnected();
+        mainConnection = connector.getMainConnector();
+        String query = "";
+        if(queryType.equals("flight")){
+            query = "";
+        }
+        else if(queryType.equals("customer")){
+            query = "SELECT Name, `TicketNumber`, `Total Price`*0.25 as `Total Revenue`" +
+                    " FROM Ticket JOIN Clients on ClientEmail = Email where `ClientEmail` = ?";
+        }
+        else if(queryType.equals("airline")){
+            query = "";
+        }
+        PreparedStatement findCustomers = mainConnection.prepareStatement(query);
+        findCustomers.setString(1, input);
+        ResultSet res = findCustomers.executeQuery();
+        while(res.next()){
+            List<String> customerDetails = new ArrayList<String>();
+            customerDetails.add(res.getString("Name"));
+            customerDetails.add(res.getString("TicketNumber"));
+            customerDetails.add(res.getString("Total Revenue"));
+            customerTickets.add(customerDetails);
+        }
+        res.close();
+        findCustomers.close();
+        connector.closeConnection();
+        return customerTickets;
     }
 }
 
+
+//Test merge
