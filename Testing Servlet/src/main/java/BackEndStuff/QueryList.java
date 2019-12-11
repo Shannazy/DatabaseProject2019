@@ -707,9 +707,12 @@ public class QueryList {
                 inserter.setString(4, type);
                 inserter.setString(5, roundRef);
                 inserter.executeUpdate();
+                inserter.close();
+                connector.closeConnection();
                 return true;
             } catch (Exception e) {
                 e.printStackTrace();
+                connector.closeConnection();
                 return false;
             }
         }
@@ -725,9 +728,12 @@ public class QueryList {
                 inserter.setString(3, totalPrice);
                 inserter.setString(4, type);
                 inserter.executeUpdate();
+                inserter.close();
+                connector.closeConnection();
                 return true;
             } catch (Exception e) {
                 e.printStackTrace();
+                connector.closeConnection();
                 return false;
             }
 
