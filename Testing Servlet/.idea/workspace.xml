@@ -6,11 +6,6 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="df0b40f9-93c5-4fcb-84db-3340dae45b61" name="Default Changelist" comment="Now able to save the users for the current session.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" afterDir="false" />
-=======
     <list default="true" id="df0b40f9-93c5-4fcb-84db-3340dae45b61" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/ReserveServlet.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/SearchServlet.java" afterDir="false" />
@@ -31,7 +26,6 @@
       <change beforePath="$PROJECT_DIR$/web/Reserve.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Reserve.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/Search.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Search.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/Welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Welcome.jsp" afterDir="false" />
->>>>>>> cf4e9caf97ade975a8fc20455e9b262a7dc41281
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,9 +49,6 @@
   </component>
   <component name="ExportToHTMLSettings">
     <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../Testing Servlet\exportToHTML" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="Testing Servlet" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -215,14 +206,9 @@
       </method>
     </configuration>
     <configuration name="Tomcat 9.0.27" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.27" ALTERNATIVE_JRE_ENABLED="false">
-<<<<<<< HEAD
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/Testing_Servlet_war/" />
-      <option name="UPDATING_POLICY" value="restart-server" />
-=======
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/Testing_Servlet_war/Testing_Servlet_war.war" />
       <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
->>>>>>> cf4e9caf97ade975a8fc20455e9b262a7dc41281
       <deployment>
         <artifact name="Testing Servlet:war">
           <settings>
@@ -297,9 +283,9 @@
       <item itemvalue="JUnit.QueryListTest.justaTest" />
       <item itemvalue="JUnit.QueryListTest.adminDelete" />
       <item itemvalue="JUnit.QueryListTest.flexableNoFilter" />
-      <item itemvalue="Tomcat Server.Tomcat 9.0.27" />
       <item itemvalue="JUnit.QueryListTest.dynamicQuery" />
       <item itemvalue="JUnit.QueryListTest.airportList" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.27" />
     </list>
     <recent_temporary>
       <list>
@@ -336,20 +322,9 @@
       <workItem from="1575396841750" duration="159000" />
       <workItem from="1575397009754" duration="647000" />
       <workItem from="1575491728481" duration="1754000" />
-<<<<<<< HEAD
-      <workItem from="1575494761336" duration="2332000" />
-      <workItem from="1575560934764" duration="4607000" />
-      <workItem from="1575574783842" duration="534000" />
-      <workItem from="1575585837065" duration="1208000" />
-      <workItem from="1575918943908" duration="7891000" />
-      <workItem from="1575994027478" duration="18567000" />
-      <workItem from="1576038713316" duration="4533000" />
-      <workItem from="1576081390872" duration="8342000" />
-=======
       <workItem from="1575494761336" duration="1970000" />
       <workItem from="1576018260726" duration="121000" />
       <workItem from="1576078308168" duration="4437000" />
->>>>>>> cf4e9caf97ade975a8fc20455e9b262a7dc41281
     </task>
     <task id="LOCAL-00001" summary="Now able to save the users for the current session.">
       <created>1575496582820</created>
@@ -400,14 +375,11 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-<<<<<<< HEAD
-=======
           <url>file://$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java</url>
           <line>20</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
->>>>>>> cf4e9caf97ade975a8fc20455e9b262a7dc41281
           <url>file://$PROJECT_DIR$/src/main/java/BackEndStuff/RegisterServlet.java</url>
           <line>25</line>
           <option name="timeStamp" value="11" />
