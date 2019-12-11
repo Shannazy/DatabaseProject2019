@@ -7,51 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df0b40f9-93c5-4fcb-84db-3340dae45b61" name="Default Changelist" comment="Merge branch 'master' of github.com:Shannazy/DatabaseProject2019 into frontend&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;Testing Servlet/.idea/workspace.xml&#10;#&#9;Testing Servlet/out/artifacts/Testing_Servlet_war/Testing Servlet_war.war&#10;#&#9;Testing Servlet/out/artifacts/Testing_Servlet_war_exploded/META-INF/MANIFEST.MF&#10;#&#9;Testing Servlet/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/LoginServlet.class&#10;#&#9;Testing Servlet/out/artifacts/Testing_Servlet_war_exploded/Welcome.jsp&#10;#&#9;Testing Servlet/src/main/java/BackEndStuff/LoginServlet.java&#10;#&#9;Testing Servlet/target/classes/BackEndStuff/LoginServlet.class&#10;#&#9;Testing Servlet/web/Profile.jsp&#10;#&#9;Testing Servlet/web/Welcome.jsp">
-      <change afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/UserInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/ProfileServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../web/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Database_Project_2019.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Database_Project_2019.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/DatabaseConnection.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/ProfileServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/RegisterServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/BackEndStuff/DatabaseConnectionTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Database_Site/Database_Site.war" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Database_Site/Testing Servlet_war.war" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war/Testing Servlet_war.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war/Testing Servlet_war.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Profile.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Representative.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Representative.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Reserve.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Reserve.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Search.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Search.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/QueryList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/QueryList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/RegisterServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/Welcome.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/LoginServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/RegisterServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/ReserveServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/ReserveServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/SearchServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/SearchServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/DatabaseConnection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/QueryList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/QueryList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/RegisterServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/BackEndStuff/DatabaseConnectionTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/BackEndStuff/QueryListTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/BackEndStuff/QueryListTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Profile.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Reserve.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Reserve.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Search.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Search.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/Welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Welcome.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -366,6 +328,7 @@
       <workItem from="1576038713316" duration="4331000" />
       <workItem from="1576088105162" duration="4617000" />
       <workItem from="1576104631749" duration="3021000" />
+      <workItem from="1576108021367" duration="336000" />
     </task>
     <task id="LOCAL-00001" summary="Now able to save the users for the current session.">
       <created>1575496582820</created>
