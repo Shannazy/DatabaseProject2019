@@ -4,9 +4,11 @@
     <a href="Welcome.jsp">
         <div class="nav-link">Home</div>
     </a>
-    <a href="Profile.jsp">
-        <div class="nav-link">Profile</div>
-    </a>
+    <form id="profileForm" action="ProfileServlet" method="get">
+        <button type="submit" form="profileForm" value="profile">
+            <div class="nav-link">Profile</div>
+        </button>
+    </form>
     <%
         try {
             if (session.getAttribute("role").equals("admin")) {
