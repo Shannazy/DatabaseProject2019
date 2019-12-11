@@ -1,0 +1,51 @@
+Profile:
+* Query User Object given Username
+  * Email
+  * Full Name
+  * Phone Number
+  * DOB
+  * Creation Date
+* Query List of Flights associated to Username | Flight Number | Airline | All
+  * All Reservations
+  * Upcoming Reservations
+  * Past Reservations
+
+* Query List of Flights Revenue (sum price) associated to group by Username, Flight Number, Airline
+
+* Query List of Flights Sort Count High to Low group by Flight Number
+
+* Query List of Flights given an Airport (arriving and departing)
+
+Generic Flight Filter/Sort Query
+* Required
+    * Filter Departure Airport given Airport Code
+    * Filter Arrival Airport given Airport Code
+* Optional/Will have Default Values
+    * Filter Trip Type given oneWay | round, default null
+    * Filter Day Flexibility given [-3, 3], default 0
+    * Filter Price Range given [minPrice, maxPrice], default null
+    * Filter Stops given [minStops, maxStops], default null
+    * Filter Airlines given List of Airline Codes, default null
+    * Sort Prices Descending given priceDescending, default null
+    * Sort Prices Ascending given priceAscending, default null
+    * Sort Latest Departure Time Descending given lateTakeoffTime, default null
+    * Sort Earliest Departure Time Descending given earlyTakeoffTime, default null
+    * Sort Latest Arrival Time Descending given lateLandingTime, default null
+    * Sort Earliest Arrival Time Descending given earlyLandingTime, default null
+
+Reserve a Flight
+* Post Flight in Client_has given Flight Number and Username
+
+Cancel a Flight
+* Delete Flight from Client_has given Flight Number and Username
+
+Waiting List
+* Not sure lol, but both Reserve and Cancel Flight Functionality
+
+Admin
+* Create, Query, Update, Delete Customer / Customer Representative Information given Username
+
+Customer Rep
+* Update Query on Airports given set of Fields
+* Update Query on Aircrafts given set of Fields
+* Update Query on Flights given set of Fields

@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Testing Servelet" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="98e215e3-3976-4e12-b569-d0541bef8172" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database_Project_2019.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Database_Project_2019.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BackEndCode/Database_Connections.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndCode/Database_Connections.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing Servlet/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Testing Servlet/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing Servlet/out/artifacts/Testing_Servlet_war/Testing Servlet_war.war" beforeDir="false" afterPath="$PROJECT_DIR$/Testing Servlet/out/artifacts/Testing_Servlet_war/Testing Servlet_war.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing Servlet/out/artifacts/Testing_Servlet_war_exploded/Login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Testing Servlet/out/artifacts/Testing_Servlet_war_exploded/Login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing Servlet/out/artifacts/Testing_Servlet_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/Testing Servlet/out/artifacts/Testing_Servlet_war_exploded/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing Servlet/out/artifacts/Testing_Servlet_war_exploded/Register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Testing Servlet/out/artifacts/Testing_Servlet_war_exploded/Register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing Servlet/out/artifacts/Testing_Servlet_war_exploded/Welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Testing Servlet/out/artifacts/Testing_Servlet_war_exploded/Welcome.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing Servlet/web/Welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Testing Servlet/web/Welcome.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -40,6 +53,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -61,10 +81,11 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -86,7 +107,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.QueryListTest.searchAdmins">
+  <component name="RunManager" selected="Tomcat Server.Application">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Database_Project_2019" />
@@ -133,6 +154,84 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Application" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.27" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="Testing Servelet">
+          <settings>
+            <option name="CONTEXT_PATH" value="/Testing_Servelet" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_Database_Project_2019_2" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="51098" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.Database_ConnectionsTest" />
+      <item itemvalue="JUnit.Database_ConnectionsTest.getConnected" />
+      <item itemvalue="JUnit.QueryListTest.searchAdmins" />
+      <item itemvalue="JUnit.QueryListTest.searchCLients" />
+      <item itemvalue="Tomcat Server.Application" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.QueryListTest.searchAdmins" />
@@ -156,6 +255,10 @@
       <workItem from="1573850118500" duration="1585000" />
       <workItem from="1573853876389" duration="812000" />
       <workItem from="1573857203617" duration="439000" />
+      <workItem from="1575558719890" duration="3041000" />
+      <workItem from="1575670850096" duration="445000" />
+      <workItem from="1575838582122" duration="3764000" />
+      <workItem from="1576011024051" duration="12000" />
     </task>
     <task id="LOCAL-00001" summary="Delete the comment">
       <created>1573697557354</created>
