@@ -576,7 +576,7 @@ public class QueryList {
         List<String> airlines = new ArrayList<String>();
         connector.getConnected();
         mainConnection = connector.getMainConnector();
-        String search = "Select * From Airport ";   //Create string for searching admins
+        String search = "Select * From Airlines ";   //Create string for searching admins
         PreparedStatement stmt = mainConnection.prepareStatement(search);
         ResultSet res = stmt.executeQuery();
         while(res.next()){
