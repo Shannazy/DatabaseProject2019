@@ -16,17 +16,17 @@ public class LoginServlet extends HttpServlet {
         String pass = request.getParameter("Password");
         DatabaseConnection myConnection = new DatabaseConnection();
         QueryList searcher = new QueryList(myConnection);
-        if(searcher.searchAdmins(username, pass)){
-            HttpSession session = request.getSession(true);
-            session.setAttribute("username", username);
+        if (searcher.searchAdmins(username, pass)) {
+            request.getSession(true);
+            request.getSession(false).setAttribute("username", username);
+            request.getSession(false).setAttribute("role", "admin");
             response.sendRedirect("Welcome.jsp");
-        }
-        else if (searcher.searchclients(username, pass)){
-            HttpSession session = request.getSession(true);
-            session.setAttribute("username", username);
+        } else if (searcher.searchclients(username, pass)) {
+            request.getSession(true);
+            request.getSession(false).setAttribute("username", username);
+            request.getSession(false).setAttribute("role", "client");
             response.sendRedirect("Welcome.jsp");
-        }
-        else{
+        } else {
             response.sendRedirect("Page404.jsp");
         }
     }
