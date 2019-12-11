@@ -451,8 +451,8 @@ public class QueryList {
         else if(queryType.equals("airline")){
             query = "";
         }
-        PreparedStatement findCustomers = mainConnection.prepareStatement(arriving);
-        findCustomers.setString(1, customerEmail);
+        PreparedStatement findCustomers = mainConnection.prepareStatement(query);
+        findCustomers.setString(1, input);
         ResultSet res = findCustomers.executeQuery();
         while(res.next()){
             List<String> customerDetails = new ArrayList<String>();
