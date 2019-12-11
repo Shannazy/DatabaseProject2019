@@ -12,16 +12,36 @@ import java.util.*;
 @WebServlet(name = "/SearchServlet", urlPatterns = {"/SearchServlet"})
 public class SearchServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String type  = request.getParameter("type");
-        String flex  = request.getParameter("flex");
-        String sort = request.getParameter("sort");
-        String lowPrice = request.getParameter("low-price");
-        String highPrice = request.getParameter("high-price");
-        String lowStops = request.getParameter("low-stops");
-        String highStops = request.getParameter("high-stops");
-        String airline = request.getParameter("airline");
-        String airportDepart = request.getParameter("airport-depart");
-        String airportDest = request.getParameter("airport-dest");
+        String type = request.getParameter("type").equals("")
+                ? null
+                : request.getParameter("type");
+        String flex = request.getParameter("flex").equals("")
+                ? null
+                : request.getParameter("flex");
+        String sort = request.getParameter("sort").equals("")
+                ? null
+                : request.getParameter("sort");
+        String lowPrice = request.getParameter("low-price").equals("")
+                ? null
+                : request.getParameter("low-price");
+        String highPrice = request.getParameter("high-price").equals("")
+                ? null
+                : request.getParameter("high-price");
+        String lowStops = request.getParameter("low-stops").equals("")
+                ? null
+                : request.getParameter("low-stops");
+        String highStops = request.getParameter("high-stops").equals("")
+                ? null
+                : request.getParameter("high-stops");
+        String airline = request.getParameter("airline").equals("")
+                ? null
+                : request.getParameter("airline");
+        String airportDepart = request.getParameter("airport-depart").equals("")
+                ? null
+                : request.getParameter("airport-depart");
+        String airportDest = request.getParameter("airport-dest").equals("")
+                ? null
+                : request.getParameter("airport-dest");
 
         System.out.println("type: " + type);
         System.out.println("flex: " + flex);
@@ -35,7 +55,7 @@ public class SearchServlet extends HttpServlet {
         System.out.println("airportDest: " + airportDest);
         System.out.println("username: " + request.getParameter("username"));
 
-        final ArrayList<String> flight1 = new ArrayList<String>(){
+        final ArrayList<String> flight1 = new ArrayList<String>() {
             {
                 add("1");
                 add("May 10");
@@ -46,7 +66,7 @@ public class SearchServlet extends HttpServlet {
                 add("365");
             }
         };
-        final ArrayList<String> flight2 = new ArrayList<String>(){
+        final ArrayList<String> flight2 = new ArrayList<String>() {
             {
                 add("2");
                 add("May 11");
@@ -57,7 +77,7 @@ public class SearchServlet extends HttpServlet {
                 add("366");
             }
         };
-        final ArrayList<String> flight3 = new ArrayList<String>(){
+        final ArrayList<String> flight3 = new ArrayList<String>() {
             {
                 add("3");
                 add("May 12");
@@ -69,7 +89,7 @@ public class SearchServlet extends HttpServlet {
             }
         };
         // Query Flights that match the sort/filter
-        ArrayList<ArrayList<String>> tempFlights = new ArrayList<ArrayList<String>>(){
+        ArrayList<ArrayList<String>> tempFlights = new ArrayList<ArrayList<String>>() {
             {
                 add(flight1);
                 add(flight2);

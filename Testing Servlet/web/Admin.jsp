@@ -10,7 +10,7 @@
 <body>
 <jsp:include page="Header.jsp"/>
 <main>
-    Admin
+    <jsp:include page="AdminNav.jsp"/>
 </main>
 </body>
 </html>
