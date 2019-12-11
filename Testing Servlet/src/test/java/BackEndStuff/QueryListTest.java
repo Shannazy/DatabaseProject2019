@@ -133,4 +133,17 @@ class QueryListTest {
         QueryList searchForTicket = new QueryList(tester);
         System.out.println(searchForTicket.adminDelete("Clients","as2591@scarletmail.rutgers.edu"));
     }
+
+    @Test
+    void flexableNoFilter() {
+        DatabaseConnection tester = new DatabaseConnection();
+        QueryList searchForTicket = new QueryList(tester);
+        List<List<String>> arrivalList = searchForTicket.flexableNoFilter("2019-12-15", "JFK", "LAX");
+        for (List<String> part1 : arrivalList) {
+            for (String runner : part1) {
+                System.out.print(runner + " ");
+            }
+            System.out.println();
+        }
+    }
 }

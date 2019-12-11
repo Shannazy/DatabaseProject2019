@@ -25,9 +25,7 @@
 <main>
     <section>
         <p class="success">Successful Login!
-            <%
-                out.println(session.getAttribute("username"));
-            %>
+                ${username}
         </p>
     </section>
 </main>

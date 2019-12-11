@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -434,5 +435,122 @@ public class QueryList {
         }
         return false;
     }
+
+    public List<List<String>> flexableNoFilter (String departureDate, String departureLocation, String destinationLocation){
+        List<List<String>> flexableTiickets = new ArrayList<List<String>>();
+        try {
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            String tickets = "Select * FROM Flight WHERE " +
+                    "`Departure Date` Between ? AND ? AND" +
+                    " `Departure_Location` = ? AND" +
+                    " `Destination Location` = ?";
+            PreparedStatement searchFlights = mainConnection.prepareStatement(tickets);
+
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Calendar c =Calendar.getInstance();
+            c.setTime(sdf.parse(departureDate));
+            c.add(Calendar.DAY_OF_MONTH, -3);
+            searchFlights.setString(1, sdf.format(c.getTime()));
+
+            c.setTime(sdf.parse(departureDate));
+            c.add(Calendar.DAY_OF_MONTH, 3);
+            searchFlights.setString(2, sdf.format(c.getTime()));
+            searchFlights.setString(3, departureLocation);
+            searchFlights.setString(4, destinationLocation);
+            ResultSet res = searchFlights.executeQuery();
+            while (res.next()) {
+                List<String> thisColumn = new ArrayList<String>();
+                thisColumn.add(res.getString("Flight#"));
+                thisColumn.add(res.getString("Departure Date"));
+                thisColumn.add(res.getString("Departure Time"));
+                thisColumn.add(res.getString("Departure_Location"));
+                thisColumn.add(res.getString("Destination Date"));
+                thisColumn.add(res.getString("Destination Time"));
+                thisColumn.add(res.getString("Destination Location"));
+                thisColumn.add(res.getString("Class"));
+                thisColumn.add(res.getString("Airline"));
+                thisColumn.add(res.getString("FlightID"));
+                thisColumn.add(res.getString("Price"));
+                flexableTiickets.add(thisColumn);
+            }
+            res.close();
+            searchFlights.close();
+            connector.closeConnection();
+            return flexableTiickets;
+        } catch (Exception e) {
+
+            connector.closeConnection();
+            List<String> failed = new ArrayList<String>();
+            failed.add("Something went wrong");
+            flexableTiickets.add(failed);
+            return flexableTiickets;
+        }
+    }
+
+//    public List<List<String>> dynamicQuery  (String departureDate, String departureLocation, String destinationLocation, String priceLow,
+//                                                String priceHigh, String Airline, boolean Flex, String Sort){
+//        List<List<String>> flightsResult = new ArrayList<List<String>>();
+//        try {
+//            StringBuilder dynamicQuery =new StringBuilder("Select * From Flight where" +
+//                    " `Departure_Location` = ? and" +
+//                    " `Destination Location` = ?");
+//            connector.getConnected();
+//            mainConnection = connector.getMainConnector();
+//            if(Flex){
+//                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//                Calendar c =Calendar.getInstance();
+//                c.setTime(sdf.parse(departureDate));
+//                c.add(Calendar.DAY_OF_MONTH, -3);
+//                String threeLess = sdf.format(c.getTime());
+//                c.setTime(sdf.parse(departureDate));
+//                c.add(Calendar.DAY_OF_MONTH, 3);
+//                String threeMore = sdf.format((c.getTime());
+//                dynamicQuery.append(" and " +
+//                        "'Departure Date' between ")
+//
+//            }
+//            PreparedStatement searchFlights = mainConnection.prepareStatement(dynamicQuery);
+//
+//            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//            Calendar c =Calendar.getInstance();
+//            c.setTime(sdf.parse(departureDate));
+//            c.add(Calendar.DAY_OF_MONTH, -3);
+//            searchFlights.setString(1, sdf.format(c.getTime()));
+//
+//            c.setTime(sdf.parse(departureDate));
+//            c.add(Calendar.DAY_OF_MONTH, 3);
+//            searchFlights.setString(2, sdf.format(c.getTime()));
+//            searchFlights.setString(3, departureLocation);
+//            searchFlights.setString(4, destinationLocation);
+//            ResultSet res = searchFlights.executeQuery();
+//            while (res.next()) {
+//                List<String> thisColumn = new ArrayList<String>();
+//                thisColumn.add(res.getString("Flight#"));
+//                thisColumn.add(res.getString("Departure Date"));
+//                thisColumn.add(res.getString("Departure Time"));
+//                thisColumn.add(res.getString("Departure_Location"));
+//                thisColumn.add(res.getString("Destination Date"));
+//                thisColumn.add(res.getString("Destination Time"));
+//                thisColumn.add(res.getString("Destination Location"));
+//                thisColumn.add(res.getString("Class"));
+//                thisColumn.add(res.getString("Airline"));
+//                thisColumn.add(res.getString("FlightID"));
+//                thisColumn.add(res.getString("Price"));
+//                flightsResult.add(thisColumn);
+//            }
+//            res.close();
+//            searchFlights.close();
+//            connector.closeConnection();
+//            return flightsResult;
+//        } catch (Exception e) {
+//
+//            connector.closeConnection();
+//            List<String> failed = new ArrayList<String>();
+//            failed.add("Something went wrong");
+//            flightsResult.add(failed);
+//            return flightsResult;
+//        }
+//    }
 }
 
