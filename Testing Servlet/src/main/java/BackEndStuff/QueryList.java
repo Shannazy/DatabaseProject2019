@@ -434,5 +434,37 @@ public class QueryList {
         }
         return false;
     }
+
+    public List<List<String>> getGreatestTotalRevenue(String queryType, String input) throws SQLException{
+
+        List<List<String>> customerTickets = new ArrayList<List<String>>();
+        connector.getConnected();
+        mainConnection = connector.getMainConnector();
+        String query = "";
+        if(queryType.equals("flight")){
+            query = "";
+        }
+        else if(queryType.equals("customer")){
+            query = "SELECT Name, `TicketNumber`, `Total Price`*0.25 as `Total Revenue`" +
+                    " FROM Ticket JOIN Clients on ClientEmail = Email where `ClientEmail` = ?"
+        }
+        else if(queryType.equals("airline")){
+            query = "";
+        }
+        PreparedStatement findCustomers = mainConnection.prepareStatement(arriving);
+        findCustomers.setString(1, customerEmail);
+        ResultSet res = findCustomers.executeQuery();
+        while(res.next()){
+            List<String> customerDetails = new ArrayList<String>();
+            customerDetails.add(res.getString("Name"));
+            customerDetails.add(res.getString("TicketNumber"));
+            customerDetails.add(res.getString("Total Revenue"));
+            customerTickets.add(customerDetails);
+        }
+        res.close();
+        findCustomers.close();
+        connector.closeConnection();
+        return customerTickets;
+    }
 }
 
