@@ -7,11 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df0b40f9-93c5-4fcb-84db-3340dae45b61" name="Default Changelist" comment="Now able to save the users for the current session.">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/DatabaseConnection.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/ProfileServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/ProfileServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/QueryList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/QueryList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/RegisterServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/BackEndStuff/DatabaseConnectionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/BackEndStuff/DatabaseConnectionTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/BackEndStuff/QueryListTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/BackEndStuff/QueryListTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +86,7 @@
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2602941" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
@@ -113,7 +119,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.27">
+  <component name="RunManager" selected="JUnit.QueryListTest.dynamicQuery">
     <configuration name="QueryListTest.adminDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Testing Servlet" />
       <extension name="coverage">
@@ -276,8 +282,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.QueryListTest.airportList" />
         <item itemvalue="JUnit.QueryListTest.dynamicQuery" />
+        <item itemvalue="JUnit.QueryListTest.airportList" />
         <item itemvalue="JUnit.QueryListTest.flexableNoFilter" />
         <item itemvalue="JUnit.QueryListTest.adminDelete" />
         <item itemvalue="JUnit.QueryListTest.justaTest" />
