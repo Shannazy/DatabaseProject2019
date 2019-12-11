@@ -9,12 +9,9 @@
     <list default="true" id="df0b40f9-93c5-4fcb-84db-3340dae45b61" name="Default Changelist" comment="Now able to save the users for the current session.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" afterDir="false" />
-<<<<<<< HEAD
-=======
       <change beforePath="$PROJECT_DIR$/web/Login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/Welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Welcome.jsp" afterDir="false" />
->>>>>>> 445a9dac9a816c7fe062ae886e8bedae38d299a8
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,11 +82,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-<<<<<<< HEAD
-    <property name="project.structure.side.proportion" value="0.2137931" />
-=======
     <property name="project.structure.side.proportion" value="0.2602941" />
->>>>>>> 445a9dac9a816c7fe062ae886e8bedae38d299a8
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -120,11 +113,7 @@
       </list>
     </option>
   </component>
-<<<<<<< HEAD
-  <component name="RunManager" selected="JUnit.QueryListTest.airportList">
-=======
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.27">
->>>>>>> 445a9dac9a816c7fe062ae886e8bedae38d299a8
     <configuration name="QueryListTest.adminDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Testing Servlet" />
       <extension name="coverage">
@@ -278,21 +267,12 @@
       </method>
     </configuration>
     <list>
-<<<<<<< HEAD
-      <item itemvalue="JUnit.QueryListTest.justaTest" />
-      <item itemvalue="JUnit.QueryListTest.adminDelete" />
-      <item itemvalue="JUnit.QueryListTest.flexableNoFilter" />
-      <item itemvalue="Tomcat Server.Tomcat 9.0.27" />
-      <item itemvalue="JUnit.QueryListTest.dynamicQuery" />
       <item itemvalue="JUnit.QueryListTest.airportList" />
-=======
-      <item itemvalue="JUnit.QueryListTest.getDeparturesFromAirport" />
-      <item itemvalue="JUnit.QueryListTest.getArrivalToAirport" />
-      <item itemvalue="JUnit.QueryListTest.getResWithAirport" />
+      <item itemvalue="JUnit.QueryListTest.dynamicQuery" />
+      <item itemvalue="JUnit.QueryListTest.flexableNoFilter" />
       <item itemvalue="JUnit.QueryListTest.justaTest" />
       <item itemvalue="JUnit.QueryListTest.adminDelete" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.27" />
->>>>>>> 445a9dac9a816c7fe062ae886e8bedae38d299a8
     </list>
     <recent_temporary>
       <list>
@@ -335,13 +315,8 @@
       <workItem from="1575585837065" duration="1208000" />
       <workItem from="1575918943908" duration="7891000" />
       <workItem from="1575994027478" duration="18567000" />
-<<<<<<< HEAD
-      <workItem from="1576038713316" duration="4533000" />
-      <workItem from="1576081390872" duration="8342000" />
-=======
       <workItem from="1576038713316" duration="4331000" />
       <workItem from="1576088105162" duration="4617000" />
->>>>>>> 445a9dac9a816c7fe062ae886e8bedae38d299a8
     </task>
     <task id="LOCAL-00001" summary="Now able to save the users for the current session.">
       <created>1575496582820</created>
