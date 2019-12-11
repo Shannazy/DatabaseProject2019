@@ -146,4 +146,19 @@ class QueryListTest {
             System.out.println();
         }
     }
-}
+
+    @Test
+    void dynamicQuery() {
+        DatabaseConnection tester = new DatabaseConnection();
+        QueryList searchForTicket = new QueryList(tester);
+        List<List<String>> arrivalList = searchForTicket.dynamicQuery("2019-12-12", "JFK",
+                "LAX", null, "400", "AA", true, "Departure Time" );
+        for (List<String> part1 : arrivalList) {
+            for (String runner : part1) {
+                System.out.print(runner + " ");
+            }
+            System.out.println();
+        }
+    }
+    }
+

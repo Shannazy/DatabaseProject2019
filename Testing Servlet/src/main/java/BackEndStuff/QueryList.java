@@ -488,69 +488,76 @@ public class QueryList {
         }
     }
 
-//    public List<List<String>> dynamicQuery  (String departureDate, String departureLocation, String destinationLocation, String priceLow,
-//                                                String priceHigh, String Airline, boolean Flex, String Sort){
-//        List<List<String>> flightsResult = new ArrayList<List<String>>();
-//        try {
-//            StringBuilder dynamicQuery =new StringBuilder("Select * From Flight where" +
-//                    " `Departure_Location` = ? and" +
-//                    " `Destination Location` = ?");
-//            connector.getConnected();
-//            mainConnection = connector.getMainConnector();
-//            if(Flex){
-//                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-//                Calendar c =Calendar.getInstance();
-//                c.setTime(sdf.parse(departureDate));
-//                c.add(Calendar.DAY_OF_MONTH, -3);
-//                String threeLess = sdf.format(c.getTime());
-//                c.setTime(sdf.parse(departureDate));
-//                c.add(Calendar.DAY_OF_MONTH, 3);
-//                String threeMore = sdf.format((c.getTime());
-//                dynamicQuery.append(" and " +
-//                        "'Departure Date' between ")
-//
-//            }
-//            PreparedStatement searchFlights = mainConnection.prepareStatement(dynamicQuery);
-//
-//            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-//            Calendar c =Calendar.getInstance();
-//            c.setTime(sdf.parse(departureDate));
-//            c.add(Calendar.DAY_OF_MONTH, -3);
-//            searchFlights.setString(1, sdf.format(c.getTime()));
-//
-//            c.setTime(sdf.parse(departureDate));
-//            c.add(Calendar.DAY_OF_MONTH, 3);
-//            searchFlights.setString(2, sdf.format(c.getTime()));
-//            searchFlights.setString(3, departureLocation);
-//            searchFlights.setString(4, destinationLocation);
-//            ResultSet res = searchFlights.executeQuery();
-//            while (res.next()) {
-//                List<String> thisColumn = new ArrayList<String>();
-//                thisColumn.add(res.getString("Flight#"));
-//                thisColumn.add(res.getString("Departure Date"));
-//                thisColumn.add(res.getString("Departure Time"));
-//                thisColumn.add(res.getString("Departure_Location"));
-//                thisColumn.add(res.getString("Destination Date"));
-//                thisColumn.add(res.getString("Destination Time"));
-//                thisColumn.add(res.getString("Destination Location"));
-//                thisColumn.add(res.getString("Class"));
-//                thisColumn.add(res.getString("Airline"));
-//                thisColumn.add(res.getString("FlightID"));
-//                thisColumn.add(res.getString("Price"));
-//                flightsResult.add(thisColumn);
-//            }
-//            res.close();
-//            searchFlights.close();
-//            connector.closeConnection();
-//            return flightsResult;
-//        } catch (Exception e) {
-//
-//            connector.closeConnection();
-//            List<String> failed = new ArrayList<String>();
-//            failed.add("Something went wrong");
-//            flightsResult.add(failed);
-//            return flightsResult;
-//        }
-//    }
+    public List<List<String>> dynamicQuery  (String departureDate, String departureLocation, String destinationLocation, String priceLow,
+                                                String priceHigh, String Airline, boolean Flex, String Sort){
+        List<List<String>> flightsResult = new ArrayList<List<String>>();
+        try {
+            StringBuilder dynamicQuery =new StringBuilder("Select * From Flight where" +
+                    " `Departure_Location` = ? and" +
+                    " `Destination Location` = ?");
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            if(Flex){
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                Calendar c =Calendar.getInstance();
+                c.setTime(sdf.parse(departureDate));
+                c.add(Calendar.DAY_OF_MONTH, -3);
+                String threeLess = sdf.format(c.getTime());
+                c.setTime(sdf.parse(departureDate));
+                c.add(Calendar.DAY_OF_MONTH, 3);
+                String threeMore = sdf.format((c.getTime()));
+                dynamicQuery.append(" and " +
+                        "`Departure Date` between \'"+threeLess+"\' and \'"+
+                        threeMore+"\'");
+            }
+            if(!Flex){
+                dynamicQuery.append(" and `Departure Date` = \'"+departureDate+"\'");
+            }
+            if(Airline != null){
+                dynamicQuery.append(" and `Airline` = \""+Airline+"\"");
+            }
+            if (priceLow!= null){
+                dynamicQuery.append(" and `Price` >= "+priceLow);
+
+            }
+            if (priceHigh != null){
+                dynamicQuery.append(" and `Price` <= "+ priceHigh);
+            }
+            if(Sort != null){
+                dynamicQuery.append(" order by `"+Sort+"`;");
+            }
+            String finalQuery = dynamicQuery.toString();
+            PreparedStatement searchFlights = mainConnection.prepareStatement(finalQuery);
+            searchFlights.setString(1, departureLocation);
+            searchFlights.setString(2, destinationLocation);
+            ResultSet res = searchFlights.executeQuery();
+            while (res.next()) {
+                List<String> thisColumn = new ArrayList<String>();
+                thisColumn.add(res.getString("Flight#"));
+                thisColumn.add(res.getString("Departure Date"));
+                thisColumn.add(res.getString("Departure Time"));
+                thisColumn.add(res.getString("Departure_Location"));
+                thisColumn.add(res.getString("Destination Date"));
+                thisColumn.add(res.getString("Destination Time"));
+                thisColumn.add(res.getString("Destination Location"));
+                thisColumn.add(res.getString("Class"));
+                thisColumn.add(res.getString("Airline"));
+                thisColumn.add(res.getString("FlightID"));
+                thisColumn.add(res.getString("Price"));
+                flightsResult.add(thisColumn);
+            }
+            res.close();
+            searchFlights.close();
+            connector.closeConnection();
+            return flightsResult;
+        } catch (Exception e) {
+        e.printStackTrace();
+            connector.closeConnection();
+            List<String> failed = new ArrayList<String>();
+            failed.add("Something went wrong");
+            flightsResult.add(failed);
+            return flightsResult;
+        }
+    }
 }
 
