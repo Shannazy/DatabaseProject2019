@@ -435,7 +435,7 @@ public class QueryList {
         return false;
     }
 
-    public List<List<String>> getGreatestTotalRevenue(String queryType, String input) throws SQLException{
+    public List<List<String>> getSalesReport(String queryType, String input) throws SQLException{
 
         List<List<String>> customerTickets = new ArrayList<List<String>>();
         connector.getConnected();
@@ -465,6 +465,26 @@ public class QueryList {
         findCustomers.close();
         connector.closeConnection();
         return customerTickets;
+    }
+
+    public List<String> getGreatestTotalRevenue(String clientEmail) throws SQLException{
+        List<String> greatestRevenue = new ArrayList<String>();
+        connector.getConnected();
+        mainConnection = connector.getMainConnector();
+        String query = "Select t1.Name, max(t1.`Total Revenue`) as `Total Revenue` " +
+                "from (select Name, sum(`Total Price`) * 0.25 as `Total Revenue` " +
+                            "from Ticket Join Clients on Email=ClientEmail where ClientEmail = ? group by ClientEmail) as t1";
+        PreparedStatement findGreatest = mainConnection.prepareStatement(query);
+        findGreatest.setString(1, clientEmail);
+        ResultSet res = findGreatest.executeQuery();
+        while(res.next()){
+            greatestRevenue.add(res.getString("Name"));
+            greatestRevenue.add(res.getString("Total Revenue"));
+        }
+        res.close();
+        findGreatest.close();
+        connector.closeConnection();
+        return greatestRevenue;
     }
 }
 
