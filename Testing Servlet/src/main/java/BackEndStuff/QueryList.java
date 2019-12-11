@@ -559,5 +559,31 @@ public class QueryList {
             return flightsResult;
         }
     }
+    public List<String> airportList() throws SQLException {
+        List<String> airportList = new ArrayList<String>();
+        connector.getConnected();
+        mainConnection = connector.getMainConnector();
+        String search = "Select * From Airport ";   //Create string for searching admins
+        PreparedStatement stmt = mainConnection.prepareStatement(search);
+        ResultSet res = stmt.executeQuery();
+        while(res.next()){
+            airportList.add(res.getString("AirportID"));
+        }
+    return airportList;
+    }
+
+    public List<String> airlineList() throws SQLException {
+        List<String> airlines = new ArrayList<String>();
+        connector.getConnected();
+        mainConnection = connector.getMainConnector();
+        String search = "Select * From Airport ";   //Create string for searching admins
+        PreparedStatement stmt = mainConnection.prepareStatement(search);
+        ResultSet res = stmt.executeQuery();
+        while(res.next()){
+            airlines.add(res.getString("AirportID"));
+        }
+        return airlines;
+
+    }
 }
 

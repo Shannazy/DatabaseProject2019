@@ -10,8 +10,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/QueryList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/QueryList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/BackEndStuff/QueryListTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/BackEndStuff/QueryListTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +111,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.QueryListTest.dynamicQuery">
+  <component name="RunManager" selected="JUnit.QueryListTest.airportList">
     <configuration name="QueryListTest.adminDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Testing Servlet" />
       <extension name="coverage">
@@ -125,6 +123,22 @@
       <option name="PACKAGE_NAME" value="BackEndStuff" />
       <option name="MAIN_CLASS_NAME" value="BackEndStuff.QueryListTest" />
       <option name="METHOD_NAME" value="adminDelete" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QueryListTest.airportList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Testing Servlet" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="BackEndStuff.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="BackEndStuff" />
+      <option name="MAIN_CLASS_NAME" value="BackEndStuff.QueryListTest" />
+      <option name="METHOD_NAME" value="airportList" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -157,22 +171,6 @@
       <option name="PACKAGE_NAME" value="BackEndStuff" />
       <option name="MAIN_CLASS_NAME" value="BackEndStuff.QueryListTest" />
       <option name="METHOD_NAME" value="flexableNoFilter" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="QueryListTest.getArrivalToAirport" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Testing Servlet" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="BackEndStuff.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="BackEndStuff" />
-      <option name="MAIN_CLASS_NAME" value="BackEndStuff.QueryListTest" />
-      <option name="METHOD_NAME" value="getArrivalToAirport" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -268,20 +266,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.QueryListTest.getArrivalToAirport" />
       <item itemvalue="JUnit.QueryListTest.justaTest" />
       <item itemvalue="JUnit.QueryListTest.adminDelete" />
       <item itemvalue="JUnit.QueryListTest.flexableNoFilter" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.27" />
       <item itemvalue="JUnit.QueryListTest.dynamicQuery" />
+      <item itemvalue="JUnit.QueryListTest.airportList" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.QueryListTest.airportList" />
         <item itemvalue="JUnit.QueryListTest.dynamicQuery" />
         <item itemvalue="JUnit.QueryListTest.flexableNoFilter" />
         <item itemvalue="JUnit.QueryListTest.adminDelete" />
         <item itemvalue="JUnit.QueryListTest.justaTest" />
-        <item itemvalue="JUnit.QueryListTest.getArrivalToAirport" />
       </list>
     </recent_temporary>
   </component>

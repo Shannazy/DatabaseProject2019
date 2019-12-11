@@ -160,5 +160,15 @@ class QueryListTest {
             System.out.println();
         }
     }
+
+    @Test
+    void airportList() throws SQLException {
+        DatabaseConnection tester = new DatabaseConnection();
+        QueryList searchForTicket = new QueryList(tester);
+        List<String> arrivalList = searchForTicket.airportList();
+        for (String part1 : arrivalList) {
+            System.out.println(part1+ "\n");
+        }
     }
+}
 
