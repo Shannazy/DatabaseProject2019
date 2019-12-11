@@ -39,7 +39,7 @@
             <option value="<% out.print(session.getAttribute("username"));%>"></option>
         </select>
         <button type="submit" form="flightListForm" value="FlightList" id="flight-list-button">Get Reservations</button>
-    </form>F
+    </form>
 
     <form id="summaryFlightForm" action="SummaryFlightServlet" method="get">
         <h1>Summary Flight</h1>
@@ -77,7 +77,7 @@
         <button type="submit" form="mostActiveForm" value="mostRevenue">Get Flights</button>
     </form>
 
-    <form id="airportFlightsForm" action="CustomerFlightServlet" method="get">
+    <form id="airportFlightsForm" action="AirportFlightsServlet" method="get">
         <h1>Get All Flights at an Airport</h1>
         <div>
             <label for="airport-flights">Airport</label>
