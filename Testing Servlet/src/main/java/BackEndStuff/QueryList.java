@@ -736,11 +736,17 @@ public class QueryList {
 
     public int getCapacity (String flightNum){
         try {
+            int capacity = 0;
             connector.getConnected();
             mainConnection = connector.getMainConnector();
-            String search = "Select * From Clients where `Email` = ?";   //Create string for searching admins
-            PreparedStatement stmt = mainConnection.prepareStatement(search);   //create the actual statement
-            stmt.setString(1, username);    //Adding the first parameter
+            String getter = "Select 'Capacity' From Flight  where `Flight#` = ?";   //Create string for searching admins
+            PreparedStatement stmt = mainConnection.prepareStatement(getter);   //create the actual statement
+            stmt.setString(1, flightNum);    //Adding the first parameter
+            ResultSet res = stmt.executeQuery();
+            while(res.next()){
+                capacity = res.getInt("Capacity");
+            }
+            return capacity;
         }catch (Exception e ){
             e.printStackTrace();
             return -1;
