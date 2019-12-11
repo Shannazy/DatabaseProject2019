@@ -15,13 +15,8 @@
         <div>
             <label id="flex-label" for="flex">Flexibility</label>
             <select id="flex" name="flex" form="searchForm">
-                <option value="0">0</option>
-                <option value="-3">-3</option>
-                <option value="-2">-2</option>
-                <option value="-1">-1</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+                <option value="true">true</option>
+                <option value="false">false</option>
             </select>
         </div>
 

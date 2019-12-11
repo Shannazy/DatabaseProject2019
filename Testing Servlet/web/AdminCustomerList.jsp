@@ -2,13 +2,13 @@
   Created by IntelliJ IDEA.
   User: stevenyuan
   Date: 12/11/19
-  Time: 12:59
+  Time: 16:05
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Sales Report</title>
+    <title>Customer Flight List</title>
     <link href="./css/index.css" rel="stylesheet" type="text/css">
     <link href="./css/welcome.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
