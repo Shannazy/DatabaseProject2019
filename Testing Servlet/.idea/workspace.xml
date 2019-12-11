@@ -9,6 +9,9 @@
     <list default="true" id="df0b40f9-93c5-4fcb-84db-3340dae45b61" name="Default Changelist" comment="Now able to save the users for the current session.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/Welcome.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,15 +90,15 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="BackEndStuff" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web" />
-      <recent name="$PROJECT_DIR$/web/css" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\shazi\Desktop\Shortcuts\Code Software\Testing Servlet\src\main\java\BackEndStuff" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\shazi\Desktop\Shortcuts\Code Software\Testing Servlet\src\main\java\BackEndStuff" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web" />
+      <recent name="$PROJECT_DIR$/web/css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -127,7 +130,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QueryListTest.getArrivalToAirport" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="QueryListTest.airportList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Testing Servlet" />
       <extension name="coverage">
         <pattern>
@@ -137,13 +140,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="BackEndStuff" />
       <option name="MAIN_CLASS_NAME" value="BackEndStuff.QueryListTest" />
-      <option name="METHOD_NAME" value="getArrivalToAirport" />
+      <option name="METHOD_NAME" value="airportList" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QueryListTest.getDeparturesFromAirport" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="QueryListTest.dynamicQuery" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Testing Servlet" />
       <extension name="coverage">
         <pattern>
@@ -153,13 +156,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="BackEndStuff" />
       <option name="MAIN_CLASS_NAME" value="BackEndStuff.QueryListTest" />
-      <option name="METHOD_NAME" value="getDeparturesFromAirport" />
+      <option name="METHOD_NAME" value="dynamicQuery" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QueryListTest.getResWithAirport" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="QueryListTest.flexableNoFilter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Testing Servlet" />
       <extension name="coverage">
         <pattern>
@@ -169,7 +172,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="BackEndStuff" />
       <option name="MAIN_CLASS_NAME" value="BackEndStuff.QueryListTest" />
-      <option name="METHOD_NAME" value="getResWithAirport" />
+      <option name="METHOD_NAME" value="flexableNoFilter" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -264,20 +267,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.QueryListTest.getDeparturesFromAirport" />
-      <item itemvalue="JUnit.QueryListTest.getArrivalToAirport" />
-      <item itemvalue="JUnit.QueryListTest.getResWithAirport" />
+      <item itemvalue="JUnit.QueryListTest.airportList" />
+      <item itemvalue="JUnit.QueryListTest.dynamicQuery" />
+      <item itemvalue="JUnit.QueryListTest.flexableNoFilter" />
       <item itemvalue="JUnit.QueryListTest.justaTest" />
       <item itemvalue="JUnit.QueryListTest.adminDelete" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.27" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.QueryListTest.airportList" />
+        <item itemvalue="JUnit.QueryListTest.dynamicQuery" />
+        <item itemvalue="JUnit.QueryListTest.flexableNoFilter" />
         <item itemvalue="JUnit.QueryListTest.adminDelete" />
         <item itemvalue="JUnit.QueryListTest.justaTest" />
-        <item itemvalue="JUnit.QueryListTest.getArrivalToAirport" />
-        <item itemvalue="JUnit.QueryListTest.getResWithAirport" />
-        <item itemvalue="JUnit.QueryListTest.getDeparturesFromAirport" />
       </list>
     </recent_temporary>
   </component>
@@ -367,6 +370,11 @@
           <url>file://$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java</url>
           <line>31</line>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java</url>
+          <line>499</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

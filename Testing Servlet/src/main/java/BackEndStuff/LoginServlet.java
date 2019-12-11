@@ -17,6 +17,7 @@ public class LoginServlet extends HttpServlet {
         DatabaseConnection myConnection = new DatabaseConnection();
         QueryList searcher = new QueryList(myConnection);
         if (searcher.searchAdmins(username, pass)) {
+
             HttpSession session = request.getSession(true);
             session.setAttribute("username", username);
             session.setAttribute("role", "admin");

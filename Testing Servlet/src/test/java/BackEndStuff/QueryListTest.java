@@ -133,4 +133,42 @@ class QueryListTest {
         QueryList searchForTicket = new QueryList(tester);
         System.out.println(searchForTicket.adminDelete("Clients","as2591@scarletmail.rutgers.edu"));
     }
+
+    @Test
+    void flexableNoFilter() {
+        DatabaseConnection tester = new DatabaseConnection();
+        QueryList searchForTicket = new QueryList(tester);
+        List<List<String>> arrivalList = searchForTicket.flexableNoFilter("2019-12-15", "JFK", "LAX");
+        for (List<String> part1 : arrivalList) {
+            for (String runner : part1) {
+                System.out.print(runner + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    @Test
+    void dynamicQuery() {
+        DatabaseConnection tester = new DatabaseConnection();
+        QueryList searchForTicket = new QueryList(tester);
+        List<List<String>> arrivalList = searchForTicket.dynamicQuery("2019-12-12", "JFK",
+                "LAX", null, "400", "AA", true, "Departure Time" );
+        for (List<String> part1 : arrivalList) {
+            for (String runner : part1) {
+                System.out.print(runner + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    @Test
+    void airportList() throws SQLException {
+        DatabaseConnection tester = new DatabaseConnection();
+        QueryList searchForTicket = new QueryList(tester);
+        List<String> arrivalList = searchForTicket.airportList();
+        for (String part1 : arrivalList) {
+            System.out.println(part1+ "\n");
+        }
+    }
 }
+
