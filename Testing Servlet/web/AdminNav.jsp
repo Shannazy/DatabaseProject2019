@@ -32,16 +32,36 @@
         </div>
         <button type="submit" form="customerFlightForm" value="CustomerFlight">Get Reservations</button>
     </form>
-    <a href="AdminSummaryListing.jsp">
-        <div class="nav-link">Summary Lists</div>
-    </a>
-    <a href="AdminMostRevenue.jsp">
-        <div class="nav-link">Most Revenue Client</div>
-    </a>
-    <a href="AdminMostActive.jsp">
-        <div class="nav-link">Most Active Flights</div>
-    </a>
-    <a href="AdminAirportFlight.jsp">
-        <div class="nav-link">Airport Flights</div>
-    </a>
+    <form id="summaryFlightForm" action="SummaryFlightServlet" method="get">
+        <h1>Summary Flight</h1>
+        <div>
+            <label for="summary-flight">Flight Number</label>
+            <input type="text" name="summary-flight" id="summary-flight">
+        </div>
+        <div>
+            <label for="summary-airline">Airline</label>
+            <input type="text" name="summary-airline" id="summary-airline">
+        </div>
+        <div>
+            <label for="summary-user">Username</label>
+            <input type="text" name="summary-user" id="summary-user">
+        </div>
+        <button type="submit" form="summaryFlightForm" value="SummaryFlight">Get Revenue</button>
+    </form>
+    <form id="mostRevenueForm" action="MostRevenueServlet" method="get">
+        <h1>Most Revenue Customer</h1>
+        <button type="submit" form="mostRevenueForm" value="mostRevenue">Get User</button>
+    </form>
+    <form id="mostActiveForm" action="MostActiveServlet" method="get">
+        <h1>Most Active Flights</h1>
+        <button type="submit" form="mostActiveForm" value="mostRevenue">Get Flights</button>
+    </form>
+    <form id="airportFlightsForm" action="CustomerFlightServlet" method="get">
+        <h1>Get All Flights at an Airport</h1>
+        <div>
+            <label for="airport-flights">Airport</label>
+            <input required type="text" name="airport-flights" id="airport-flights">
+        </div>
+        <button type="submit" form="airportFlightsForm" value="AirportFlights">Get Flights</button>
+    </form>
 </nav>
