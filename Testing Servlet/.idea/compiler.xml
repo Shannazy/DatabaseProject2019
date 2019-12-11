@@ -9,7 +9,7 @@
         <module name="Testing Servlet" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="8">
       <module name="Testing Servlet" target="1.5" />
     </bytecodeTargetLevel>
   </component>

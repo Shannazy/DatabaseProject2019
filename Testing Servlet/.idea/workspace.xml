@@ -7,11 +7,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df0b40f9-93c5-4fcb-84db-3340dae45b61" name="Default Changelist" comment="Now able to save the users for the current session.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/ProfileServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/Profile.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Database_Project_2019.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Database_Project_2019.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/DatabaseConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/LoginServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/QueryList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/BackEndStuff/QueryListTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/BackEndStuff/QueryListTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/RegisterServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/UserInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/BackEndStuff/DatabaseConnectionTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/BackEndStuff/QueryListTest.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,9 +56,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
-        <option value="Jsp File" />
         <option value="CSS File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -80,10 +93,10 @@
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2137931" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="project.structure.side.proportion" value="0.2602941" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -113,7 +126,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.QueryListTest.adminDelete">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.27">
     <configuration name="QueryListTest.adminDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Testing Servlet" />
       <extension name="coverage">
@@ -195,7 +208,6 @@
       </method>
     </configuration>
     <configuration name="Tomcat 9.0.27" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.27" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/Testing_Servlet_war/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Testing Servlet:war">
@@ -271,9 +283,9 @@
       <item itemvalue="JUnit.QueryListTest.getDeparturesFromAirport" />
       <item itemvalue="JUnit.QueryListTest.getArrivalToAirport" />
       <item itemvalue="JUnit.QueryListTest.getResWithAirport" />
-      <item itemvalue="Tomcat Server.Tomcat 9.0.27" />
       <item itemvalue="JUnit.QueryListTest.justaTest" />
       <item itemvalue="JUnit.QueryListTest.adminDelete" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.27" />
     </list>
     <recent_temporary>
       <list>
@@ -317,6 +329,7 @@
       <workItem from="1575918943908" duration="7891000" />
       <workItem from="1575994027478" duration="18567000" />
       <workItem from="1576038713316" duration="4331000" />
+      <workItem from="1576088105162" duration="1714000" />
     </task>
     <task id="LOCAL-00001" summary="Now able to save the users for the current session.">
       <created>1575496582820</created>
