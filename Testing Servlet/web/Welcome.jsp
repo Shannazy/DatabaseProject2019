@@ -10,9 +10,11 @@
 <body>
 <jsp:include page="Header.jsp"/>
 <main>
-    <section>
-        Welcome to your site for booking flights <% out.println(session.getAttribute("username")); %>!
-    </section>
+    <% if (session.getAttribute("role").equals("client")) {%>
+        <jsp:include page="Search.jsp"/>
+    <% } %>
+
+    <jsp:include page="Search.jsp"/>
 </main>
 </body>
 </html>

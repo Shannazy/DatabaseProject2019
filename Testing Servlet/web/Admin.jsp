@@ -10,6 +10,7 @@
 <body>
 <jsp:include page="Header.jsp"/>
 <main>
+    Admin
 </main>
 </body>
 </html>

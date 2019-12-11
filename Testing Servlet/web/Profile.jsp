@@ -10,6 +10,7 @@
 <body>
 <jsp:include page="Header.jsp"/>
 <main>
+    Profile
 </main>
 </body>
 </html>
