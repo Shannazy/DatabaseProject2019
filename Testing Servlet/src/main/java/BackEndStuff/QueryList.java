@@ -189,30 +189,30 @@ public class QueryList {
         }
     }
 
-    public UserInfo getUserInfo(String username) throws SQLException {
+    public List<String> getUserInfo(String username) throws SQLException {
         connector.getConnected();
         mainConnection = connector.getMainConnector();
         String search = "Select * From Clients where `Email` = ?";   //Create string for searching admins
         PreparedStatement stmt = mainConnection.prepareStatement(search);   //create the actual statement
         stmt.setString(1, username);    //Adding the first parameter
         ResultSet res = stmt.executeQuery();
+        List<String> currentUser = new ArrayList<String>();
 
         if (res.next()) {
-            UserInfo currentUser = new UserInfo(res.getString("Email"),
-                    res.getString("Name"),
-                    (res.getString("Phone")),
-                    (res.getString("Creation_Date")),
-                    (res.getString("DOB")));
+            currentUser.add(res.getString("Email"));
+            currentUser.add(res.getString("Name"));
+            currentUser.add(res.getString("Phone"));
+            currentUser.add(res.getString("Creation_Date"));
+            currentUser.add(res.getString("DOB"));
             stmt.close();
             res.close();
             connector.closeConnection();
             return currentUser;
         } else {
-            UserInfo failedUser = new UserInfo("fail", "fail", "Fail", "Fail", "Fail");
             stmt.close();
             res.close();
             connector.closeConnection();
-            return failedUser;
+            return currentUser;
         }
     }
 
@@ -446,7 +446,7 @@ public class QueryList {
         }
         else if(queryType.equals("customer")){
             query = "SELECT Name, `TicketNumber`, `Total Price`*0.25 as `Total Revenue`" +
-                    " FROM Ticket JOIN Clients on ClientEmail = Email where `ClientEmail` = ?"
+                    " FROM Ticket JOIN Clients on ClientEmail = Email where `ClientEmail` = ?";
         }
         else if(queryType.equals("airline")){
             query = "";
