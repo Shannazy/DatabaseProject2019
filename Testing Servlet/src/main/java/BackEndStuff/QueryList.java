@@ -18,6 +18,7 @@ public class QueryList {
     Connection mainConnection;
     DatabaseConnection connector;
 
+
     public QueryList(DatabaseConnection connector) {
         this.connector = connector;
     }
@@ -358,8 +359,8 @@ public class QueryList {
         List<List<String>> departureFlights = new ArrayList<List<String>>();
         connector.getConnected();
         mainConnection = connector.getMainConnector();
-        String tickets = "SELECT * FROM Departure where `Airport_AirportID` = ?";
-        PreparedStatement findDepart = mainConnection.prepareStatement(tickets);
+        String departing = "SELECT * FROM Departure where `Airport_AirportID` = ?";
+        PreparedStatement findDepart = mainConnection.prepareStatement(departing);
         findDepart.setString(1, AirportCode);
         ResultSet res = findDepart.executeQuery();
         while(res.next()){
@@ -382,8 +383,8 @@ public class QueryList {
         List<List<String>> arrivalFlights = new ArrayList<List<String>>();
         connector.getConnected();
         mainConnection = connector.getMainConnector();
-        String tickets = "SELECT * FROM Arrival where `Airport_Airport ID` = ?";
-        PreparedStatement findArrivals = mainConnection.prepareStatement(tickets);
+        String arriving = "SELECT * FROM Arrival where `Airport_Airport ID` = ?";
+        PreparedStatement findArrivals = mainConnection.prepareStatement(arriving);
         findArrivals.setString(1, AirportCode);
         ResultSet res = findArrivals.executeQuery();
         while(res.next()){
@@ -404,5 +405,34 @@ public class QueryList {
         return arrivalFlights;
     }
 
+    public boolean adminDelete (String table, String email) throws SQLException {
+
+        try {
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            if (table.equals("Clients")) {
+                String deletingTable = "Delete FROM `"+table+"` where `Email` = ?";
+                PreparedStatement deleter = mainConnection.prepareStatement(deletingTable);
+                deleter.setString(1, email);
+                deleter.executeUpdate();
+                deleter.close();
+                connector.closeConnection();
+                return true;
+            }
+            else if (table.equals("CustomerRep")) {
+                String deletingTable = "Delete FROM `"+table+"` where `CustomerRep_Username` = ?";
+                PreparedStatement deleter = mainConnection.prepareStatement(deletingTable);
+                deleter.setString(1, email);
+                deleter.executeUpdate();
+                deleter.close();
+                connector.closeConnection();
+                return true;
+            }
+        } catch (Exception e){
+            connector.closeConnection();
+            return false;
+        }
+        return false;
+    }
 }
 

@@ -8,14 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="df0b40f9-93c5-4fcb-84db-3340dae45b61" name="Default Changelist" comment="Now able to save the users for the current session.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war/Testing Servlet_war.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war/Testing Servlet_war.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/QueryList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/QueryList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/RegisterServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/RegisterServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/QueryList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/QueryList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/RegisterServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/QueryList.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/BackEndStuff/QueryListTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/BackEndStuff/QueryListTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -95,15 +90,15 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="BackEndStuff" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\shazi\Desktop\Shortcuts\Code Software\Testing Servlet\src\main\java\BackEndStuff" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web" />
+      <recent name="$PROJECT_DIR$/web/css" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web" />
-      <recent name="$PROJECT_DIR$/web/css" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\shazi\Desktop\Shortcuts\Code Software\Testing Servlet\src\main\java\BackEndStuff" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -118,7 +113,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.QueryListTest.getResWithAirport">
+  <component name="RunManager" selected="JUnit.QueryListTest.adminDelete">
+    <configuration name="QueryListTest.adminDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Testing Servlet" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="BackEndStuff.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="BackEndStuff" />
+      <option name="MAIN_CLASS_NAME" value="BackEndStuff.QueryListTest" />
+      <option name="METHOD_NAME" value="adminDelete" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="QueryListTest.getArrivalToAirport" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Testing Servlet" />
       <extension name="coverage">
@@ -130,22 +141,6 @@
       <option name="PACKAGE_NAME" value="BackEndStuff" />
       <option name="MAIN_CLASS_NAME" value="BackEndStuff.QueryListTest" />
       <option name="METHOD_NAME" value="getArrivalToAirport" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="QueryListTest.getComingReservations" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Testing Servlet" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="BackEndStuff.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="BackEndStuff" />
-      <option name="MAIN_CLASS_NAME" value="BackEndStuff.QueryListTest" />
-      <option name="METHOD_NAME" value="getComingReservations" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -167,22 +162,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QueryListTest.getPastReservation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Testing Servlet" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="BackEndStuff.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="BackEndStuff" />
-      <option name="MAIN_CLASS_NAME" value="BackEndStuff.QueryListTest" />
-      <option name="METHOD_NAME" value="getPastReservation" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="QueryListTest.getResWithAirport" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Testing Servlet" />
       <extension name="coverage">
@@ -194,6 +173,22 @@
       <option name="PACKAGE_NAME" value="BackEndStuff" />
       <option name="MAIN_CLASS_NAME" value="BackEndStuff.QueryListTest" />
       <option name="METHOD_NAME" value="getResWithAirport" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QueryListTest.justaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Testing Servlet" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="BackEndStuff.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="BackEndStuff" />
+      <option name="MAIN_CLASS_NAME" value="BackEndStuff.QueryListTest" />
+      <option name="METHOD_NAME" value="justaTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -273,20 +268,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Tomcat Server.Tomcat 9.0.27" />
-      <item itemvalue="JUnit.QueryListTest.getComingReservations" />
-      <item itemvalue="JUnit.QueryListTest.getPastReservation" />
       <item itemvalue="JUnit.QueryListTest.getDeparturesFromAirport" />
       <item itemvalue="JUnit.QueryListTest.getArrivalToAirport" />
       <item itemvalue="JUnit.QueryListTest.getResWithAirport" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.27" />
+      <item itemvalue="JUnit.QueryListTest.justaTest" />
+      <item itemvalue="JUnit.QueryListTest.adminDelete" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.QueryListTest.getResWithAirport" />
+        <item itemvalue="JUnit.QueryListTest.adminDelete" />
+        <item itemvalue="JUnit.QueryListTest.justaTest" />
         <item itemvalue="JUnit.QueryListTest.getArrivalToAirport" />
+        <item itemvalue="JUnit.QueryListTest.getResWithAirport" />
         <item itemvalue="JUnit.QueryListTest.getDeparturesFromAirport" />
-        <item itemvalue="JUnit.QueryListTest.getPastReservation" />
-        <item itemvalue="JUnit.QueryListTest.getComingReservations" />
       </list>
     </recent_temporary>
   </component>
@@ -320,7 +315,8 @@
       <workItem from="1575574783842" duration="534000" />
       <workItem from="1575585837065" duration="1208000" />
       <workItem from="1575918943908" duration="7891000" />
-      <workItem from="1575994027478" duration="17937000" />
+      <workItem from="1575994027478" duration="18567000" />
+      <workItem from="1576038713316" duration="4331000" />
     </task>
     <task id="LOCAL-00001" summary="Now able to save the users for the current session.">
       <created>1575496582820</created>

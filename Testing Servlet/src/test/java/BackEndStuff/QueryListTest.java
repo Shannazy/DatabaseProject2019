@@ -126,4 +126,11 @@ class QueryListTest {
             System.out.println();
         }
     }
+
+    @Test
+    void adminDelete() throws SQLException {
+        DatabaseConnection tester = new DatabaseConnection();
+        QueryList searchForTicket = new QueryList(tester);
+        System.out.println(searchForTicket.adminDelete("Clients","as2591@scarletmail.rutgers.edu"));
     }
+}
