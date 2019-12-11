@@ -2,6 +2,7 @@ package BackEndStuff;
 
 import org.junit.jupiter.api.Test;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -28,8 +29,57 @@ class QueryListTest {
     void initialOneWayTicket() {
         DatabaseConnection tester = new DatabaseConnection();
         QueryList searchForTicket = new QueryList(tester);
-        List<List<String>> myarray = searchForTicket.initialOneWayTicket("2019-12-12","JFK","LAX");
+        List<List<String>> myarray = searchForTicket.initialOneWayTicket("2019-12-12","JFK","");
         for (List<String> part1 : myarray){
+            for (String runner : part1){
+                System.out.print(runner+ " ");
+            }
+            System.out.println();
+        }
+    }
+
+    @Test
+    void getUserInfo() throws SQLException {
+        DatabaseConnection tester = new DatabaseConnection();
+        QueryList searchForTicket = new QueryList(tester);
+        UserInfo mytest =  searchForTicket.getUserInfo("BasicEmail.com");
+        System.out.println(mytest.Phone);
+        System.out.println(mytest.Creation_Date);
+        System.out.println(mytest.DOB);
+
+    }
+
+    @Test
+    void getAllReservation() throws SQLException {
+        DatabaseConnection tester = new DatabaseConnection();
+        QueryList searchForTicket = new QueryList(tester);
+        List<List<String>> mytest =  searchForTicket.getAllReservations("BasicEmail.com");
+        for (List<String> part1 : mytest){
+            for (String runner : part1){
+                System.out.print(runner+ " ");
+            }
+            System.out.println();
+        }
+    }
+
+    @Test
+    void getComingReservations() throws SQLException {
+        DatabaseConnection tester = new DatabaseConnection();
+        QueryList searchForTicket = new QueryList(tester);
+        List<List<String>> mytest =  searchForTicket.getComingReservations("BasicEmail.com");
+        for (List<String> part1 : mytest){
+            for (String runner : part1){
+                System.out.print(runner+ " ");
+            }
+            System.out.println();
+        }
+    }
+
+    @Test
+    void getPastReservation() throws SQLException {  DatabaseConnection tester = new DatabaseConnection();
+        QueryList searchForTicket = new QueryList(tester);
+        List<List<String>> mytest =  searchForTicket.getPastReservation("BasicEmail.com");
+        for (List<String> part1 : mytest){
             for (String runner : part1){
                 System.out.print(runner+ " ");
             }
