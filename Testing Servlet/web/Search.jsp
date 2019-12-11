@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="javax.servlet.http.HttpSession" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 <section>
     <form id="searchForm" action="SearchServlet" method="get">
 
@@ -21,15 +22,19 @@
         </div>
 
         <div>
-            <label id="sort-label" for="sort">Sort by</label>
+            <label id="sort-label" for="sort">Sort by Low to High</label>
             <select id="sort" name="sort" form="searchForm">
-                <option value="priceDescending">Price High to Low</option>
-                <option value="priceAscending">Price Low to High</option>
-                <option value="lateTakeoffTime">Takeoff Time Latest to Earliest</option>
-                <option value="earlyTakeoffTime">Takeoff Time Earliest to Latest</option>
-                <option value="lateLandingTime">Landing Time Latest to Earliest</option>
-                <option value="earlyLandingTime">Landing Time Earliest to Latest</option>
+                <option value="Price">Price</option>
+                <option value="Destination Time">Destination Time</option>
+                <option value="Destination Date">Destination Date</option>
+                <option value="Departure Date">Destination Date</option>
+                <option value="Departure Time">Departure Time</option>
             </select>
+        </div>
+
+        <div>
+            <label id="date-label" for="date">Date</label>
+            <input type="date" name="date" id="date">
         </div>
 
         <div>
@@ -52,7 +57,7 @@
             <label id="airline-label" for="airline">Airlines</label>
             <select id="airline" name="airline" form="searchForm">
                 <%
-                    List<String> airlines = (List<String>) session.getAttribute("airlines");
+                    ArrayList<String> airlines = (ArrayList<String>) (session.getAttribute("airlines"));
                     for (int i = 0; i < airlines.size(); i++) {
                 %>
                 <option value="<% out.print(airlines.get(i));%>"><% out.print(airlines.get(i));%></option>
@@ -64,10 +69,10 @@
             <label id="airport-depart-label" for="airport-depart">Departing Airport</label>
             <select id="airport-depart" name="airport-depart" form="searchForm">
                 <%
-                    List<String> airportDepart = (List<String>) session.getAttribute("airportDepart");
-                    for (int i = 0; i < airportDepart.size(); i++) {
+                    ArrayList<String> airportDepart = (ArrayList<String>) session.getAttribute("airportDepart");
+                    for (String airport : airportDepart) {
                 %>
-                <option value="<% out.print(airportDepart.get(i));%>"><% out.print(airportDepart.get(i));%></option>
+                <option value="<% out.print(airport);%>"><% out.print(airport);%></option>
                 <% }%>
             </select>
         </div>
@@ -77,10 +82,10 @@
             <label id="airport-dest-label" for="airport-dest">Destination Airport</label>
             <select id="airport-dest" name="airport-dest" form="searchForm">
                 <%
-                    List<String> airportDest = (List<String>) session.getAttribute("airportDest");
-                    for (int i = 0; i < airportDest.size(); i++) {
+                    ArrayList<String> airportDest = (ArrayList<String>) session.getAttribute("airportDest");
+                    for (String airport : airportDest) {
                 %>
-                <option value="<% out.print(airportDest.get(i));%>"><% out.print(airportDest.get(i));%></option>
+                <option value="<% out.print(airport);%>"><% out.print(airport);%></option>
                 <% }%>
             </select>
         </div>

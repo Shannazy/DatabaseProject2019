@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.*;
 
 @WebServlet(name = "/LoginServlet", urlPatterns = {"/LoginServlet"})
@@ -17,33 +18,37 @@ public class LoginServlet extends HttpServlet {
         String pass = request.getParameter("Password");
         DatabaseConnection myConnection = new DatabaseConnection();
         QueryList searcher = new QueryList(myConnection);
-        ArrayList<String> tempAirlines = new ArrayList<String>();
-        tempAirlines.add("AA");
-        tempAirlines.add("AC");
-        tempAirlines.add("AZ");
-        ArrayList<String> tempAirports = new ArrayList<String>();
-        tempAirports.add("ABR");
-        tempAirports.add("ABI");
-        tempAirports.add("ADL");
-        if(searcher.searchAdmins(username, pass)){
+        ArrayList<String> airlines = null;
+        try {
+            airlines = new ArrayList<String>(searcher.airlineList());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        System.out.println(airlines);
+        ArrayList<String> airports = null;
+        try {
+            airports = new ArrayList<String>(searcher.airportList());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        if (searcher.searchAdmins(username, pass)) {
+
             HttpSession session = request.getSession(true);
-            session.setAttribute("airlines", tempAirlines);
-            session.setAttribute("airportDepart", tempAirports);
-            session.setAttribute("airportDest", tempAirports);
+            session.setAttribute("airlines", airlines);
+            session.setAttribute("airportDepart", airports);
+            session.setAttribute("airportDest", airports);
             session.setAttribute("username", username);
             session.setAttribute("role", "admin");
             response.sendRedirect("Welcome.jsp");
-        }
-        else if (searcher.searchclients(username, pass)){
+        } else if (searcher.searchclients(username, pass)) {
             HttpSession session = request.getSession(true);
-            session.setAttribute("airlines", tempAirlines);
-            session.setAttribute("airportDepart", tempAirports);
-            session.setAttribute("airportDest", tempAirports);
+            session.setAttribute("airlines", airlines);
+            session.setAttribute("airportDepart", airports);
+            session.setAttribute("airportDest", airports);
             session.setAttribute("username", username);
             session.setAttribute("role", "client");
             response.sendRedirect("Welcome.jsp");
-        }
-        else{
+        } else {
             response.sendRedirect("Page404.jsp");
         }
     }

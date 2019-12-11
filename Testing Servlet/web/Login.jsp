@@ -1,5 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="javax.servlet.http.HttpSession" %>
 <html>
 <head>
     <title>Login</title>
@@ -9,7 +8,6 @@
 </head>
 <body>
 <main>
-    <% session.invalidate();%>
     <section class="login">
         <form action="LoginServlet" method="post" class="login-form" id="login-form">
             <label id="user-name-label" for="username">Username</label>

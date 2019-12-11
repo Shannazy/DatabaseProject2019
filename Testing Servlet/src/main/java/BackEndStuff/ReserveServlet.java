@@ -13,6 +13,8 @@ public class ReserveServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         // Update Client_Has Table
+        DatabaseConnection myConnection = new DatabaseConnection();
+        QueryList searcher = new QueryList(myConnection);
 
         HttpSession session = request.getSession(true);
         String flightNumber = request.getParameter("flightNumber");
@@ -20,7 +22,8 @@ public class ReserveServlet extends HttpServlet {
         System.out.println("flightNumber: " + flightNumber);
         System.out.println("username: " + username);
         session.setAttribute("username", request.getParameter("username"));
-        session.removeAttribute("flights");
+
+
 
         response.sendRedirect("Welcome.jsp");
     }

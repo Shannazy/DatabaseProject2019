@@ -18,6 +18,7 @@ public class RegisterServlet extends HttpServlet {
         String DOB = request.getParameter("Date of Birth");
         DatabaseConnection connector = new DatabaseConnection();
         QueryList register = new QueryList(connector);
+
         if(register.registerClient(email, name, Phone, CreationDate, pass, DOB)){
          response.sendRedirect("Login.jsp");
         }

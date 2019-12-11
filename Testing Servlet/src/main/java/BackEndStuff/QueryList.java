@@ -1,13 +1,24 @@
 package BackEndStuff;
 
+import com.mysql.cj.protocol.Resultset;
+
+import javax.naming.PartialResultException;
+import javax.servlet.http.HttpSession;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 public class QueryList {
     Connection mainConnection;
     DatabaseConnection connector;
+
 
     public QueryList(DatabaseConnection connector) {
         this.connector = connector;
@@ -34,15 +45,18 @@ public class QueryList {
                 if (user.equals(userName)) {  //compare the username found
                     if (pass.equals(Netid)) { //Compare the password found
                         res.close();    //close connections
+                        stmt.close();
                         connector.closeConnection();    //close the actual connection to stop from breaking the database
                         return true;
                     } else {
                         res.close();
+                        stmt.close();
                         connector.closeConnection();
                         return false;
                     }
                 } else {
                     res.close();
+                    stmt.close();
                     connector.closeConnection();
                     return false;
                 }
@@ -132,4 +146,525 @@ public class QueryList {
             return false;
         }
     }
+
+    public List<List<String>> initialOneWayTicket(String departureDate, String departureLocation, String destinationLocation) {
+        List<List<String>> allTickets = new ArrayList<List<String>>();
+        try {
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            String tickets = "Select * FROM Flight WHERE " +
+                    "`Departure Date` = ? AND" +
+                    " `Departure_Location` = ? AND" +
+                    " `Destination Location` = ?";
+            PreparedStatement searchFlights = mainConnection.prepareStatement(tickets);
+            searchFlights.setString(1, departureDate);
+            searchFlights.setString(2, departureLocation);
+            searchFlights.setString(3, destinationLocation);
+            ResultSet res = searchFlights.executeQuery();
+            while (res.next()) {
+                List<String> thisColumn = new ArrayList<String>();
+                thisColumn.add(res.getString("Flight#"));
+                thisColumn.add(res.getString("Departure Date"));
+                thisColumn.add(res.getString("Departure Time"));
+                thisColumn.add(res.getString("Departure_Location"));
+                thisColumn.add(res.getString("Destination Date"));
+                thisColumn.add(res.getString("Destination Time"));
+                thisColumn.add(res.getString("Destination Location"));
+                thisColumn.add(res.getString("Class"));
+                thisColumn.add(res.getString("Airline"));
+                thisColumn.add(res.getString("FlightID"));
+                thisColumn.add(res.getString("Price"));
+                allTickets.add(thisColumn);
+            }
+            res.close();
+            searchFlights.close();
+            connector.closeConnection();
+            return allTickets;
+        } catch (Exception e) {
+
+            connector.closeConnection();
+            List<String> failed = new ArrayList<String>();
+            failed.add("Something went wrong");
+            allTickets.add(failed);
+            return allTickets;
+        }
+    }
+
+    public List<String> getUserInfo(String username) throws SQLException {
+        connector.getConnected();
+        mainConnection = connector.getMainConnector();
+        String search = "Select * From Clients where `Email` = ?";   //Create string for searching admins
+        PreparedStatement stmt = mainConnection.prepareStatement(search);   //create the actual statement
+        stmt.setString(1, username);    //Adding the first parameter
+        ResultSet res = stmt.executeQuery();
+        List<String> currentUser = new ArrayList<String>();
+
+        if (res.next()) {
+            currentUser.add(res.getString("Email"));
+            currentUser.add(res.getString("Name"));
+            currentUser.add(res.getString("Phone"));
+            currentUser.add(res.getString("Creation_Date"));
+            currentUser.add(res.getString("DOB"));
+            stmt.close();
+            res.close();
+            connector.closeConnection();
+            return currentUser;
+        } else {
+            stmt.close();
+            res.close();
+            connector.closeConnection();
+            return currentUser;
+        }
+    }
+
+    public List<List<String>> getAllReservations(String username) throws SQLException {
+        List<List<String>> reservationResult = new ArrayList<List<String>>();
+        connector.getConnected();
+        mainConnection = connector.getMainConnector();
+        String tickets = "SELECT * FROM Flight join Ticket " +
+                "on Flight.`Flight#` = Ticket.`Flight#` " +
+                "where `ClientEmail` = ? ";
+        PreparedStatement findReservation = mainConnection.prepareStatement(tickets);
+        findReservation.setString(1, username);
+        ResultSet res = findReservation.executeQuery();
+        while (res.next()) {
+            List<String> columnValue = new ArrayList<String>();
+            columnValue.add(res.getString("TicketNumber"));
+            columnValue.add(res.getString("Departure Date"));
+            columnValue.add(res.getString("Departure Time"));
+            columnValue.add(res.getString("Departure_Location"));
+            columnValue.add(res.getString("Destination Date"));
+            columnValue.add(res.getString("Destination Time"));
+            columnValue.add(res.getString("Destination Location"));
+            columnValue.add(res.getString("Airline"));
+            columnValue.add(res.getString("FlightID"));
+            columnValue.add(res.getString("Class"));
+            columnValue.add(res.getString("Total Price"));
+            reservationResult.add(columnValue);
+        }
+        findReservation.close();
+        res.close();
+        connector.closeConnection();
+        return reservationResult;
+
+    }
+
+    public List<List<String>> getComingReservations(String username) throws SQLException {
+        List<List<String>> reservationResult = new ArrayList<List<String>>();
+        connector.getConnected();
+        mainConnection = connector.getMainConnector();
+        String tickets = "SELECT * FROM Flight join Ticket " +
+                "on Flight.`Flight#` = Ticket.`Flight#` " +
+                "where `ClientEmail` = ? and `Departure Date` > ? ";
+        PreparedStatement findReservation = mainConnection.prepareStatement(tickets);
+        findReservation.setString(1, username);
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = new Date();
+        String stringDate = dateFormat.format(date);
+        findReservation.setString(2, stringDate);
+        ResultSet res = findReservation.executeQuery();
+        while (res.next()) {
+            List<String> columnValue = new ArrayList<String>();
+            columnValue.add(res.getString("TicketNumber"));
+            columnValue.add(res.getString("Departure Date"));
+            columnValue.add(res.getString("Departure Time"));
+            columnValue.add(res.getString("Departure_Location"));
+            columnValue.add(res.getString("Destination Date"));
+            columnValue.add(res.getString("Destination Time"));
+            columnValue.add(res.getString("Destination Location"));
+            columnValue.add(res.getString("Airline"));
+            columnValue.add(res.getString("FlightID"));
+            columnValue.add(res.getString("Class"));
+            columnValue.add(res.getString("Total Price"));
+            reservationResult.add(columnValue);
+        }
+        findReservation.close();
+        res.close();
+        connector.closeConnection();
+        return reservationResult;
+
+    }
+
+    public List<List<String>> getPastReservation(String username) throws SQLException {
+        List<List<String>> reservationResult = new ArrayList<List<String>>();
+        connector.getConnected();
+        mainConnection = connector.getMainConnector();
+        String tickets = "SELECT * FROM Flight join Ticket " +
+                "on Flight.`Flight#` = Ticket.`Flight#` " +
+                "where `ClientEmail` = ? and `Departure Date` <= ? ";
+        PreparedStatement findReservation = mainConnection.prepareStatement(tickets);
+        findReservation.setString(1, username);
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = new Date();
+        String stringDate = dateFormat.format(date);
+        findReservation.setString(2, stringDate);
+        ResultSet res = findReservation.executeQuery();
+        while (res.next()) {
+            List<String> columnValue = new ArrayList<String>();
+            columnValue.add(res.getString("TicketNumber"));
+            columnValue.add(res.getString("Departure Date"));
+            columnValue.add(res.getString("Departure Time"));
+            columnValue.add(res.getString("Departure_Location"));
+            columnValue.add(res.getString("Destination Date"));
+            columnValue.add(res.getString("Destination Time"));
+            columnValue.add(res.getString("Destination Location"));
+            columnValue.add(res.getString("Airline"));
+            columnValue.add(res.getString("FlightID"));
+            columnValue.add(res.getString("Class"));
+            columnValue.add(res.getString("Total Price"));
+            reservationResult.add(columnValue);
+        }
+        findReservation.close();
+        res.close();
+        connector.closeConnection();
+        return reservationResult;
+
+    }
+
+    public List<List<String>> getResWithAirport(String username, String AirportCode) throws SQLException {
+        List<List<String>> reservationResult = new ArrayList<List<String>>();
+        connector.getConnected();
+        mainConnection = connector.getMainConnector();
+        String tickets = "SELECT * FROM Flight join Ticket " +
+                "on Flight.`Flight#` = Ticket.`Flight#` " +
+                "where `ClientEmail` = ? and `Departure_Location` = ? " +
+                "OR `Destination Location` = ?";
+        PreparedStatement findReservation = mainConnection.prepareStatement(tickets);
+        findReservation.setString(1, username);
+        findReservation.setString(2, AirportCode);
+        findReservation.setString(3, AirportCode);
+        ResultSet res = findReservation.executeQuery();
+        while (res.next()) {
+            List<String> columnValue = new ArrayList<String>();
+            columnValue.add(res.getString("TicketNumber"));
+            columnValue.add(res.getString("Departure Date"));
+            columnValue.add(res.getString("Departure Time"));
+            columnValue.add(res.getString("Departure_Location"));
+            columnValue.add(res.getString("Destination Date"));
+            columnValue.add(res.getString("Destination Time"));
+            columnValue.add(res.getString("Destination Location"));
+            columnValue.add(res.getString("Airline"));
+            columnValue.add(res.getString("FlightID"));
+            columnValue.add(res.getString("Class"));
+            columnValue.add(res.getString("Total Price"));
+            reservationResult.add(columnValue);
+        }
+        findReservation.close();
+        res.close();
+        connector.closeConnection();
+        return reservationResult;
+
+    }
+
+    public List<List<String>> getDeparturesFromAirport (String AirportCode) throws SQLException {
+        List<List<String>> departureFlights = new ArrayList<List<String>>();
+        connector.getConnected();
+        mainConnection = connector.getMainConnector();
+        String departing = "SELECT * FROM Departure where `Airport_AirportID` = ?";
+        PreparedStatement findDepart = mainConnection.prepareStatement(departing);
+        findDepart.setString(1, AirportCode);
+        ResultSet res = findDepart.executeQuery();
+        while(res.next()){
+            List<String> departDetail = new ArrayList<String>();
+            departDetail.add(res.getString("Date"));
+            departDetail.add(res.getString("Time"));
+            departDetail.add(res.getString("Airport_AirportID"));
+            departDetail.add(res.getString("Airline_Code"));
+            departDetail.add(res.getString("CraftID"));
+            departDetail.add(res.getString("Passengers"));
+            departureFlights.add(departDetail);
+        }
+        res.close();
+        findDepart.close();
+        connector.closeConnection();
+        return departureFlights;
+    }
+
+    public List<List<String>> getArrivalToAirport (String AirportCode) throws SQLException {
+        List<List<String>> arrivalFlights = new ArrayList<List<String>>();
+        connector.getConnected();
+        mainConnection = connector.getMainConnector();
+        String arriving = "SELECT * FROM Arrival where `Airport_Airport ID` = ?";
+        PreparedStatement findArrivals = mainConnection.prepareStatement(arriving);
+        findArrivals.setString(1, AirportCode);
+        ResultSet res = findArrivals.executeQuery();
+        while(res.next()){
+            List<String> arrivalDetails = new ArrayList<String>();
+            arrivalDetails.add(res.getString("Date"));
+            arrivalDetails.add(res.getString("Time"));
+            arrivalDetails.add(res.getString("Airport_Airport ID"));
+            arrivalDetails.add(res.getString("Depart Date"));
+            arrivalDetails.add(res.getString("Depart Time"));
+            arrivalDetails.add(res.getString("DepartLocation"));
+            arrivalDetails.add(res.getString("AirlineCode"));
+            arrivalDetails.add(res.getString("CraftID"));
+            arrivalFlights.add(arrivalDetails);
+        }
+        res.close();
+        findArrivals.close();
+        connector.closeConnection();
+        return arrivalFlights;
+    }
+
+    public boolean adminDelete (String table, String email) throws SQLException {
+
+        try {
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            if (table.equals("Clients")) {
+                String deletingTable = "Delete FROM `"+table+"` where `Email` = ?";
+                PreparedStatement deleter = mainConnection.prepareStatement(deletingTable);
+                deleter.setString(1, email);
+                deleter.executeUpdate();
+                deleter.close();
+                connector.closeConnection();
+                return true;
+            }
+            else if (table.equals("CustomerRep")) {
+                String deletingTable = "Delete FROM `"+table+"` where `CustomerRep_Username` = ?";
+                PreparedStatement deleter = mainConnection.prepareStatement(deletingTable);
+                deleter.setString(1, email);
+                deleter.executeUpdate();
+                deleter.close();
+                connector.closeConnection();
+                return true;
+            }
+        } catch (Exception e){
+            connector.closeConnection();
+            return false;
+        }
+        return false;
+    }
+
+
+    public List<List<String>> flexableNoFilter (String departureDate, String departureLocation, String destinationLocation){
+        List<List<String>> flexableTiickets = new ArrayList<List<String>>();
+        try {
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            String tickets = "Select * FROM Flight WHERE " +
+                    "`Departure Date` Between ? AND ? AND" +
+                    " `Departure_Location` = ? AND" +
+                    " `Destination Location` = ?";
+            PreparedStatement searchFlights = mainConnection.prepareStatement(tickets);
+
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Calendar c =Calendar.getInstance();
+            c.setTime(sdf.parse(departureDate));
+            c.add(Calendar.DAY_OF_MONTH, -3);
+            searchFlights.setString(1, sdf.format(c.getTime()));
+
+            c.setTime(sdf.parse(departureDate));
+            c.add(Calendar.DAY_OF_MONTH, 3);
+            searchFlights.setString(2, sdf.format(c.getTime()));
+            searchFlights.setString(3, departureLocation);
+            searchFlights.setString(4, destinationLocation);
+            ResultSet res = searchFlights.executeQuery();
+            while (res.next()) {
+                List<String> thisColumn = new ArrayList<String>();
+                thisColumn.add(res.getString("Flight#"));
+                thisColumn.add(res.getString("Departure Date"));
+                thisColumn.add(res.getString("Departure Time"));
+                thisColumn.add(res.getString("Departure_Location"));
+                thisColumn.add(res.getString("Destination Date"));
+                thisColumn.add(res.getString("Destination Time"));
+                thisColumn.add(res.getString("Destination Location"));
+                thisColumn.add(res.getString("Class"));
+                thisColumn.add(res.getString("Airline"));
+                thisColumn.add(res.getString("FlightID"));
+                thisColumn.add(res.getString("Price"));
+                flexableTiickets.add(thisColumn);
+            }
+            res.close();
+            searchFlights.close();
+            connector.closeConnection();
+            return flexableTiickets;
+        } catch (Exception e) {
+
+            connector.closeConnection();
+            List<String> failed = new ArrayList<String>();
+            failed.add("Something went wrong");
+            flexableTiickets.add(failed);
+            return flexableTiickets;
+        }
+    }
+
+    public List<List<String>> dynamicQuery  (String departureDate, String departureLocation, String destinationLocation, String priceLow,
+                                                String priceHigh, String Airline, boolean Flex, String Sort){
+        List<List<String>> flightsResult = new ArrayList<List<String>>();
+        try {
+            StringBuilder dynamicQuery =new StringBuilder("Select * From Flight where" +
+                    " `Departure_Location` = ? and" +
+                    " `Destination Location` = ?");
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            if(Flex){
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                Calendar c =Calendar.getInstance();
+                c.setTime(sdf.parse(departureDate));
+                c.add(Calendar.DAY_OF_MONTH, -3);
+                String threeLess = sdf.format(c.getTime());
+                c.setTime(sdf.parse(departureDate));
+                c.add(Calendar.DAY_OF_MONTH, 3);
+                String threeMore = sdf.format((c.getTime()));
+                dynamicQuery.append(" and " +
+                        "`Departure Date` between \'"+threeLess+"\' and \'"+
+                        threeMore+"\'");
+            }
+            if(!Flex){
+                dynamicQuery.append(" and `Departure Date` = \'"+departureDate+"\'");
+            }
+            if(Airline != null){
+                dynamicQuery.append(" and `Airline` = \""+Airline+"\"");
+            }
+            if (priceLow!= null){
+                dynamicQuery.append(" and `Price` >= "+priceLow);
+
+            }
+            if (priceHigh != null){
+                dynamicQuery.append(" and `Price` <= "+ priceHigh);
+            }
+            if(Sort != null){
+                dynamicQuery.append(" order by `"+Sort+"`;");
+            }
+            String finalQuery = dynamicQuery.toString();
+            PreparedStatement searchFlights = mainConnection.prepareStatement(finalQuery);
+            searchFlights.setString(1, departureLocation);
+            searchFlights.setString(2, destinationLocation);
+            ResultSet res = searchFlights.executeQuery();
+            while (res.next()) {
+                List<String> thisColumn = new ArrayList<String>();
+                thisColumn.add(res.getString("Flight#"));
+                thisColumn.add(res.getString("Departure Date"));
+                thisColumn.add(res.getString("Departure Time"));
+                thisColumn.add(res.getString("Departure_Location"));
+                thisColumn.add(res.getString("Destination Date"));
+                thisColumn.add(res.getString("Destination Time"));
+                thisColumn.add(res.getString("Destination Location"));
+                thisColumn.add(res.getString("Class"));
+                thisColumn.add(res.getString("Airline"));
+                thisColumn.add(res.getString("FlightID"));
+                thisColumn.add(res.getString("Price"));
+                flightsResult.add(thisColumn);
+            }
+            res.close();
+            searchFlights.close();
+            connector.closeConnection();
+            return flightsResult;
+        } catch (Exception e) {
+        e.printStackTrace();
+            connector.closeConnection();
+            List<String> failed = new ArrayList<String>();
+            failed.add("Something went wrong");
+            flightsResult.add(failed);
+            return flightsResult;
+        }
+    }
+    public List<String> airportList() throws SQLException {
+        List<String> airportList = new ArrayList<String>();
+        connector.getConnected();
+        mainConnection = connector.getMainConnector();
+        String search = "Select * From Airport ";   //Create string for searching admins
+        PreparedStatement stmt = mainConnection.prepareStatement(search);
+        ResultSet res = stmt.executeQuery();
+        while(res.next()){
+            airportList.add(res.getString("AirportID"));
+        }
+        stmt.close();
+        res.close();
+        connector.closeConnection();
+    return airportList;
+    }
+
+    public List<String> airlineList() throws SQLException {
+        List<String> airlines = new ArrayList<String>();
+        connector.getConnected();
+        mainConnection = connector.getMainConnector();
+        String search = "Select * From Airlines ";   //Create string for searching admins
+        PreparedStatement stmt = mainConnection.prepareStatement(search);
+        ResultSet res = stmt.executeQuery();
+        while(res.next()){
+            airlines.add(res.getString("Airline_Code"));
+        }
+        stmt.close();
+        res.close();
+        connector.closeConnection();
+        return airlines;
+
+    }
+
+    public List<List<String>> getSalesReport(String queryType, String input) throws SQLException{
+        List<List<String>> customerTickets = new ArrayList<List<String>>();
+        connector.getConnected();
+        mainConnection = connector.getMainConnector();
+        String query = "";
+        if(queryType.equals("flight")){
+            query = "";
+        }
+        else if(queryType.equals("customer")){
+            query = "SELECT Name, `TicketNumber`, `Total Price`*0.25 as `Total Revenue`" +
+                    " FROM Ticket JOIN Clients on ClientEmail = Email where `ClientEmail` = ?";
+        }
+        else if(queryType.equals("airline")){
+            query = "";
+        }
+        PreparedStatement findCustomers = mainConnection.prepareStatement(query);
+        findCustomers.setString(1, input);
+        ResultSet res = findCustomers.executeQuery();
+        while(res.next()){
+            List<String> customerDetails = new ArrayList<String>();
+            customerDetails.add(res.getString("Name"));
+            customerDetails.add(res.getString("TicketNumber"));
+            customerDetails.add(res.getString("Total Revenue"));
+            customerTickets.add(customerDetails);
+        }
+        res.close();
+        findCustomers.close();
+        connector.closeConnection();
+        return customerTickets;
+    }
+
+    public boolean addToWaitlist (String flightNum, String userEmail) {
+        try {
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            String deletingTable = "INSERT INTO WaitList (ClientEmail, `Departure Date`, `Departure Time`, `Departure Loc`, Class, `Destination Date`, `Destination Loc`, `Destination Time`)\n" +
+                    "SELECT Clients.Email, Flight.`Departure Date`, Flight.`Departure Time`, Flight.Departure_Location, Flight.Class, Flight.`Destination Date`, Flight.`Destination Location`, Flight.`Destination Time` \n" +
+                    "FROM Clients, Flight\n" +
+                    "WHERE Flight.`Flight#`= ?\n" +
+                    "AND Clients.Email = ?;";
+            PreparedStatement inserter = mainConnection.prepareStatement(deletingTable);
+            inserter.setString(1, flightNum);
+            inserter.setString(2, userEmail);
+            inserter.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    public List<String> getGreatestTotalRevenue(String clientEmail) throws SQLException{
+        List<String> greatestRevenue = new ArrayList<String>();
+        connector.getConnected();
+        mainConnection = connector.getMainConnector();
+        String query = "Select t1.Name, max(t1.`Total Revenue`) as `Total Revenue` " +
+                "from (select Name, sum(`Total Price`) * 0.25 as `Total Revenue` " +
+                            "from Ticket Join Clients on Email=ClientEmail where ClientEmail = ? group by ClientEmail) as t1";
+        PreparedStatement findGreatest = mainConnection.prepareStatement(query);
+        findGreatest.setString(1, clientEmail);
+        ResultSet res = findGreatest.executeQuery();
+        while(res.next()){
+            greatestRevenue.add(res.getString("Name"));
+            greatestRevenue.add(res.getString("Total Revenue"));
+        }
+        res.close();
+        findGreatest.close();
+        connector.closeConnection();
+        return greatestRevenue;
+
+    }
 }
+
+
+
+//Test merge

@@ -7,7 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98e215e3-3976-4e12-b569-d0541bef8172" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Testing Servlet/src/main/java/BackEndStuff/ProfileServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/Testing Servlet/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Testing Servlet/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Testing Servlet/out/artifacts/Testing_Servlet_war/Testing Servlet_war.war" beforeDir="false" afterPath="$PROJECT_DIR$/Testing Servlet/out/artifacts/Testing_Servlet_war/Testing Servlet_war.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Testing Servlet/out/artifacts/Testing_Servlet_war_exploded/Login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Testing Servlet/out/artifacts/Testing_Servlet_war_exploded/Login.jsp" afterDir="false" />
@@ -15,6 +20,10 @@
       <change beforePath="$PROJECT_DIR$/Testing Servlet/out/artifacts/Testing_Servlet_war_exploded/Register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Testing Servlet/out/artifacts/Testing_Servlet_war_exploded/Register.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Testing Servlet/out/artifacts/Testing_Servlet_war_exploded/Welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Testing Servlet/out/artifacts/Testing_Servlet_war_exploded/Welcome.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Testing Servlet/web/Welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Testing Servlet/web/Welcome.jsp" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/Database_Project_2019.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Database_Project_2019.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testing Servlet/src/main/java/BackEndStuff/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Testing Servlet/src/main/java/BackEndStuff/LoginServlet.java" afterDir="false" />
+>>>>>>> cf197a2d6d78406ae25f44d25e6e397c904ed3b6
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +78,11 @@
     </option>
   </component>
   <component name="ProjectId" id="1TfTNj6I0LHnUAnbZZqUV8aN9Hx" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -84,8 +97,12 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+<<<<<<< HEAD
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+=======
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+>>>>>>> cf197a2d6d78406ae25f44d25e6e397c904ed3b6
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -255,10 +272,14 @@
       <workItem from="1573850118500" duration="1585000" />
       <workItem from="1573853876389" duration="812000" />
       <workItem from="1573857203617" duration="439000" />
+<<<<<<< HEAD
       <workItem from="1575558719890" duration="3041000" />
       <workItem from="1575670850096" duration="445000" />
       <workItem from="1575838582122" duration="3764000" />
       <workItem from="1576011024051" duration="12000" />
+=======
+      <workItem from="1576087913504" duration="156000" />
+>>>>>>> cf197a2d6d78406ae25f44d25e6e397c904ed3b6
     </task>
     <task id="LOCAL-00001" summary="Delete the comment">
       <created>1573697557354</created>
@@ -269,38 +290,6 @@
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
-  </component>
-  <component name="TestHistory">
-    <history-entry file="QueryListTest_searchAdmins - 2019.11.14 at 11h 13m 21s.xml">
-      <configuration name="QueryListTest.searchAdmins" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="QueryListTest_searchAdmins - 2019.11.14 at 12h 15m 39s.xml">
-      <configuration name="QueryListTest.searchAdmins" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="QueryListTest_searchAdmins - 2019.11.14 at 12h 17m 42s.xml">
-      <configuration name="QueryListTest.searchAdmins" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="QueryListTest_searchCLients - 2019.11.14 at 18h 29m 09s.xml">
-      <configuration name="QueryListTest.searchCLients" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="QueryListTest_searchCLients - 2019.11.14 at 18h 30m 12s.xml">
-      <configuration name="QueryListTest.searchCLients" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="QueryListTest_searchCLients - 2019.11.14 at 18h 31m 09s.xml">
-      <configuration name="QueryListTest.searchCLients" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Database_ConnectionsTest_getConnected - 2019.11.15 at 12h 41m 41s.xml">
-      <configuration name="Database_ConnectionsTest.getConnected" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Database_ConnectionsTest_getConnected - 2019.11.15 at 12h 42m 11s.xml">
-      <configuration name="Database_ConnectionsTest.getConnected" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="QueryListTest_searchAdmins - 2019.11.15 at 14h 24m 35s.xml">
-      <configuration name="QueryListTest.searchAdmins" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="QueryListTest_searchAdmins - 2019.11.15 at 15h 20m 57s.xml">
-      <configuration name="QueryListTest.searchAdmins" configurationId="JUnit" />
-    </history-entry>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -333,6 +322,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Delete the comment" />
     <option name="LAST_COMMIT_MESSAGE" value="Delete the comment" />
   </component>

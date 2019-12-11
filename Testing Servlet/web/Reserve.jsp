@@ -15,19 +15,22 @@
         <h1>Flights</h1>
         <form id="reserveForm" action="ReserveServlet" method="post">
             <p><% out.print(session.getAttribute("username")); %></p>
-            <select style="display: none;" id="username" name="username" form="searchForm">\
+            <select style="display: none;" id="username" name="username" form="reserveForm">\
                 <option value="<% out.print(session.getAttribute("username"));%>"></option>
             </select>
             <table>
                 <tr>
-                    <th>Flight ID</th>
-                    <th>Departure Day</th>
-                    <th>Arrival Day</th>
-                    <th>Departure Airport</th>
-                    <th>Arrival Airport</th>
+                    <th>Flight Number</th>
+                    <th>Departure Date</th>
+                    <th>Departure Time</th>
+                    <th>Departure Location</th>
+                    <th>Destination Date</th>
+                    <th>Destination Time</th>
+                    <th>Destination Location</th>
+                    <th>Class</th>
                     <th>Airline</th>
+                    <th>Flight ID</th>
                     <th>Price</th>
-                    <th>Reserve</th>
                 </tr>
                 <%
                     ArrayList<ArrayList<String>> flights =
