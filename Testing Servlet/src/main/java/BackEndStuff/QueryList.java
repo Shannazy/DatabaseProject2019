@@ -190,7 +190,7 @@ public class QueryList {
         }
     }
 
-    public UserInfo getUserInfo(String username) throws SQLException {
+    public List<String> getUserInfo(String username) throws SQLException {
         connector.getConnected();
         mainConnection = connector.getMainConnector();
         String search = "Select * From Clients where `Email` = ?";   //Create string for searching admins
@@ -583,6 +583,10 @@ public class QueryList {
             airlines.add(res.getString("AirportID"));
         }
         return airlines;
+
+    }
+
+    public boolean adminNameUpdate(String newName){
 
     }
 }
