@@ -24,11 +24,7 @@
 </nav>
 <main>
     <section>
-        <p class="success">Successful Login!
-            <%
-                out.println(session.getAttribute("username"));
-            %>
-        </p>
+        <p class="success">Successful Login!</p>
     </section>
 </main>
 </body>
