@@ -9,17 +9,20 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.*;
 
-@WebServlet(name = "/EditUserServlet", urlPatterns = {"/EditUserServlet"})
-public class EditUserServlet extends HttpServlet {
+@WebServlet(name = "/FlightListServlet", urlPatterns = {"/FlightListServlet"})
+public class FlightListServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String user = request.getParameter("edit-user");
-        String nickname = request.getParameter("edit-name");
 
-        // Update Name Query
+        String user = request.getParameter("flight-list");
+        String nickname = request.getParameter("customer-flight");
+
+        // Get Flights list
+        ArrayList<ArrayList<String>> flightList = new ArrayList<ArrayList<String>>();
 
         HttpSession session = request.getSession(true);
         session.setAttribute("username", request.getParameter("username"));
+        session.setAttribute("flightList", flightList);
 
-        response.sendRedirect("Profile.jsp");
+        response.sendRedirect("AdminFlightList.jsp");
     }
 }
