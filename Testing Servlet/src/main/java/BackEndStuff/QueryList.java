@@ -221,11 +221,11 @@ public class QueryList {
         mainConnection = connector.getMainConnector();
         String tickets = "SELECT * FROM Flight join Ticket " +
                 "on Flight.`Flight#` = Ticket.`Flight#` " +
-                "where `ClientEmail` = ? " ;
+                "where `ClientEmail` = ? ";
         PreparedStatement findReservation = mainConnection.prepareStatement(tickets);
         findReservation.setString(1, username);
         ResultSet res = findReservation.executeQuery();
-        while (res.next()){
+        while (res.next()) {
             List<String> columnValue = new ArrayList<String>();
             columnValue.add(res.getString("TicketNumber"));
             columnValue.add(res.getString("Departure Date"));
@@ -247,21 +247,21 @@ public class QueryList {
 
     }
 
-    public List<List<String>> getComingReservations(String username) throws SQLException{
+    public List<List<String>> getComingReservations(String username) throws SQLException {
         List<List<String>> reservationResult = new ArrayList<List<String>>();
         connector.getConnected();
         mainConnection = connector.getMainConnector();
         String tickets = "SELECT * FROM Flight join Ticket " +
                 "on Flight.`Flight#` = Ticket.`Flight#` " +
-                "where `ClientEmail` = ? and `Departure Date` > ? " ;
+                "where `ClientEmail` = ? and `Departure Date` > ? ";
         PreparedStatement findReservation = mainConnection.prepareStatement(tickets);
         findReservation.setString(1, username);
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
         String stringDate = dateFormat.format(date);
-        findReservation.setString(2,stringDate);
+        findReservation.setString(2, stringDate);
         ResultSet res = findReservation.executeQuery();
-        while (res.next()){
+        while (res.next()) {
             List<String> columnValue = new ArrayList<String>();
             columnValue.add(res.getString("TicketNumber"));
             columnValue.add(res.getString("Departure Date"));
@@ -283,21 +283,21 @@ public class QueryList {
 
     }
 
-    public List<List<String>> getPastReservation(String username) throws SQLException{
+    public List<List<String>> getPastReservation(String username) throws SQLException {
         List<List<String>> reservationResult = new ArrayList<List<String>>();
         connector.getConnected();
         mainConnection = connector.getMainConnector();
         String tickets = "SELECT * FROM Flight join Ticket " +
                 "on Flight.`Flight#` = Ticket.`Flight#` " +
-                "where `ClientEmail` = ? and `Departure Date` <= ? " ;
+                "where `ClientEmail` = ? and `Departure Date` <= ? ";
         PreparedStatement findReservation = mainConnection.prepareStatement(tickets);
         findReservation.setString(1, username);
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
         String stringDate = dateFormat.format(date);
-        findReservation.setString(2,stringDate);
+        findReservation.setString(2, stringDate);
         ResultSet res = findReservation.executeQuery();
-        while (res.next()){
+        while (res.next()) {
             List<String> columnValue = new ArrayList<String>();
             columnValue.add(res.getString("TicketNumber"));
             columnValue.add(res.getString("Departure Date"));
@@ -318,5 +318,91 @@ public class QueryList {
         return reservationResult;
 
     }
+
+    public List<List<String>> getResWithAirport(String username, String AirportCode) throws SQLException {
+        List<List<String>> reservationResult = new ArrayList<List<String>>();
+        connector.getConnected();
+        mainConnection = connector.getMainConnector();
+        String tickets = "SELECT * FROM Flight join Ticket " +
+                "on Flight.`Flight#` = Ticket.`Flight#` " +
+                "where `ClientEmail` = ? and `Departure_Location` = ? " +
+                "OR `Destination Location` = ?";
+        PreparedStatement findReservation = mainConnection.prepareStatement(tickets);
+        findReservation.setString(1, username);
+        findReservation.setString(2, AirportCode);
+        findReservation.setString(3, AirportCode);
+        ResultSet res = findReservation.executeQuery();
+        while (res.next()) {
+            List<String> columnValue = new ArrayList<String>();
+            columnValue.add(res.getString("TicketNumber"));
+            columnValue.add(res.getString("Departure Date"));
+            columnValue.add(res.getString("Departure Time"));
+            columnValue.add(res.getString("Departure_Location"));
+            columnValue.add(res.getString("Destination Date"));
+            columnValue.add(res.getString("Destination Time"));
+            columnValue.add(res.getString("Destination Location"));
+            columnValue.add(res.getString("Airline"));
+            columnValue.add(res.getString("FlightID"));
+            columnValue.add(res.getString("Class"));
+            columnValue.add(res.getString("Total Price"));
+            reservationResult.add(columnValue);
+        }
+        findReservation.close();
+        res.close();
+        connector.closeConnection();
+        return reservationResult;
+
+    }
+
+    public List<List<String>> getDeparturesFromAirport (String AirportCode) throws SQLException {
+        List<List<String>> departureFlights = new ArrayList<List<String>>();
+        connector.getConnected();
+        mainConnection = connector.getMainConnector();
+        String tickets = "SELECT * FROM Departure where `Airport_AirportID` = ?";
+        PreparedStatement findDepart = mainConnection.prepareStatement(tickets);
+        findDepart.setString(1, AirportCode);
+        ResultSet res = findDepart.executeQuery();
+        while(res.next()){
+            List<String> departDetail = new ArrayList<String>();
+            departDetail.add(res.getString("Date"));
+            departDetail.add(res.getString("Time"));
+            departDetail.add(res.getString("Airport_AirportID"));
+            departDetail.add(res.getString("Airline_Code"));
+            departDetail.add(res.getString("CraftID"));
+            departDetail.add(res.getString("Passengers"));
+            departureFlights.add(departDetail);
+        }
+        res.close();
+        findDepart.close();
+        connector.closeConnection();
+        return departureFlights;
+    }
+
+    public List<List<String>> getArrivalToAirport (String AirportCode) throws SQLException {
+        List<List<String>> arrivalFlights = new ArrayList<List<String>>();
+        connector.getConnected();
+        mainConnection = connector.getMainConnector();
+        String tickets = "SELECT * FROM Arrival where `Airport_Airport ID` = ?";
+        PreparedStatement findArrivals = mainConnection.prepareStatement(tickets);
+        findArrivals.setString(1, AirportCode);
+        ResultSet res = findArrivals.executeQuery();
+        while(res.next()){
+            List<String> arrivalDetails = new ArrayList<String>();
+            arrivalDetails.add(res.getString("Date"));
+            arrivalDetails.add(res.getString("Time"));
+            arrivalDetails.add(res.getString("Airport_Airport ID"));
+            arrivalDetails.add(res.getString("Depart Date"));
+            arrivalDetails.add(res.getString("Depart Time"));
+            arrivalDetails.add(res.getString("DepartLocation"));
+            arrivalDetails.add(res.getString("AirlineCode"));
+            arrivalDetails.add(res.getString("CraftID"));
+            arrivalFlights.add(arrivalDetails);
+        }
+        res.close();
+        findArrivals.close();
+        connector.closeConnection();
+        return arrivalFlights;
+    }
+
 }
 
