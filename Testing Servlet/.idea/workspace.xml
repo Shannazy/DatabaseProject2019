@@ -6,7 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df0b40f9-93c5-4fcb-84db-3340dae45b61" name="Default Changelist" comment="Now able to save the users for the current session." />
+    <list default="true" id="df0b40f9-93c5-4fcb-84db-3340dae45b61" name="Default Changelist" comment="Now able to save the users for the current session.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +111,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.QueryListTest.dynamicQuery">
+  <component name="RunManager" selected="JUnit.QueryListTest.querySpecFlight">
     <configuration name="QueryListTest.adminDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Testing Servlet" />
       <extension name="coverage">
@@ -172,7 +176,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QueryListTest.justaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="QueryListTest.querySpecFlight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Testing Servlet" />
       <extension name="coverage">
         <pattern>
@@ -182,7 +186,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="BackEndStuff" />
       <option name="MAIN_CLASS_NAME" value="BackEndStuff.QueryListTest" />
-      <option name="METHOD_NAME" value="justaTest" />
+      <option name="METHOD_NAME" value="querySpecFlight" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -264,17 +268,17 @@
       <item itemvalue="JUnit.QueryListTest.airportList" />
       <item itemvalue="JUnit.QueryListTest.dynamicQuery" />
       <item itemvalue="JUnit.QueryListTest.flexableNoFilter" />
-      <item itemvalue="JUnit.QueryListTest.justaTest" />
       <item itemvalue="JUnit.QueryListTest.adminDelete" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.27" />
+      <item itemvalue="JUnit.QueryListTest.querySpecFlight" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.QueryListTest.querySpecFlight" />
         <item itemvalue="JUnit.QueryListTest.dynamicQuery" />
         <item itemvalue="JUnit.QueryListTest.airportList" />
         <item itemvalue="JUnit.QueryListTest.flexableNoFilter" />
         <item itemvalue="JUnit.QueryListTest.adminDelete" />
-        <item itemvalue="JUnit.QueryListTest.justaTest" />
       </list>
     </recent_temporary>
   </component>
