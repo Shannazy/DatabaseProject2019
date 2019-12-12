@@ -6,7 +6,13 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df0b40f9-93c5-4fcb-84db-3340dae45b61" name="Default Changelist" comment="Now able to save the users for the current session." />
+    <list default="true" id="afee541e-7b84-4d9f-9643-a0aa3c9a5786" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/QueryList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/QueryList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/BackEndStuff/QueryListTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/BackEndStuff/QueryListTest.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,9 +35,6 @@
   </component>
   <component name="ExportToHTMLSettings">
     <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../Testing Servlet\exportToHTML" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="Testing Servlet" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -74,6 +77,7 @@
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2602941" />
@@ -107,8 +111,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.QueryListTest.dynamicQuery">
-    <configuration name="QueryListTest.adminDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.QueryListTest.getCustomersOnWaitlist">
+    <configuration name="QueryListTest.addTicketentry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Testing Servlet" />
       <extension name="coverage">
         <pattern>
@@ -118,7 +122,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="BackEndStuff" />
       <option name="MAIN_CLASS_NAME" value="BackEndStuff.QueryListTest" />
-      <option name="METHOD_NAME" value="adminDelete" />
+      <option name="METHOD_NAME" value="addTicketentry" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -156,7 +160,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QueryListTest.flexableNoFilter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="QueryListTest.getCustomersOnWaitlist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Testing Servlet" />
       <extension name="coverage">
         <pattern>
@@ -166,13 +170,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="BackEndStuff" />
       <option name="MAIN_CLASS_NAME" value="BackEndStuff.QueryListTest" />
-      <option name="METHOD_NAME" value="flexableNoFilter" />
+      <option name="METHOD_NAME" value="getCustomersOnWaitlist" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QueryListTest.justaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="QueryListTest.getSalesReportForMonth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Testing Servlet" />
       <extension name="coverage">
         <pattern>
@@ -182,7 +186,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="BackEndStuff" />
       <option name="MAIN_CLASS_NAME" value="BackEndStuff.QueryListTest" />
-      <option name="METHOD_NAME" value="justaTest" />
+      <option name="METHOD_NAME" value="getSalesReportForMonth" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -263,18 +267,18 @@
     <list>
       <item itemvalue="JUnit.QueryListTest.airportList" />
       <item itemvalue="JUnit.QueryListTest.dynamicQuery" />
-      <item itemvalue="JUnit.QueryListTest.flexableNoFilter" />
-      <item itemvalue="JUnit.QueryListTest.justaTest" />
-      <item itemvalue="JUnit.QueryListTest.adminDelete" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.27" />
+      <item itemvalue="JUnit.QueryListTest.addTicketentry" />
+      <item itemvalue="JUnit.QueryListTest.getSalesReportForMonth" />
+      <item itemvalue="JUnit.QueryListTest.getCustomersOnWaitlist" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.QueryListTest.getCustomersOnWaitlist" />
+        <item itemvalue="JUnit.QueryListTest.getSalesReportForMonth" />
+        <item itemvalue="JUnit.QueryListTest.addTicketentry" />
         <item itemvalue="JUnit.QueryListTest.dynamicQuery" />
         <item itemvalue="JUnit.QueryListTest.airportList" />
-        <item itemvalue="JUnit.QueryListTest.flexableNoFilter" />
-        <item itemvalue="JUnit.QueryListTest.adminDelete" />
-        <item itemvalue="JUnit.QueryListTest.justaTest" />
       </list>
     </recent_temporary>
   </component>
@@ -360,6 +364,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java</url>
           <line>499</line>
           <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java</url>
+          <line>747</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java</url>
+          <line>813</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

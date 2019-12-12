@@ -593,6 +593,7 @@ public class QueryList {
 
     }
 
+    // Get sales report
     public List<List<String>> getSalesReport(String queryType, String input) throws SQLException{
         List<List<String>> customerTickets = new ArrayList<List<String>>();
         connector.getConnected();
@@ -646,6 +647,7 @@ public class QueryList {
             return false;
         }
     }
+
     public List<String> getGreatestTotalRevenue(String clientEmail) throws SQLException{
         List<String> greatestRevenue = new ArrayList<String>();
         connector.getConnected();
@@ -667,31 +669,80 @@ public class QueryList {
 
     }
 
-//    public List<List<String>> getSalesReportForMonth(String month) throws SQLException{
-//        List<String> months = new ArrayList<String>();
-//        months.add("January");
-//        months.add("February");
-//        months.add("March");
-//        months.add("April");
-//        months.add("May");
-//        months.add("June");
-//        months.add("July");
-//        months.add("August");
-//        months.add("September");
-//        months.add("October");
-//        months.add("November");
-//        months.add("December");
-//        String startDate = "";
-//        String endDate = "";
-//
-//        int queryMonth = months.indexOf(month);
-//
-//        if(queryMonth == 1){
-//            startDate = "2019-0"
-//        }
-//
-//        return null;
-//    }
+    public List<List<String>> getSalesReportForMonth(String month) throws SQLException{
+        List<List<String>> queryResult = new ArrayList<List<String>>();
+        List<String> months = new ArrayList<String>();
+        months.add("January");
+        months.add("February");
+        months.add("March");
+        months.add("April");
+        months.add("May");
+        months.add("June");
+        months.add("July");
+        months.add("August");
+        months.add("September");
+        months.add("October");
+        months.add("November");
+        months.add("December");
+        String startDate = "";
+        String endDate = "";
+
+        int monthIndex = months.indexOf(month) + 1;
+
+        if(monthIndex==2){
+            startDate = "2019-02-01";
+            endDate = "2019-02-28";
+        }
+        else if(monthIndex <= 7){
+            startDate = "2019-0" + monthIndex + "-01";
+            if(monthIndex % 2 != 0){
+                endDate = "2019-0" + monthIndex + "-31";
+            }
+            else{
+                endDate = "2019-0" + monthIndex + "-30";
+            }
+        }
+        else if(monthIndex > 7){
+            if(monthIndex >= 10){
+                startDate = "2019-" + monthIndex + "-01";
+            }
+            else{
+                startDate = "2019-0" + monthIndex + "01";
+            }
+            if(monthIndex % 2 != 0){
+                endDate = "2019-0" + monthIndex + "-30";
+            }
+            else{
+                endDate = "2019-0" + monthIndex + "-31";
+            }
+        }
+
+        try {
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            String query = "Select Flight.`Flight#`, count(Flight.`Flight#`) as `Tickets Sold`, sum(`Total Price`) as `Total Revenue` from Ticket join Flight on\n" +
+                    "Flight.`Flight#`=Ticket.`Flight#` where `Departure Date` between ? and ?" +
+                    "Group by Flight.`Flight#`";
+            PreparedStatement inserter = mainConnection.prepareStatement(query);
+            inserter.setString(1, startDate);
+            inserter.setString(2, endDate);
+            ResultSet res = inserter.executeQuery();
+            while (res.next()) {
+                List<String> flightReport = new ArrayList<String>();
+                flightReport.add(res.getString("Flight#"));
+                flightReport.add(res.getString("Tickets Sold"));
+                flightReport.add(res.getString("Total Revenue"));
+                queryResult.add(flightReport);
+            }
+            res.close();
+            inserter.close();
+            connector.closeConnection();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return queryResult;
+    }
 
     public boolean addTicketentry (String clientEmail, String FlightNum, String totalPrice, String type, String roundRef){
         if (roundRef != null){
@@ -721,7 +772,7 @@ public class QueryList {
                 connector.getConnected();
                 mainConnection = connector.getMainConnector();
                 String deletingTable = "INSERT INTO Ticket (`ClientEmail`, `Flight#`, `Total Price`, `Type`)\n" +
-                        "VALUE (?,?,?,?,?)";
+                        "VALUE (?,?,?,?)";
                 PreparedStatement inserter = mainConnection.prepareStatement(deletingTable);
                 inserter.setString(1, clientEmail);
                 inserter.setString(2, FlightNum);
@@ -758,9 +809,87 @@ public class QueryList {
             return -1;
         }
     }
+
+    public void updateCapacity (String flightNum, String Capacity){
+        try {
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            String search = "UPDATE Flight" + " SET Flight.Capacity = ? " + " WHERE Flight.`Flight#` = ?";   //Create string for searching admins
+            PreparedStatement stmt = mainConnection.prepareStatement(search);   //create the actual statement
+            stmt.setString(1, Capacity);//Adding the first parameter
+            stmt.setString(2, flightNum);
+            stmt.executeUpdate();
+        }catch (Exception e ){
+            e.printStackTrace();
+        }
+    }
+
+    public List<List<String>> querySpecFlight (String FlightNum){
+        List<List<String>> fullList = new ArrayList<List<String>>();
+        try {
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            String getter = "Select * From Flight  where `Flight#` = ?";   //Create string for searching admins
+            PreparedStatement stmt = mainConnection.prepareStatement(getter);   //create the actual statement
+            stmt.setString(1, FlightNum);    //Adding the first parameter
+            ResultSet res = stmt.executeQuery();
+            while(res.next()){
+                List<String> data = new ArrayList<String>();
+                data.add(res.getString("Flight#"));
+                data.add(res.getString("Departure Date"));
+                data.add(res.getString("Departure Time"));
+                data.add(res.getString("Departure_Location"));
+                data.add(res.getString("Destination Date"));
+                data.add(res.getString("Destination Time"));
+                data.add(res.getString("Destination Location"));
+                data.add(res.getString("Class"));
+                data.add(res.getString("Airline"));
+                data.add(res.getString("FlightID"));
+                data.add(res.getString("Price"));
+                fullList.add(data);
+            }
+            stmt.close();
+            res.close();
+            connector.closeConnection();
+            return fullList;
+        }catch (Exception e ){
+            e.printStackTrace();
+            return fullList;
+        }
+    }
+
+    public List<List<String>> getCustomersOnWaitlist(String flightNum){
+        List<List<String>> fullList = new ArrayList<List<String>>();
+        try {
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            String getter = "Select Clients.Name, Email \n" +
+                    "From Clients join WaitList\n" +
+                    "on Clients.Email = WaitList.ClientEmail\n" +
+                    "where WaitList.`Flight#` = ?";   //Create string for searching admins
+            PreparedStatement stmt = mainConnection.prepareStatement(getter);   //create the actual statement
+            stmt.setString(1, flightNum);    //Adding the first parameter
+            ResultSet res = stmt.executeQuery();
+            while(res.next()){
+                List<String> data = new ArrayList<String>();
+                data.add(res.getString("Name"));
+                data.add(res.getString("Email"));
+                fullList.add(data);
+            }
+            stmt.close();
+            res.close();
+            connector.closeConnection();
+            return fullList;
+        }catch (Exception e ){
+            e.printStackTrace();
+            return fullList;
+        }
+    }
+
 }
 
 
+<<<<<<< HEAD
 	public int updateCapacity (String flightNum){
 		try {
             connector.getConnected();
@@ -775,6 +904,8 @@ public class QueryList {
         }
 
 	}
+=======
+>>>>>>> 545136df85190589706a2ce42d4c50718b8d11bc
 
 	
     public int addToAirport (String AirportID){
