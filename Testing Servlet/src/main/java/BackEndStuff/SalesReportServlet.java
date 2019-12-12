@@ -12,8 +12,12 @@ import java.util.*;
 @WebServlet(name = "/SalesReportServlet", urlPatterns = {"/SalesReportServlet"})
 public class SalesReportServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String month = request.getParameter("month");
+        DatabaseConnection myConnection = new DatabaseConnection();
+        QueryList searcher = new QueryList(myConnection);
         // Get Sales Report Query
-        ArrayList<ArrayList<String>> salesReport = new ArrayList<ArrayList<String>>();
+        List<List<String>> salesReport = null;
+
 
         HttpSession session = request.getSession(true);
         session.setAttribute("username", request.getParameter("username"));
