@@ -1020,13 +1020,25 @@ public class QueryList {
         }
     }
 
-//    public boolean deleteAirport(String airportID) throws SQLException {
-//        try {
-//
-//        } catch (Exception e) {
-//        }
-//
-//    }
+    public boolean deleteAirport(String airportID) throws SQLException {
+        try {
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            String getter = "DELETE FROM Airport WHERE `AirportID` = ?";   //Create string for searching admins
+            PreparedStatement stmt = mainConnection.prepareStatement(getter);   //create the actual statement
+            stmt.setString(1, airportID);    //Adding the first parameter
+            stmt.executeUpdate();
+            stmt.close();
+            connector.closeConnection();
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            connector.closeConnection();
+            return false;
+        }
+
+    }
 
     //customer rep has to choose an airline from a drop-down menu first (before adding airplane)
     public int addToAirplane(String CraftID, String airlines) {
@@ -1050,18 +1062,22 @@ public class QueryList {
 
 
 
-	public int editFlight (String price){
+	public int editFlight (String newPrice, String oldPrice){
 	    try {
 	        connector.getConnected(); //asdflkaj
 	        mainConnection = connector.getMainConnector();
-	        String getter = "INSERT INTO Airplanes (UPDATE Flight" + "SET Flight.`Price` = ?" + "WHERE Flight.`Price` = ?";   //Create string for searching admins
+	        String getter = "INSERT INTO Airplanes (UPDATE Flight " + " SET Flight.`Price` = ?" + "WHERE Flight.`Price` = ?";   //Create string for searching admins
 	        PreparedStatement stmt = mainConnection.prepareStatement(getter);   //create the actual statement
-	        stmt.setString(1, price);    //Adding the first parameter
+	        stmt.setString(1, newPrice); //Adding the first parameter
+            stmt.setString(2, oldPrice);
 	        stmt.executeUpdate();
+	        stmt.close();
+	        connector.closeConnection();
 	        return 1;
 	        
 	    }catch (Exception e ){
 	        e.printStackTrace();
+	        connector.closeConnection();
 	        return -1;
 	    }
 	}
