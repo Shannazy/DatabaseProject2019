@@ -796,5 +796,19 @@ public class QueryList {
 }
 
 
+	public int updateCapacity (String flightNum){
+	    try {
+	        connector.getConnected();
+	        mainConnection = connector.getMainConnector();
+	        String search = "UPDATE Flight" + " SET Flight.Capacity = ? " + " WHERE Flight.`Flight#` = ?";   //Create string for searching admins
+	        PreparedStatement stmt = mainConnection.prepareStatement(search);   //create the actual statement
+	        stmt.setString(1, username);    //Adding the first parameter
+	    }catch (Exception e ){
+	        e.printStackTrace();
+	        return -1;
+	    }
+	}
+	}
+
 
 //Test merge
