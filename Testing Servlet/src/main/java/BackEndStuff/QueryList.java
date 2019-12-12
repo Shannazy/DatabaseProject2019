@@ -958,7 +958,7 @@ public class QueryList {
 //customer rep has to choose an airline from a drop-down menu first (before adding airplane)
 	public int addToAirplane (String CraftID){
 	    try {
-	        connector.getConnected();
+	        connector.getConnected(); //asdflkaj
 	        mainConnection = connector.getMainConnector();
 	        String getter = "INSERT INTO Airplanes (CraftID, Airlines_Airline_Code)" + "VALUE (?,?))";   //Create string for searching admins
 	        PreparedStatement stmt = mainConnection.prepareStatement(getter);   //create the actual statement
