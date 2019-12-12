@@ -7,6 +7,9 @@
     <form id="profileForm" action="ProfileServlet" method="get">
         <button type="submit" form="profileForm" value="profile">
             <div class="nav-link">Profile</div>
+            <select style="display: none;" id="username" name="username" form="profileForm">\
+                <option value="<% out.print(session.getAttribute("username"));%>"></option>
+            </select>
         </button>
     </form>
     <%

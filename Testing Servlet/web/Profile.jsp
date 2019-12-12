@@ -20,7 +20,7 @@
 <p> You created your profile on: <% out.println(user.get(3));%></p>
 <main>
     <section>
-        <h1>Upcoming Flights:</h1>
+        <h1>Future Flights:</h1>
         <table>
             <tr>
                 <th>Flight Number</th>
@@ -37,6 +37,62 @@
             </tr>
             <%
                 ArrayList<ArrayList<String>> flights =
+                        (ArrayList<ArrayList<String>>) (session.getAttribute("flights"));
+                for (int i = 0; i < flights.size(); i++) {
+                    ArrayList<String> flight = flights.get(i);
+            %>
+            <tr>
+                <%for (int j = 0; j < flight.size(); j++) {%>
+                <td><% out.print(flight.get(j));%></td>
+                <% } %>
+            </tr>
+            <% } %>
+        </table>
+        <h1>Previous Flights:</h1>
+        <table>
+            <tr>
+                <th>Flight Number</th>
+                <th>Departure Date</th>
+                <th>Departure Time</th>
+                <th>Departure Location</th>
+                <th>Destination Date</th>
+                <th>Destination Time</th>
+                <th>Destination Location</th>
+                <th>Class</th>
+                <th>Airline</th>
+                <th>Flight ID</th>
+                <th>Price</th>
+            </tr>
+            <%
+                ArrayList<ArrayList<String>> previousFlights =
+                        (ArrayList<ArrayList<String>>) (session.getAttribute("flights"));
+                for (int i = 0; i < flights.size(); i++) {
+                    ArrayList<String> flight = flights.get(i);
+            %>
+            <tr>
+                <%for (int j = 0; j < flight.size(); j++) {%>
+                <td><% out.print(flight.get(j));%></td>
+                <% } %>
+            </tr>
+            <% } %>
+        </table>
+        <h1>All Flights:</h1>
+        <table>
+            <tr>
+                <th>Flight Number</th>
+                <th>Departure Date</th>
+                <th>Departure Time</th>
+                <th>Departure Location</th>
+                <th>Destination Date</th>
+                <th>Destination Time</th>
+                <th>Destination Location</th>
+                <th>Class</th>
+                <th>Airline</th>
+                <th>Flight ID</th>
+                <th>Price</th>
+            </tr>
+            <%
+                ArrayList<ArrayList<String>> allFlights =
                         (ArrayList<ArrayList<String>>) (session.getAttribute("flights"));
                 for (int i = 0; i < flights.size(); i++) {
                     ArrayList<String> flight = flights.get(i);
