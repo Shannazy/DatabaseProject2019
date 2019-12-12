@@ -646,6 +646,7 @@ public class QueryList {
             return false;
         }
     }
+
     public List<String> getGreatestTotalRevenue(String clientEmail) throws SQLException{
         List<String> greatestRevenue = new ArrayList<String>();
         connector.getConnected();
@@ -759,7 +760,6 @@ public class QueryList {
         }
     }
 
-
     public void updateCapacity (String flightNum, String Capacity){
         try {
             connector.getConnected();
@@ -773,6 +773,7 @@ public class QueryList {
             e.printStackTrace();
         }
     }
+
     public List<List<String>> querySpecFlight (String FlightNum){
         List<List<String>> fullList = new ArrayList<List<String>>();
         try {
