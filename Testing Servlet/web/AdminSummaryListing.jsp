@@ -15,8 +15,15 @@
 </head>
 <body>
 <jsp:include page="Header.jsp"/>
+<h1>Query <% out.print(session.getAttribute("query")); %></h1>
 <table>
-    <h1>Query <% out.print(session.getAttribute("query")); %></h1>
+    <tr>
+        <th>Ticket Number</th>
+        <th>Client</th>
+        <th>Flight Number</th>
+        <th>Total Price</th>
+        <th>Ref</th>
+    </tr>
     <%
         ArrayList<ArrayList<String>> summary =
                 (ArrayList<ArrayList<String>>) (session.getAttribute("summaryListing"));

@@ -250,6 +250,42 @@ public class QueryList {
 
     }
 
+    public List<List<String>> getSpecificReservations(String queryType, String input) throws SQLException{
+        List<List<String>> queryResult = new ArrayList<List<String>>();
+        try {
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            String query = "";
+            if (queryType.equals("Client")) {
+                query = "Select * From Ticket where ClientEmail = ?";
+
+            } else if (queryType.equals("Flight")) {
+                query = "Select * From Ticket where `Flight#` = ?";
+            }
+            PreparedStatement queryStatement = mainConnection.prepareStatement(query);
+            queryStatement.setString(1, input);
+            ResultSet res = queryStatement.executeQuery();
+            while(res.next()){
+                List<String> result = new ArrayList<String>();
+                result.add(res.getString("TicketNumber"));
+                result.add(res.getString("ClientEmail"));
+                result.add(res.getString("Flight#"));
+                result.add(res.getString("Total Price"));
+                result.add(res.getString("Ref"));
+                queryResult.add(result);
+            }
+            queryStatement.setString(1, input);
+            queryStatement.executeQuery();
+            queryStatement.close();
+            connector.closeConnection();
+            return queryResult;
+        } catch (Exception e) {
+            e.printStackTrace();
+            connector.closeConnection();
+            return queryResult;
+        }
+    }
+
     public List<List<String>> getComingReservations(String username) throws SQLException {
         List<List<String>> reservationResult = new ArrayList<List<String>>();
         connector.getConnected();
@@ -1005,14 +1041,29 @@ public class QueryList {
             stmt.close();
             connector.closeConnection();
             return 1;
-
         } catch (Exception e) {
             e.printStackTrace();
             connector.closeConnection();
             return -1;
         }
     }
-}
 
 
+
+	public int editFlight (String price){
+	    try {
+	        connector.getConnected(); //asdflkaj
+	        mainConnection = connector.getMainConnector();
+	        String getter = "INSERT INTO Airplanes (UPDATE Flight" + "SET Flight.`Price` = ?" + "WHERE Flight.`Price` = ?";   //Create string for searching admins
+	        PreparedStatement stmt = mainConnection.prepareStatement(getter);   //create the actual statement
+	        stmt.setString(1, price);    //Adding the first parameter
+	        stmt.executeUpdate();
+	        return 1;
+	        
+	    }catch (Exception e ){
+	        e.printStackTrace();
+	        return -1;
+	    }
+	}
+	}
 
