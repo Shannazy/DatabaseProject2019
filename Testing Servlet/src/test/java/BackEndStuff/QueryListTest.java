@@ -221,5 +221,13 @@ class QueryListTest {
         }
 
     }
+
+    @Test
+    void addToAirplane() {
+        DatabaseConnection tester = new DatabaseConnection();
+        QueryList searchForTicket = new QueryList(tester);
+        searchForTicket.addToAirplane("200","AA");
+    }
+
 }
 
