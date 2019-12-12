@@ -9,19 +9,16 @@
     <list default="true" id="df0b40f9-93c5-4fcb-84db-3340dae45b61" name="Default Changelist" comment="Merge branch 'master' of github.com:Shannazy/DatabaseProject2019 into frontend&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;Testing Servlet/.idea/workspace.xml&#10;#&#9;Testing Servlet/out/artifacts/Testing_Servlet_war/Testing Servlet_war.war&#10;#&#9;Testing Servlet/out/artifacts/Testing_Servlet_war_exploded/META-INF/MANIFEST.MF&#10;#&#9;Testing Servlet/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/LoginServlet.class&#10;#&#9;Testing Servlet/out/artifacts/Testing_Servlet_war_exploded/Welcome.jsp&#10;#&#9;Testing Servlet/src/main/java/BackEndStuff/LoginServlet.java&#10;#&#9;Testing Servlet/target/classes/BackEndStuff/LoginServlet.class&#10;#&#9;Testing Servlet/web/Profile.jsp&#10;#&#9;Testing Servlet/web/Welcome.jsp">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war/Testing Servlet_war.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war/Testing Servlet_war.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/AdminMostRevenue.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/AdminMostRevenue.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/AdminNav.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/AdminNav.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/AdminAirportFlight.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/AdminAirportFlight.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/AdminSummaryListing.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/AdminSummaryListing.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/LoginServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/MostActiveServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/MostActiveServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/MostRevenueServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/MostRevenueServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/QueryList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/QueryList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/MostActiveServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/MostActiveServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/MostRevenueServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/MostRevenueServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/SummaryFlightServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/SummaryFlightServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/MostActiveServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/MostActiveServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/SummaryFlightServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/SummaryFlightServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/MostRevenueServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/MostRevenueServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/AdminMostRevenue.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/AdminMostRevenue.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/SummaryFlightServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/SummaryFlightServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/AdminSummaryListing.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/AdminSummaryListing.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,6 +114,18 @@
       <recent name="$PROJECT_DIR$/web" />
       <recent name="$PROJECT_DIR$/web/css" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.27">
     <configuration name="QueryListTest.adminDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -290,29 +299,6 @@
         <item itemvalue="JUnit.QueryListTest.justaTest" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <option name="contentProportion" value="0.1541271" />
-          <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-            </expand>
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />

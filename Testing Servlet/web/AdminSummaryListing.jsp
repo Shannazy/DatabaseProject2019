@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: stevenyuan
   Date: 12/11/19
@@ -15,6 +15,21 @@
 </head>
 <body>
 <jsp:include page="Header.jsp"/>
+<table>
+    <h1>Query <% out.print(session.getAttribute("query")); %></h1>
+    <%
+        ArrayList<ArrayList<String>> summary =
+                (ArrayList<ArrayList<String>>) (session.getAttribute("summaryListing"));
+        for (int i = 0; i < summary.size(); i++) {
+            ArrayList<String> sum = summary.get(i);
+    %>
+    <tr>
+        <%for (int j = 0; j < sum.size(); j++) {%>
+        <td><% out.print(sum.get(j));%></td>
+        <% } %>
+    </tr>
+    <% } %>
+</table>
 
 </body>
 </html>

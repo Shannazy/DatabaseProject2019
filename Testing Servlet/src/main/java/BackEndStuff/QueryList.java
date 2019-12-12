@@ -599,7 +599,7 @@ public class QueryList {
         mainConnection = connector.getMainConnector();
         String query = "";
         if(queryType.equals("flight")){
-            query = "select Flight.`Flight#`, count(Ticket.`Flight#`) as `Tickets Sold`, Ticket.`Total Price` * 0.25 as `Total Revenue`" +
+            query = "select Flight.`Flight#`, count(Ticket.`Flight#`) as `Tickets Sold`, sum(Ticket.`Total Price`) * 0.25 as `Total Revenue`" +
                     " from Ticket join\n" +
                     "Flight on Ticket.`Flight#` = Flight.`Flight#` where Flight.`Flight#` = ?";
             PreparedStatement findCustomers = mainConnection.prepareStatement(query);
