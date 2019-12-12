@@ -160,5 +160,18 @@ class QueryListTest {
             System.out.println(part1+ "\n");
         }
     }
+
+    @Test
+    void querySpecFlight() {
+        DatabaseConnection tester = new DatabaseConnection();
+        QueryList searchForTicket = new QueryList(tester);
+        List<List<String>> arrivalList = searchForTicket.querySpecFlight("2" );
+        for (List<String> part1 : arrivalList) {
+            for (String runner : part1) {
+                System.out.print(runner + " ");
+            }
+            System.out.println();
+        }
+    }
 }
 

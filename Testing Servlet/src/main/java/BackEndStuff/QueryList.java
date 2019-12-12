@@ -646,6 +646,7 @@ public class QueryList {
             return false;
         }
     }
+
     public List<String> getGreatestTotalRevenue(String clientEmail) throws SQLException{
         List<String> greatestRevenue = new ArrayList<String>();
         connector.getConnected();
@@ -722,7 +723,7 @@ public class QueryList {
                 connector.getConnected();
                 mainConnection = connector.getMainConnector();
                 String deletingTable = "INSERT INTO Ticket (`ClientEmail`, `Flight#`, `Total Price`, `Type`)\n" +
-                        "VALUE (?,?,?,?,?)";
+                        "VALUE (?,?,?,?)";
                 PreparedStatement inserter = mainConnection.prepareStatement(deletingTable);
                 inserter.setString(1, clientEmail);
                 inserter.setString(2, FlightNum);
@@ -759,7 +760,56 @@ public class QueryList {
             return -1;
         }
     }
+
+    public void updateCapacity (String flightNum, String Capacity){
+        try {
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            String search = "UPDATE Flight" + " SET Flight.Capacity = ? " + " WHERE Flight.`Flight#` = ?";   //Create string for searching admins
+            PreparedStatement stmt = mainConnection.prepareStatement(search);   //create the actual statement
+            stmt.setString(1, Capacity);//Adding the first parameter
+            stmt.setString(2, flightNum);
+            stmt.executeUpdate();
+        }catch (Exception e ){
+            e.printStackTrace();
+        }
+    }
+
+    public List<List<String>> querySpecFlight (String FlightNum){
+        List<List<String>> fullList = new ArrayList<List<String>>();
+        try {
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            String getter = "Select * From Flight  where `Flight#` = ?";   //Create string for searching admins
+            PreparedStatement stmt = mainConnection.prepareStatement(getter);   //create the actual statement
+            stmt.setString(1, FlightNum);    //Adding the first parameter
+            ResultSet res = stmt.executeQuery();
+            while(res.next()){
+                List<String> data = new ArrayList<String>();
+                data.add(res.getString("Flight#"));
+                data.add(res.getString("Departure Date"));
+                data.add(res.getString("Departure Time"));
+                data.add(res.getString("Departure_Location"));
+                data.add(res.getString("Destination Date"));
+                data.add(res.getString("Destination Time"));
+                data.add(res.getString("Destination Location"));
+                data.add(res.getString("Class"));
+                data.add(res.getString("Airline"));
+                data.add(res.getString("FlightID"));
+                data.add(res.getString("Price"));
+                fullList.add(data);
+            }
+            stmt.close();
+            res.close();
+            connector.closeConnection();
+            return fullList;
+        }catch (Exception e ){
+            e.printStackTrace();
+            return fullList;
+        }
+    }
 }
+
 
 
 
