@@ -1042,6 +1042,49 @@ public class QueryList {
             connector.closeConnection();
             return 1;
 
+<<<<<<< HEAD
+	
+
+//customer rep has to choose an airline from a drop-down menu first (before adding airplane)
+	public int addToAirplane (String CraftID, String Airlines_Airline_Code){
+	    try {
+	        connector.getConnected(); //asdflkaj
+	        mainConnection = connector.getMainConnector();
+	        String getter = "INSERT INTO Airplanes (CraftID, Airlines_Airline_Code)" + "VALUE (?,?))";   //Create string for searching admins
+	        PreparedStatement stmt = mainConnection.prepareStatement(getter);   //create the actual statement
+	        stmt.setString(1, CraftID);    //Adding the first parameter
+	        stmt.executeUpdate();
+	        return 1;
+	        
+	    }catch (Exception e ){
+	        e.printStackTrace();
+	        return -1;
+	    }
+	}
+}
+
+
+
+	public int editFlight (String price){
+	    try {
+	        connector.getConnected(); //asdflkaj
+	        mainConnection = connector.getMainConnector();
+	        String getter = "INSERT INTO Airplanes (UPDATE Flight" + "SET Flight.`Price` = ?" + "WHERE Flight.`Price` = ?";   //Create string for searching admins
+	        PreparedStatement stmt = mainConnection.prepareStatement(getter);   //create the actual statement
+	        stmt.setString(1, price);    //Adding the first parameter
+	        stmt.executeUpdate();
+	        return 1;
+	        
+	    }catch (Exception e ){
+	        e.printStackTrace();
+	        return -1;
+	    }
+	}
+	}
+	
+	
+//Test merge
+=======
         } catch (Exception e) {
             e.printStackTrace();
             connector.closeConnection();
@@ -1051,4 +1094,5 @@ public class QueryList {
 }
 
 
+>>>>>>> 29f6ecf628d0a6b5a6d94fa7cb43054ebfec2446
 
