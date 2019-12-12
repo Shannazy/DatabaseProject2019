@@ -8,22 +8,17 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
-@WebServlet(name = "/WaitingListServlet", urlPatterns = {"/WaitingListServlet"})
-public class WaitingListServlet extends HttpServlet {
+@WebServlet(name = "/AddAirportServlet", urlPatterns = {"/AddAirportServlet"})
+public class AddAirportServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String airport = request.getParameter("add-airport");
         DatabaseConnection myConnection = new DatabaseConnection();
         QueryList searcher = new QueryList(myConnection);
+        searcher.addToAirport(airport);
         HttpSession session = request.getSession(true);
-        String flightNumber = request.getParameter("wait-number");
-        String username = session.getAttribute("username").toString();
-        System.out.println("username: " + username);
         session.setAttribute("username", request.getParameter("username"));
-        List<List<String>> user = null;
-        user = searcher.getCustomersOnWaitlist(flightNumber);
-        session.setAttribute("flights", user);
-        response.sendRedirect("RepGetWaitingList.jsp");
+        response.sendRedirect("Representative.jsp");
     }
 }

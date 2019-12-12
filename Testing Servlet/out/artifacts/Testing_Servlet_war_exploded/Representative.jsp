@@ -10,7 +10,7 @@
 <body>
 <jsp:include page="Header.jsp"/>
 <main>
-    Representative
+    <jsp:include page="RepNav.jsp"/>
 </main>
 </body>
 </html>

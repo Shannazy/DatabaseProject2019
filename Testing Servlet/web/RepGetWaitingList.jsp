@@ -8,8 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <title>Waiting List</title>
+    <link href="./css/index.css" rel="stylesheet" type="text/css">
+    <link href="./css/welcome.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body>
+<jsp:include page="Header.jsp"/>
 <h2>Welcome to the Waiting List</h2>
 <main>
     <section>
