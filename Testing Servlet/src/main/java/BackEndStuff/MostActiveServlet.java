@@ -18,9 +18,9 @@ public class MostActiveServlet extends HttpServlet {
         QueryList searcher = new QueryList(myConnection);
         String username = request.getParameter("username");
         System.out.println(username);
-        ArrayList<ArrayList<String>> mostActive = new ArrayList<ArrayList<String>>();
+        ArrayList<String> mostActive = new ArrayList<String>();
         try {
-            mostActive = (ArrayList<String>) searcher.get;
+            mostActive = (ArrayList<String>) searcher.getGreatestTotalFlightRevenue();
         } catch (SQLException e) {
             e.printStackTrace();
         }

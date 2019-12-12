@@ -19,7 +19,7 @@
     List<String> mostActive = (List<String>) session.getAttribute("mostActive");
 %>
 <p>
-    Name: <% out.print(mostActive.get(0));%>
+    Flight Number: <% out.print(mostActive.get(0));%>
 </p>
 <p>
     Most Revenue: <% out.print(mostActive.get(1));%>
