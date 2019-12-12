@@ -595,34 +595,67 @@ public class QueryList {
 
     // Get sales report
     public List<List<String>> getSalesReport(String queryType, String input) throws SQLException{
-        List<List<String>> customerTickets = new ArrayList<List<String>>();
+        List<List<String>> queryResult = new ArrayList<List<String>>();
         connector.getConnected();
         mainConnection = connector.getMainConnector();
         String query = "";
         if(queryType.equals("flight")){
-            query = "";
+            query = "select Flight.`Flight#`, count(Ticket.`Flight#`) as `Tickets Sold`, Ticket.`Total Price` * 0.25 as `Total Revenue`" +
+                    " from Ticket join\n" +
+                    "Flight on Ticket.`Flight#` = Flight.`Flight#` where Flight.`Flight#` = ?";
+            PreparedStatement findCustomers = mainConnection.prepareStatement(query);
+            findCustomers.setString(1, input);
+            ResultSet res = findCustomers.executeQuery();
+            while(res.next()){
+                List<String> customerDetails = new ArrayList<String>();
+                customerDetails.add(res.getString("Flight#"));
+                customerDetails.add(res.getString("Tickets Sold"));
+                customerDetails.add(res.getString("Total Revenue"));
+                queryResult.add(customerDetails);
+            }
+            res.close();
+            findCustomers.close();
+            connector.closeConnection();
+            return queryResult;
         }
         else if(queryType.equals("customer")){
-            query = "SELECT Name, `TicketNumber`, `Total Price`*0.25 as `Total Revenue`" +
-                    " FROM Ticket JOIN Clients on ClientEmail = Email where `ClientEmail` = ?";
+            query = "SELECT Name, count(ClientEmail) as `Tickets Sold`, sum(`Total Price`*0.25) as `Total Revenue`" +
+                    "FROM Ticket JOIN Clients on ClientEmail = Email where `ClientEmail` = ?";
+            PreparedStatement findCustomers = mainConnection.prepareStatement(query);
+            findCustomers.setString(1, input);
+            ResultSet res = findCustomers.executeQuery();
+            while(res.next()){
+                List<String> customerDetails = new ArrayList<String>();
+                customerDetails.add(res.getString("Name"));
+                customerDetails.add(res.getString("Tickets Sold"));
+                customerDetails.add(res.getString("Total Revenue"));
+                queryResult.add(customerDetails);
+            }
+            res.close();
+            findCustomers.close();
+            connector.closeConnection();
+            return queryResult;
         }
         else if(queryType.equals("airline")){
-            query = "";
+            query = "select Flight.Airline, count(`Airline`)as `Tickets Sold`,sum(`Total Price`) * 0.25 as `Total Revenue` from Ticket join " +
+                    "Flight on Ticket.`Flight#` = Flight.`Flight#` where Flight.Airline = ? group by Flight.Airline";
+            PreparedStatement findCustomers = mainConnection.prepareStatement(query);
+            findCustomers.setString(1, input);
+            ResultSet res = findCustomers.executeQuery();
+            while(res.next()){
+                List<String> customerDetails = new ArrayList<String>();
+                customerDetails.add(res.getString("Airline"));
+                customerDetails.add(res.getString("Tickets Sold"));
+                customerDetails.add(res.getString("Total Revenue"));
+                queryResult.add(customerDetails);
+            }
+            res.close();
+            findCustomers.close();
+            connector.closeConnection();
+            return queryResult;
         }
-        PreparedStatement findCustomers = mainConnection.prepareStatement(query);
-        findCustomers.setString(1, input);
-        ResultSet res = findCustomers.executeQuery();
-        while(res.next()){
-            List<String> customerDetails = new ArrayList<String>();
-            customerDetails.add(res.getString("Name"));
-            customerDetails.add(res.getString("TicketNumber"));
-            customerDetails.add(res.getString("Total Revenue"));
-            customerTickets.add(customerDetails);
-        }
-        res.close();
-        findCustomers.close();
-        connector.closeConnection();
-        return customerTickets;
+
+        return queryResult;
     }
 
     public boolean addToWaitlist (String flightNum, String userEmail) {

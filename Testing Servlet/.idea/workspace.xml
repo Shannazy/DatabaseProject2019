@@ -111,7 +111,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.QueryListTest.getCustomersOnWaitlist">
+  <component name="RunManager" selected="JUnit.QueryListTest.getSalesReport">
     <configuration name="QueryListTest.addTicketentry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Testing Servlet" />
       <extension name="coverage">
@@ -123,22 +123,6 @@
       <option name="PACKAGE_NAME" value="BackEndStuff" />
       <option name="MAIN_CLASS_NAME" value="BackEndStuff.QueryListTest" />
       <option name="METHOD_NAME" value="addTicketentry" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="QueryListTest.airportList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Testing Servlet" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="BackEndStuff.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="BackEndStuff" />
-      <option name="MAIN_CLASS_NAME" value="BackEndStuff.QueryListTest" />
-      <option name="METHOD_NAME" value="airportList" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -171,6 +155,22 @@
       <option name="PACKAGE_NAME" value="BackEndStuff" />
       <option name="MAIN_CLASS_NAME" value="BackEndStuff.QueryListTest" />
       <option name="METHOD_NAME" value="getCustomersOnWaitlist" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QueryListTest.getSalesReport" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Testing Servlet" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="BackEndStuff.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="BackEndStuff" />
+      <option name="MAIN_CLASS_NAME" value="BackEndStuff.QueryListTest" />
+      <option name="METHOD_NAME" value="getSalesReport" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -265,20 +265,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.QueryListTest.airportList" />
       <item itemvalue="JUnit.QueryListTest.dynamicQuery" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.27" />
       <item itemvalue="JUnit.QueryListTest.addTicketentry" />
       <item itemvalue="JUnit.QueryListTest.getSalesReportForMonth" />
       <item itemvalue="JUnit.QueryListTest.getCustomersOnWaitlist" />
+      <item itemvalue="JUnit.QueryListTest.getSalesReport" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.QueryListTest.getSalesReport" />
         <item itemvalue="JUnit.QueryListTest.getCustomersOnWaitlist" />
         <item itemvalue="JUnit.QueryListTest.getSalesReportForMonth" />
         <item itemvalue="JUnit.QueryListTest.addTicketentry" />
         <item itemvalue="JUnit.QueryListTest.dynamicQuery" />
-        <item itemvalue="JUnit.QueryListTest.airportList" />
       </list>
     </recent_temporary>
   </component>
@@ -367,13 +367,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java</url>
-          <line>747</line>
+          <line>780</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java</url>
-          <line>813</line>
+          <line>846</line>
           <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java</url>
+          <line>684</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

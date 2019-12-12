@@ -207,5 +207,19 @@ class QueryListTest {
             System.out.println();
         }
     }
+
+    @Test
+    void getSalesReport() throws SQLException {
+        DatabaseConnection tester = new DatabaseConnection();
+        QueryList searchForTicket = new QueryList(tester);
+        List<List<String>> arrivalList = searchForTicket.getSalesReport("airline", "AA" );
+        for (List<String> part1 : arrivalList) {
+            for (String runner : part1) {
+                System.out.print(runner + " ");
+            }
+            System.out.println();
+        }
+
+    }
 }
 
