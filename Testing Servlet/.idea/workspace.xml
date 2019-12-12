@@ -9,9 +9,6 @@
     <list default="true" id="afee541e-7b84-4d9f-9643-a0aa3c9a5786" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/QueryList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/QueryList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/BackEndStuff/QueryListTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/BackEndStuff/QueryListTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -362,22 +359,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java</url>
-          <line>499</line>
+          <line>498</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java</url>
-          <line>780</line>
+          <line>778</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java</url>
-          <line>846</line>
+          <line>844</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java</url>
-          <line>684</line>
+          <line>683</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
