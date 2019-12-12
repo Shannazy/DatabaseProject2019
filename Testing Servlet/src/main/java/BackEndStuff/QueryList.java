@@ -637,9 +637,12 @@ public class QueryList {
             inserter.setString(1, flightNum);
             inserter.setString(2, userEmail);
             inserter.executeUpdate();
+            inserter.close();
+            connector.closeConnection();
             return true;
         } catch (Exception e) {
             e.printStackTrace();
+            connector.closeConnection();
             return false;
         }
     }
@@ -664,30 +667,97 @@ public class QueryList {
 
     }
 
-    public List<List<String>> getSalesReportForMonth(String month) throws SQLException{
-        List<String> months = new ArrayList<String>();
-        months.add("January");
-        months.add("February");
-        months.add("March");
-        months.add("April");
-        months.add("May");
-        months.add("June");
-        months.add("July");
-        months.add("August");
-        months.add("September");
-        months.add("October");
-        months.add("November");
-        months.add("December");
-        String startDate = "";
-        String endDate = "";
+//    public List<List<String>> getSalesReportForMonth(String month) throws SQLException{
+//        List<String> months = new ArrayList<String>();
+//        months.add("January");
+//        months.add("February");
+//        months.add("March");
+//        months.add("April");
+//        months.add("May");
+//        months.add("June");
+//        months.add("July");
+//        months.add("August");
+//        months.add("September");
+//        months.add("October");
+//        months.add("November");
+//        months.add("December");
+//        String startDate = "";
+//        String endDate = "";
+//
+//        int queryMonth = months.indexOf(month);
+//
+//        if(queryMonth == 1){
+//            startDate = "2019-0"
+//        }
+//
+//        return null;
+//    }
 
-        int queryMonth = months.indexOf(month);
+    public boolean addTicketentry (String clientEmail, String FlightNum, String totalPrice, String type, String roundRef){
+        if (roundRef != null){
+            try {
 
-        if(queryMonth == 1){
-            startDate = null;
+                connector.getConnected();
+                mainConnection = connector.getMainConnector();
+                String deletingTable = "INSERT INTO Ticket (`ClientEmail`, `Flight#`, `Total Price`, `Type`, `Ref`)\n" +
+                        "VALUE (?,?,?,?,?)";
+                PreparedStatement inserter = mainConnection.prepareStatement(deletingTable);
+                inserter.setString(1, clientEmail);
+                inserter.setString(2, FlightNum);
+                inserter.setString(3, totalPrice);
+                inserter.setString(4, type);
+                inserter.setString(5, roundRef);
+                inserter.executeUpdate();
+                inserter.close();
+                connector.closeConnection();
+                return true;
+            } catch (Exception e) {
+                e.printStackTrace();
+                connector.closeConnection();
+                return false;
+            }
         }
+        else {
+            try {
+                connector.getConnected();
+                mainConnection = connector.getMainConnector();
+                String deletingTable = "INSERT INTO Ticket (`ClientEmail`, `Flight#`, `Total Price`, `Type`)\n" +
+                        "VALUE (?,?,?,?,?)";
+                PreparedStatement inserter = mainConnection.prepareStatement(deletingTable);
+                inserter.setString(1, clientEmail);
+                inserter.setString(2, FlightNum);
+                inserter.setString(3, totalPrice);
+                inserter.setString(4, type);
+                inserter.executeUpdate();
+                inserter.close();
+                connector.closeConnection();
+                return true;
+            } catch (Exception e) {
+                e.printStackTrace();
+                connector.closeConnection();
+                return false;
+            }
 
-        return null;
+        }
+    }
+
+    public int getCapacity (String flightNum){
+        try {
+            int capacity = 0;
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            String getter = "Select 'Capacity' From Flight  where `Flight#` = ?";   //Create string for searching admins
+            PreparedStatement stmt = mainConnection.prepareStatement(getter);   //create the actual statement
+            stmt.setString(1, flightNum);    //Adding the first parameter
+            ResultSet res = stmt.executeQuery();
+            while(res.next()){
+                capacity = res.getInt("Capacity");
+            }
+            return capacity;
+        }catch (Exception e ){
+            e.printStackTrace();
+            return -1;
+        }
     }
 }
 

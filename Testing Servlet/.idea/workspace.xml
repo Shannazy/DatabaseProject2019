@@ -7,13 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df0b40f9-93c5-4fcb-84db-3340dae45b61" name="Default Changelist" comment="Merge branch 'master' of github.com:Shannazy/DatabaseProject2019 into frontend&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;Testing Servlet/.idea/workspace.xml&#10;#&#9;Testing Servlet/out/artifacts/Testing_Servlet_war/Testing Servlet_war.war&#10;#&#9;Testing Servlet/out/artifacts/Testing_Servlet_war_exploded/META-INF/MANIFEST.MF&#10;#&#9;Testing Servlet/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/LoginServlet.class&#10;#&#9;Testing Servlet/out/artifacts/Testing_Servlet_war_exploded/Welcome.jsp&#10;#&#9;Testing Servlet/src/main/java/BackEndStuff/LoginServlet.java&#10;#&#9;Testing Servlet/target/classes/BackEndStuff/LoginServlet.class&#10;#&#9;Testing Servlet/web/Profile.jsp&#10;#&#9;Testing Servlet/web/Welcome.jsp">
-      <change afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/DatabaseConnection.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/ProfileServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/RegisterServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/BackEndStuff/DatabaseConnectionTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war/Testing Servlet_war.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war/Testing Servlet_war.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/QueryList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/QueryList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/ReserveServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/ReserveServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/LoginServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/ReserveServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/ReserveServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/QueryList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/QueryList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/BackEndStuff/QueryListTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/BackEndStuff/QueryListTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -329,6 +333,7 @@
       <workItem from="1576088105162" duration="4617000" />
       <workItem from="1576104631749" duration="3021000" />
       <workItem from="1576108021367" duration="336000" />
+      <workItem from="1576108756066" duration="296000" />
     </task>
     <task id="LOCAL-00001" summary="Now able to save the users for the current session.">
       <created>1575496582820</created>

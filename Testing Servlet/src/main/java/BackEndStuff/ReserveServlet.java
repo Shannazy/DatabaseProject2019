@@ -12,10 +12,6 @@ import java.io.IOException;
 public class ReserveServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        // Update Client_Has Table
-        DatabaseConnection myConnection = new DatabaseConnection();
-        QueryList searcher = new QueryList(myConnection);
-
         HttpSession session = request.getSession(true);
         String flightNumber = request.getParameter("flightNumber");
         String username = session.getAttribute("username").toString();
@@ -23,6 +19,16 @@ public class ReserveServlet extends HttpServlet {
         System.out.println("username: " + username);
         session.setAttribute("username", request.getParameter("username"));
 
+        // Update Client_Has Table
+        DatabaseConnection myConnection = new DatabaseConnection();
+        QueryList searcher = new QueryList(myConnection);
+        searcher.
+        searcher.addTicketentry(
+                username,
+                flightNumber,
+
+                null
+                );
 
 
         response.sendRedirect("Welcome.jsp");

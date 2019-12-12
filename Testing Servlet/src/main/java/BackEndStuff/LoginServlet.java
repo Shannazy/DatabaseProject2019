@@ -18,14 +18,14 @@ public class LoginServlet extends HttpServlet {
         String pass = request.getParameter("Password");
         DatabaseConnection myConnection = new DatabaseConnection();
         QueryList searcher = new QueryList(myConnection);
-        ArrayList<String> airlines = null;
+        ArrayList<String> airlines = new ArrayList<String>();
         try {
             airlines = new ArrayList<String>(searcher.airlineList());
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        System.out.println(airlines);
-        ArrayList<String> airports = null;
+        System.out.println(airlines.toString());
+        ArrayList<String> airports = new ArrayList<String>();
         try {
             airports = new ArrayList<String>(searcher.airportList());
         } catch (SQLException e) {
