@@ -229,5 +229,14 @@ class QueryListTest {
         searchForTicket.addToAirplane("200","AA");
     }
 
+    @Test
+    void getGreatestTotalFlightRevenue() throws SQLException {
+        DatabaseConnection tester = new DatabaseConnection();
+        QueryList searchForTicket = new QueryList(tester);
+        List<String> arrivalList = searchForTicket.getGreatestTotalFlightRevenue();
+        for (String part1 : arrivalList) {
+            System.out.print(part1 + " ");
+        }
+    }
 }
 

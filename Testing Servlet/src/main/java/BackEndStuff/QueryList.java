@@ -681,15 +681,41 @@ public class QueryList {
 
     public List<String> getGreatestTotalRevenue() throws SQLException {
         List<String> greatestRevenue = new ArrayList<String>();
+        try {
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            String query = "Select t1.Name, max(t1.`Total Revenue`) as `Total Revenue` " +
+                    "from (select Name, sum(`Total Price`) * 0.25 as `Total Revenue` " +
+                    "from Ticket Join Clients on Email=ClientEmail group by ClientEmail) as t1";
+            PreparedStatement findGreatest = mainConnection.prepareStatement(query);
+            ResultSet res = findGreatest.executeQuery();
+            while (res.next()) {
+                greatestRevenue.add(res.getString("Name"));
+                greatestRevenue.add(res.getString("Total Revenue"));
+            }
+            res.close();
+            findGreatest.close();
+            connector.closeConnection();
+            return greatestRevenue;
+        }
+        catch (Exception e){
+            connector.closeConnection();
+            return greatestRevenue;
+        }
+
+    }
+
+    public List<String> getGreatestTotalFlightRevenue() throws SQLException {
+        List<String> greatestRevenue = new ArrayList<String>();
         connector.getConnected();
         mainConnection = connector.getMainConnector();
-        String query = "Select t1.Name, max(t1.`Total Revenue`) as `Total Revenue` " +
-                "from (select Name, sum(`Total Price`) * 0.25 as `Total Revenue` " +
-                "from Ticket Join Clients on Email=ClientEmail group by ClientEmail) as t1";
+        String query = "Select t1.`Flight#` as `Flight#`, max(t1.`Total Revenue`) as `Total Revenue` " +
+                "from (select Flight.`Flight#`, sum(`Total Price`) * 0.25 as `Total Revenue` " +
+                "from Ticket Join Flight on Flight.`Flight#`=Ticket.`Flight#` group by Flight.`Flight#`) as t1";
         PreparedStatement findGreatest = mainConnection.prepareStatement(query);
         ResultSet res = findGreatest.executeQuery();
         while (res.next()) {
-            greatestRevenue.add(res.getString("Name"));
+            greatestRevenue.add(res.getString("Flight#"));
             greatestRevenue.add(res.getString("Total Revenue"));
         }
         res.close();
