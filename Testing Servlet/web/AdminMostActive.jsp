@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: stevenyuan
   Date: 12/11/19
@@ -15,6 +15,14 @@
 </head>
 <body>
 <jsp:include page="Header.jsp"/>
-
+<%
+    List<String> mostActive = (List<String>) session.getAttribute("mostActive");
+%>
+<p>
+    Name: <% out.print(mostActive.get(0));%>
+</p>
+<p>
+    Most Revenue: <% out.print(mostActive.get(1));%>
+</p>
 </body>
 </html>

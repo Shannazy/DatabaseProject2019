@@ -20,7 +20,6 @@ public class FlightListServlet extends HttpServlet {
 
         // Get Flights list
         ArrayList<ArrayList<String>> flightList = null;
-        searcher.querySpecFlight()
         HttpSession session = request.getSession(true);
         session.setAttribute("username", request.getParameter("username"));
         session.setAttribute("flightList", flightList);
