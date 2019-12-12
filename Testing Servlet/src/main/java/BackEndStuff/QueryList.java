@@ -888,8 +888,6 @@ public class QueryList {
 
 }
 
-
-<<<<<<< HEAD
 	public int updateCapacity (String flightNum){
 		try {
             connector.getConnected();
@@ -904,9 +902,6 @@ public class QueryList {
         }
 
 	}
-=======
->>>>>>> 545136df85190589706a2ce42d4c50718b8d11bc
-
 	
     public int addToAirport (String AirportID){
         try {
@@ -925,5 +920,24 @@ public class QueryList {
     }
 }
 	
-
+//customer rep has to choose an airline from a drop-down menu first (before adding airplane)
+	public int addToAirplane (String CraftID){
+	    try {
+	        connector.getConnected();
+	        mainConnection = connector.getMainConnector();
+	        String getter = "INSERT INTO Airplanes (CraftID, Airlines_Airline_Code)" + "VALUE (?,?))";   //Create string for searching admins
+	        PreparedStatement stmt = mainConnection.prepareStatement(getter);   //create the actual statement
+	        stmt.setString(1, CraftID);    //Adding the first parameter
+	        stmt.executeUpdate();
+	        return 1;
+	        
+	    }catch (Exception e ){
+	        e.printStackTrace();
+	        return -1;
+	    }
+	}
+}
+	
+	
+	
 //Test merge
