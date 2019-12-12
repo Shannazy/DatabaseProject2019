@@ -19,7 +19,13 @@
 
     <form id="salesReportForm" action="SalesReportServlet" method="get">
         <h1>Sales Report</h1>
-        <select style="display: none;" name="username" form="editUserForm">\
+        <div>
+            <label id="sales-label" for="sales-label">Month</label>
+            <select style="display: none;" name="username" form="salesReportForm">\
+                <option value="<% out.print(session.getAttribute("username"));%>"></option>
+            </select>
+        </div>
+        <select style="display: none;" name="username" form="salesReportForm">\
             <option value="<% out.print(session.getAttribute("username"));%>"></option>
         </select>
         <button type="submit" form="salesReportForm" value="SalesReport" id="sales-report-button">Get Report</button>
@@ -35,7 +41,7 @@
             <label for="customer-flight">Username</label>
             <input type="text" name="customer-flight" id="customer-flight">
         </div>
-        <select style="display: none;" name="username" form="editUserForm">\
+        <select style="display: none;" name="username" form="flightListForm">\
             <option value="<% out.print(session.getAttribute("username"));%>"></option>
         </select>
         <button type="submit" form="flightListForm" value="FlightList" id="flight-list-button">Get Reservations</button>
@@ -55,7 +61,7 @@
             <label for="summary-user">Username</label>
             <input type="text" name="summary-user" id="summary-user">
         </div>
-        <select style="display: none;" name="username" form="editUserForm">\
+        <select style="display: none;" name="username" form="summaryFlightForm">\
             <option value="<% out.print(session.getAttribute("username"));%>"></option>
         </select>
         <button type="submit" form="summaryFlightForm" value="SummaryFlight">Get Revenue</button>
@@ -63,7 +69,7 @@
 
     <form id="mostRevenueForm" action="MostRevenueServlet" method="get">
         <h1>Most Revenue Customer</h1>
-        <select style="display: none;" name="username" form="editUserForm">\
+        <select style="display: none;" name="username" form="mostRevenueForm">\
             <option value="<% out.print(session.getAttribute("username"));%>"></option>
         </select>
         <button type="submit" form="mostRevenueForm" value="mostRevenue">Get User</button>
@@ -71,7 +77,7 @@
 
     <form id="mostActiveForm" action="MostActiveServlet" method="get">
         <h1>Most Active Flights</h1>
-        <select style="display: none;" name="username" form="editUserForm">\
+        <select style="display: none;" name="username" form="mostActiveForm">\
             <option value="<% out.print(session.getAttribute("username"));%>"></option>
         </select>
         <button type="submit" form="mostActiveForm" value="mostRevenue">Get Flights</button>
@@ -83,7 +89,7 @@
             <label for="airport-flights">Airport</label>
             <input required type="text" name="airport-flights" id="airport-flights">
         </div>
-        <select style="display: none;" name="username" form="editUserForm">\
+        <select style="display: none;" name="username" form="airportFlightsForm">\
             <option value="<% out.print(session.getAttribute("username"));%>"></option>
         </select>
         <button type="submit" form="airportFlightsForm" value="AirportFlights">Get Flights</button>
