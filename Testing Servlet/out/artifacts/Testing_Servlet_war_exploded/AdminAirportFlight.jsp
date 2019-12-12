@@ -36,9 +36,11 @@
             ArrayList<String> arrival = arrivals.get(i);
     %>
     <tr>
-        <%for (int j = 0; j < arrival.size(); j++) {%>
-        <td><% out.print(arrival.get(j));%></td>
-        <% } %>
+        <td><% out.print(arrival.get(0));%></td>
+        <td><% out.print(arrival.get(1));%></td>
+        <td><% out.print(arrival.get(2));%></td>
+        <td><% out.print(arrival.get(6));%></td>
+        <td><% out.print(arrival.get(7));%></td>
     </tr>
     <% } %>
     <%
