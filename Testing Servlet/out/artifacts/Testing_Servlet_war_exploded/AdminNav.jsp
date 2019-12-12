@@ -20,9 +20,20 @@
     <form id="salesReportForm" action="SalesReportServlet" method="get">
         <h1>Sales Report</h1>
         <div>
-            <label id="sales-label" for="sales-label">Month</label>
-            <select style="display: none;" name="username" form="salesReportForm">\
-                <option value="<% out.print(session.getAttribute("username"));%>"></option>
+            <label id="month-label" for="month">Month</label>
+            <select name="month" form="salesReportForm" id="month">\
+                <option value="January">January</option>
+                <option value="February">January</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
             </select>
         </div>
         <select style="display: none;" name="username" form="salesReportForm">\

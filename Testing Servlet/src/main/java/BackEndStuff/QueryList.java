@@ -593,35 +593,69 @@ public class QueryList {
 
     }
 
+    // Get sales report
     public List<List<String>> getSalesReport(String queryType, String input) throws SQLException{
-        List<List<String>> customerTickets = new ArrayList<List<String>>();
+        List<List<String>> queryResult = new ArrayList<List<String>>();
         connector.getConnected();
         mainConnection = connector.getMainConnector();
         String query = "";
         if(queryType.equals("flight")){
-            query = "";
+            query = "select Flight.`Flight#`, count(Ticket.`Flight#`) as `Tickets Sold`, Ticket.`Total Price` * 0.25 as `Total Revenue`" +
+                    " from Ticket join\n" +
+                    "Flight on Ticket.`Flight#` = Flight.`Flight#` where Flight.`Flight#` = ?";
+            PreparedStatement findCustomers = mainConnection.prepareStatement(query);
+            findCustomers.setString(1, input);
+            ResultSet res = findCustomers.executeQuery();
+            while(res.next()){
+                List<String> customerDetails = new ArrayList<String>();
+                customerDetails.add(res.getString("Flight#"));
+                customerDetails.add(res.getString("Tickets Sold"));
+                customerDetails.add(res.getString("Total Revenue"));
+                queryResult.add(customerDetails);
+            }
+            res.close();
+            findCustomers.close();
+            connector.closeConnection();
+            return queryResult;
         }
         else if(queryType.equals("customer")){
-            query = "SELECT Name, `TicketNumber`, `Total Price`*0.25 as `Total Revenue`" +
-                    " FROM Ticket JOIN Clients on ClientEmail = Email where `ClientEmail` = ?";
+            query = "SELECT Name, count(ClientEmail) as `Tickets Sold`, sum(`Total Price`*0.25) as `Total Revenue`" +
+                    "FROM Ticket JOIN Clients on ClientEmail = Email where `ClientEmail` = ?";
+            PreparedStatement findCustomers = mainConnection.prepareStatement(query);
+            findCustomers.setString(1, input);
+            ResultSet res = findCustomers.executeQuery();
+            while(res.next()){
+                List<String> customerDetails = new ArrayList<String>();
+                customerDetails.add(res.getString("Name"));
+                customerDetails.add(res.getString("Tickets Sold"));
+                customerDetails.add(res.getString("Total Revenue"));
+                queryResult.add(customerDetails);
+            }
+            res.close();
+            findCustomers.close();
+            connector.closeConnection();
+            return queryResult;
         }
         else if(queryType.equals("airline")){
-            query = "";
+            query = "select Flight.Airline, count(`Airline`)as `Tickets Sold`,sum(`Total Price`) * 0.25 as `Total Revenue` from Ticket join " +
+                    "Flight on Ticket.`Flight#` = Flight.`Flight#` where Flight.Airline = ? group by Flight.Airline";
+            PreparedStatement findCustomers = mainConnection.prepareStatement(query);
+            findCustomers.setString(1, input);
+            ResultSet res = findCustomers.executeQuery();
+            while(res.next()){
+                List<String> customerDetails = new ArrayList<String>();
+                customerDetails.add(res.getString("Airline"));
+                customerDetails.add(res.getString("Tickets Sold"));
+                customerDetails.add(res.getString("Total Revenue"));
+                queryResult.add(customerDetails);
+            }
+            res.close();
+            findCustomers.close();
+            connector.closeConnection();
+            return queryResult;
         }
-        PreparedStatement findCustomers = mainConnection.prepareStatement(query);
-        findCustomers.setString(1, input);
-        ResultSet res = findCustomers.executeQuery();
-        while(res.next()){
-            List<String> customerDetails = new ArrayList<String>();
-            customerDetails.add(res.getString("Name"));
-            customerDetails.add(res.getString("TicketNumber"));
-            customerDetails.add(res.getString("Total Revenue"));
-            customerTickets.add(customerDetails);
-        }
-        res.close();
-        findCustomers.close();
-        connector.closeConnection();
-        return customerTickets;
+
+        return queryResult;
     }
 
     public boolean addToWaitlist (String flightNum, String userEmail) {
@@ -668,36 +702,84 @@ public class QueryList {
 
     }
 
-//    public List<List<String>> getSalesReportForMonth(String month) throws SQLException{
-//        List<String> months = new ArrayList<String>();
-//        months.add("January");
-//        months.add("February");
-//        months.add("March");
-//        months.add("April");
-//        months.add("May");
-//        months.add("June");
-//        months.add("July");
-//        months.add("August");
-//        months.add("September");
-//        months.add("October");
-//        months.add("November");
-//        months.add("December");
-//        String startDate = "";
-//        String endDate = "";
-//
-//        int queryMonth = months.indexOf(month);
-//
-//        if(queryMonth == 1){
-//            startDate = "2019-0"
-//        }
-//
-//        return null;
-//    }
+    public List<List<String>> getSalesReportForMonth(String month) throws SQLException{
+        List<List<String>> queryResult = new ArrayList<List<String>>();
+        List<String> months = new ArrayList<String>();
+        months.add("January");
+        months.add("February");
+        months.add("March");
+        months.add("April");
+        months.add("May");
+        months.add("June");
+        months.add("July");
+        months.add("August");
+        months.add("September");
+        months.add("October");
+        months.add("November");
+        months.add("December");
+        String startDate = "";
+        String endDate = "";
+
+        int monthIndex = months.indexOf(month) + 1;
+
+        if(monthIndex==2){
+            startDate = "2019-02-01";
+            endDate = "2019-02-28";
+        }
+        else if(monthIndex <= 7){
+            startDate = "2019-0" + monthIndex + "-01";
+            if(monthIndex % 2 != 0){
+                endDate = "2019-0" + monthIndex + "-31";
+            }
+            else{
+                endDate = "2019-0" + monthIndex + "-30";
+            }
+        }
+        else if(monthIndex > 7){
+            if(monthIndex >= 10){
+                startDate = "2019-" + monthIndex + "-01";
+            }
+            else{
+                startDate = "2019-0" + monthIndex + "01";
+            }
+            if(monthIndex % 2 != 0){
+                endDate = "2019-0" + monthIndex + "-30";
+            }
+            else{
+                endDate = "2019-0" + monthIndex + "-31";
+            }
+        }
+
+        try {
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            String query = "Select Flight.`Flight#`, count(Flight.`Flight#`) as `Tickets Sold`, sum(`Total Price`) as `Total Revenue` from Ticket join Flight on\n" +
+                    "Flight.`Flight#`=Ticket.`Flight#` where `Departure Date` between ? and ?" +
+                    "Group by Flight.`Flight#`";
+            PreparedStatement inserter = mainConnection.prepareStatement(query);
+            inserter.setString(1, startDate);
+            inserter.setString(2, endDate);
+            ResultSet res = inserter.executeQuery();
+            while (res.next()) {
+                List<String> flightReport = new ArrayList<String>();
+                flightReport.add(res.getString("Flight#"));
+                flightReport.add(res.getString("Tickets Sold"));
+                flightReport.add(res.getString("Total Revenue"));
+                queryResult.add(flightReport);
+            }
+            res.close();
+            inserter.close();
+            connector.closeConnection();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        return queryResult;
+    }
 
     public boolean addTicketentry (String clientEmail, String FlightNum, String totalPrice, String type, String roundRef){
         if (roundRef != null){
             try {
-
                 connector.getConnected();
                 mainConnection = connector.getMainConnector();
                 String deletingTable = "INSERT INTO Ticket (`ClientEmail`, `Flight#`, `Total Price`, `Type`, `Ref`)\n" +
@@ -808,9 +890,51 @@ public class QueryList {
             return fullList;
         }
     }
+
+    public List<List<String>> getCustomersOnWaitlist(String flightNum){
+        List<List<String>> fullList = new ArrayList<List<String>>();
+        try {
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            String getter = "Select Clients.Name, Email \n" +
+                    "From Clients join WaitList\n" +
+                    "on Clients.Email = WaitList.ClientEmail\n" +
+                    "where WaitList.`Flight#` = ?";   //Create string for searching admins
+            PreparedStatement stmt = mainConnection.prepareStatement(getter);   //create the actual statement
+            stmt.setString(1, flightNum);    //Adding the first parameter
+            ResultSet res = stmt.executeQuery();
+            while(res.next()){
+                List<String> data = new ArrayList<String>();
+                data.add(res.getString("Name"));
+                data.add(res.getString("Email"));
+                fullList.add(data);
+            }
+            stmt.close();
+            res.close();
+            connector.closeConnection();
+            return fullList;
+        }catch (Exception e ){
+            e.printStackTrace();
+            return fullList;
+        }
+    }
+
+    public int addToAirport (String AirportID){
+        try {
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            String getter = "INSERT INTO Airport (AirportID) " + " VALUE (?)";   //Create string for searching admins
+            PreparedStatement stmt = mainConnection.prepareStatement(getter);   //create the actual statement
+            stmt.setString(1, AirportID);    //Adding the first parameter
+            stmt.executeUpdate();
+            return 1;
+
+        }catch (Exception e ){
+            e.printStackTrace();
+            return -1;
+        }
+    }
 }
 
+	
 
-
-
-//Test merge
