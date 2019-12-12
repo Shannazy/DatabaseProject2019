@@ -584,7 +584,7 @@ public class QueryList {
         PreparedStatement stmt = mainConnection.prepareStatement(search);
         ResultSet res = stmt.executeQuery();
         while(res.next()){
-            airlines.add(res.getString("AirportID"));
+            airlines.add(res.getString("Airline_Code"));
         }
         stmt.close();
         res.close();
