@@ -238,5 +238,18 @@ class QueryListTest {
             System.out.print(part1 + " ");
         }
     }
+
+    @Test
+    void getSpecificReservations() throws SQLException {
+        DatabaseConnection tester = new DatabaseConnection();
+        QueryList searchForTicket = new QueryList(tester);
+        List<List<String>> arrivalList = searchForTicket.getSpecificReservations("Client", "BasicEmail.com");
+        for (List<String> part1 : arrivalList) {
+            for (String runner : part1) {
+                System.out.print(runner + " ");
+            }
+            System.out.println();
+        }
+    }
 }
 

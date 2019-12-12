@@ -7,10 +7,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df0b40f9-93c5-4fcb-84db-3340dae45b61" name="Default Changelist" comment="Merge branch 'master' of github.com:Shannazy/DatabaseProject2019 into frontend&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;Testing Servlet/.idea/workspace.xml&#10;#&#9;Testing Servlet/out/artifacts/Testing_Servlet_war/Testing Servlet_war.war&#10;#&#9;Testing Servlet/out/artifacts/Testing_Servlet_war_exploded/META-INF/MANIFEST.MF&#10;#&#9;Testing Servlet/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/LoginServlet.class&#10;#&#9;Testing Servlet/out/artifacts/Testing_Servlet_war_exploded/Welcome.jsp&#10;#&#9;Testing Servlet/src/main/java/BackEndStuff/LoginServlet.java&#10;#&#9;Testing Servlet/target/classes/BackEndStuff/LoginServlet.class&#10;#&#9;Testing Servlet/web/Profile.jsp&#10;#&#9;Testing Servlet/web/Welcome.jsp">
+      <change afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/WaitingListServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war/Testing Servlet_war.war" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war/Testing Servlet_war.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/AirportFlightsServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/AirportFlightsServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/DatabaseConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/EditUserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/EditUserServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/FlightListServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/FlightListServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/MostActiveServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/MostActiveServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/MostRevenueServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/MostRevenueServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/ProfileServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/ProfileServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/QueryList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/QueryList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/RegisterServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/ReserveServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/ReserveServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/SalesReportServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/SalesReportServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/SearchServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/SearchServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/SummaryFlightServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Testing_Servlet_war_exploded/WEB-INF/classes/BackEndStuff/SummaryFlightServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BackEndStuff/QueryList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BackEndStuff/QueryListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/AirportFlightsServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/AirportFlightsServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/DatabaseConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/EditUserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/EditUserServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/FlightListServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/FlightListServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/MostActiveServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/MostActiveServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/MostRevenueServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/MostRevenueServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/ProfileServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/ProfileServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/QueryList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/QueryList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/RegisterServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/RegisterServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/ReserveServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/ReserveServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/SalesReportServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/SalesReportServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/SearchServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/SearchServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BackEndStuff/SummaryFlightServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BackEndStuff/SummaryFlightServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/BackEndStuff/QueryListTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/BackEndStuff/QueryListTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/RepGetWaitingList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/RepGetWaitingList.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,10 +77,10 @@
         <option value="JUnit5 Test Class" />
         <option value="Jsp File" />
         <option value="CSS File" />
-        <option value="Class" />
         <option value="CSS File" />
         <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -291,6 +325,11 @@
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
             </expand>
             <select />
           </treeState>
@@ -339,6 +378,7 @@
       <workItem from="1576112475457" duration="2691000" />
       <workItem from="1576119495138" duration="751000" />
       <workItem from="1576121134408" duration="23000" />
+      <workItem from="1576122671898" duration="1620000" />
     </task>
     <task id="LOCAL-00001" summary="Now able to save the users for the current session.">
       <created>1575496582820</created>
@@ -372,62 +412,62 @@
     <option name="LAST_COMMIT_MESSAGE" value="Now able to save the users for the current session." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="570" y="346" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1576119516035">
+    <state x="570" y="346" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1576122675506">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="570" y="346" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1440.900@0.0.1440.900" timestamp="1576119516035" />
-    <state width="1157" height="245" key="GridCell.Tab.0.bottom" timestamp="1576116388639">
+    <state x="570" y="346" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1440.900@0.0.1440.900" timestamp="1576122675506" />
+    <state width="1157" height="245" key="GridCell.Tab.0.bottom" timestamp="1576123664872">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1157" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1576116388639" />
-    <state width="1157" height="245" key="GridCell.Tab.0.center" timestamp="1576116388638">
+    <state width="1157" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1576123664872" />
+    <state width="1157" height="245" key="GridCell.Tab.0.center" timestamp="1576123664871">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1157" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1576116388638" />
-    <state width="1157" height="245" key="GridCell.Tab.0.left" timestamp="1576116388638">
+    <state width="1157" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1576123664871" />
+    <state width="1157" height="245" key="GridCell.Tab.0.left" timestamp="1576123664868">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1157" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1576116388638" />
-    <state width="1157" height="245" key="GridCell.Tab.0.right" timestamp="1576116388639">
+    <state width="1157" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1576123664868" />
+    <state width="1157" height="245" key="GridCell.Tab.0.right" timestamp="1576123664871">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1157" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1576116388639" />
-    <state width="1157" height="245" key="GridCell.Tab.1.bottom" timestamp="1576115381614">
+    <state width="1157" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1576123664871" />
+    <state width="1157" height="245" key="GridCell.Tab.1.bottom" timestamp="1576123664874">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1157" height="245" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1576115381614" />
-    <state width="1157" height="245" key="GridCell.Tab.1.center" timestamp="1576115381613">
+    <state width="1157" height="245" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1576123664874" />
+    <state width="1157" height="245" key="GridCell.Tab.1.center" timestamp="1576123664873">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1157" height="245" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1576115381613" />
-    <state width="1157" height="245" key="GridCell.Tab.1.left" timestamp="1576115381613">
+    <state width="1157" height="245" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1576123664873" />
+    <state width="1157" height="245" key="GridCell.Tab.1.left" timestamp="1576123664872">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1157" height="245" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1576115381613" />
-    <state width="1157" height="245" key="GridCell.Tab.1.right" timestamp="1576115381614">
+    <state width="1157" height="245" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1576123664872" />
+    <state width="1157" height="245" key="GridCell.Tab.1.right" timestamp="1576123664873">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1157" height="245" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1576115381614" />
-    <state width="1157" height="245" key="GridCell.Tab.2.bottom" timestamp="1576115381616">
+    <state width="1157" height="245" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1576123664873" />
+    <state width="1157" height="245" key="GridCell.Tab.2.bottom" timestamp="1576123664876">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1157" height="245" key="GridCell.Tab.2.bottom/0.0.1440.900@0.0.1440.900" timestamp="1576115381616" />
-    <state width="1157" height="245" key="GridCell.Tab.2.center" timestamp="1576115381615">
+    <state width="1157" height="245" key="GridCell.Tab.2.bottom/0.0.1440.900@0.0.1440.900" timestamp="1576123664876" />
+    <state width="1157" height="245" key="GridCell.Tab.2.center" timestamp="1576123664875">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1157" height="245" key="GridCell.Tab.2.center/0.0.1440.900@0.0.1440.900" timestamp="1576115381615" />
-    <state width="1157" height="245" key="GridCell.Tab.2.left" timestamp="1576115381614">
+    <state width="1157" height="245" key="GridCell.Tab.2.center/0.0.1440.900@0.0.1440.900" timestamp="1576123664875" />
+    <state width="1157" height="245" key="GridCell.Tab.2.left" timestamp="1576123664874">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1157" height="245" key="GridCell.Tab.2.left/0.0.1440.900@0.0.1440.900" timestamp="1576115381614" />
-    <state width="1157" height="245" key="GridCell.Tab.2.right" timestamp="1576115381615">
+    <state width="1157" height="245" key="GridCell.Tab.2.left/0.0.1440.900@0.0.1440.900" timestamp="1576123664874" />
+    <state width="1157" height="245" key="GridCell.Tab.2.right" timestamp="1576123664875">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1157" height="245" key="GridCell.Tab.2.right/0.0.1440.900@0.0.1440.900" timestamp="1576115381615" />
-    <state x="229" y="89" key="SettingsEditor" timestamp="1576121156160">
+    <state width="1157" height="245" key="GridCell.Tab.2.right/0.0.1440.900@0.0.1440.900" timestamp="1576123664875" />
+    <state x="229" y="89" key="SettingsEditor" timestamp="1576122685484">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1576121156160" />
+    <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1576122685484" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
