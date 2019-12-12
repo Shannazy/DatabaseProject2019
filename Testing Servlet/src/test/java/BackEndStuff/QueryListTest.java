@@ -173,5 +173,39 @@ class QueryListTest {
             System.out.println();
         }
     }
+
+    @Test
+    void addTicketentry() {
+        DatabaseConnection tester = new DatabaseConnection();
+        QueryList searchForTicket = new QueryList(tester);
+        searchForTicket.addTicketentry("BasicEmail.com","2","650","One-Way",null);
+    }
+
+    @Test
+    void getSalesReportForMonth() throws SQLException {
+        DatabaseConnection tester = new DatabaseConnection();
+        QueryList searchForTicket = new QueryList(tester);
+        List<List<String>> arrivalList = searchForTicket.getSalesReportForMonth("December" );
+        for (List<String> part1 : arrivalList) {
+            for (String runner : part1) {
+                System.out.print(runner + " ");
+            }
+            System.out.println();
+        }
+
+    }
+
+    @Test
+    void getCustomersOnWaitlist() {
+        DatabaseConnection tester = new DatabaseConnection();
+        QueryList searchForTicket = new QueryList(tester);
+        List<List<String>> arrivalList = searchForTicket.getCustomersOnWaitlist("0" );
+        for (List<String> part1 : arrivalList) {
+            for (String runner : part1) {
+                System.out.print(runner + " ");
+            }
+            System.out.println();
+        }
+    }
 }
 
