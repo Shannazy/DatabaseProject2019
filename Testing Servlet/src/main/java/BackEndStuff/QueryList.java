@@ -922,6 +922,41 @@ public class QueryList {
 }
 
 
+<<<<<<< HEAD
+	public int updateCapacity (String flightNum){
+		try {
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            String search = "UPDATE Flight" + " SET Flight.Capacity = ? " + " WHERE Flight.`Flight#` = ?";   //Create string for searching admins
+            PreparedStatement stmt = mainConnection.prepareStatement(search);   //create the actual statement
+            stmt.setString(1, Capacity);//Adding the first parameter
+            stmt.setString(2, flightNum);
+            stmt.executeUpdate();
+        }catch (Exception e ){
+            e.printStackTrace();
+        }
 
+	}
+=======
+>>>>>>> 545136df85190589706a2ce42d4c50718b8d11bc
+
+	
+    public int addToAirport (String AirportID){
+        try {
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            String getter = "INSERT INTO Airport (AirportID) " + " VALUE (?)";   //Create string for searching admins
+            PreparedStatement stmt = mainConnection.prepareStatement(getter);   //create the actual statement
+            stmt.setString(1, AirportID);    //Adding the first parameter
+            stmt.executeUpdate();
+            return 1;
+            
+        }catch (Exception e ){
+            e.printStackTrace();
+            return -1;
+        }
+    }
+}
+	
 
 //Test merge
