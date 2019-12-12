@@ -371,7 +371,6 @@ public class QueryList {
             departDetail.add(res.getString("Airport_AirportID"));
             departDetail.add(res.getString("Airline_Code"));
             departDetail.add(res.getString("CraftID"));
-            departDetail.add(res.getString("Passengers"));
             departureFlights.add(departDetail);
         }
         res.close();
@@ -681,15 +680,14 @@ public class QueryList {
         }
     }
 
-    public List<String> getGreatestTotalRevenue(String clientEmail) throws SQLException{
+    public List<String> getGreatestTotalRevenue() throws SQLException{
         List<String> greatestRevenue = new ArrayList<String>();
         connector.getConnected();
         mainConnection = connector.getMainConnector();
         String query = "Select t1.Name, max(t1.`Total Revenue`) as `Total Revenue` " +
                 "from (select Name, sum(`Total Price`) * 0.25 as `Total Revenue` " +
-                            "from Ticket Join Clients on Email=ClientEmail where ClientEmail = ? group by ClientEmail) as t1";
+                            "from Ticket Join Clients on Email=ClientEmail group by ClientEmail) as t1";
         PreparedStatement findGreatest = mainConnection.prepareStatement(query);
-        findGreatest.setString(1, clientEmail);
         ResultSet res = findGreatest.executeQuery();
         while(res.next()){
             greatestRevenue.add(res.getString("Name"));
@@ -934,6 +932,8 @@ public class QueryList {
             return -1;
         }
     }
+
+
 }
 
 	
