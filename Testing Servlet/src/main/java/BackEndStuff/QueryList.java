@@ -758,22 +758,21 @@ public class QueryList {
             return -1;
         }
     }
-}
 
 
-	public void updateCapacity (String flightNum, String Capacity){
-	    try {
-	        connector.getConnected();
-	        mainConnection = connector.getMainConnector();
-	        String search = "UPDATE Flight" + " SET Flight.Capacity = ? " + " WHERE Flight.`Flight#` = ?";   //Create string for searching admins
-	        PreparedStatement stmt = mainConnection.prepareStatement(search);   //create the actual statement
-	        stmt.setString(1, Capacity);//Adding the first parameter
+    public void updateCapacity (String flightNum, String Capacity){
+        try {
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            String search = "UPDATE Flight" + " SET Flight.Capacity = ? " + " WHERE Flight.`Flight#` = ?";   //Create string for searching admins
+            PreparedStatement stmt = mainConnection.prepareStatement(search);   //create the actual statement
+            stmt.setString(1, Capacity);//Adding the first parameter
             stmt.setString(2, flightNum);
             stmt.executeUpdate();
-	    }catch (Exception e ){
-	        e.printStackTrace();
-	    }
-	}
+        }catch (Exception e ){
+            e.printStackTrace();
+        }
+    }
     public List<List<String>> querySpecFlight (String FlightNum){
         List<List<String>> fullList = new ArrayList<List<String>>();
         try {
@@ -807,7 +806,9 @@ public class QueryList {
             return fullList;
         }
     }
-	}
+}
+
+
 
 
 //Test merge
