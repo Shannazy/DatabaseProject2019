@@ -1,6 +1,7 @@
 package BackEndStuff;
 
 import com.mysql.cj.protocol.Resultset;
+import com.mysql.cj.result.SqlDateValueFactory;
 
 import javax.naming.PartialResultException;
 import javax.servlet.http.HttpSession;
@@ -917,23 +918,6 @@ public class QueryList {
         }
     }
 
-}
-
-	public int updateCapacity (String flightNum){
-		try {
-            connector.getConnected();
-            mainConnection = connector.getMainConnector();
-            String search = "UPDATE Flight" + " SET Flight.Capacity = ? " + " WHERE Flight.`Flight#` = ?";   //Create string for searching admins
-            PreparedStatement stmt = mainConnection.prepareStatement(search);   //create the actual statement
-            stmt.setString(1, Capacity);//Adding the first parameter
-            stmt.setString(2, flightNum);
-            stmt.executeUpdate();
-        }catch (Exception e ){
-            e.printStackTrace();
-        }
-
-	}
-	
     public int addToAirport (String AirportID){
         try {
             connector.getConnected();
@@ -942,38 +926,56 @@ public class QueryList {
             PreparedStatement stmt = mainConnection.prepareStatement(getter);   //create the actual statement
             stmt.setString(1, AirportID);    //Adding the first parameter
             stmt.executeUpdate();
+            stmt.close();
+            connector.closeConnection();
             return 1;
 
         }catch (Exception e ){
             e.printStackTrace();
+            connector.closeConnection();
             return -1;
         }
     }
 
+    public boolean deleteFlight (String Date, String Time, String airPortID, String airlines, String CraftID){
+        try {
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            String getter = "DELETE From Departure " +
+                    "where `Date` = ? " +
+                    "and `Time` = ? "+
+                    "and `Airport_AirportID` = ? "+
+                    "and `Airline_Code` = ? "+
+                    "and `CraftID` = ? ";   //Create string for searching admins
+            PreparedStatement stmt = mainConnection.prepareStatement(getter);   //create the actual statement
+            stmt.setString(1, Date);    //Adding the first parameter
+            stmt.setString(2, Time);
+            stmt.setString(3, airPortID);
+            stmt.setString(4, airlines);
+            stmt.setString(5, CraftID);
 
+            stmt.executeUpdate();
+
+            stmt.close();
+            connector.closeConnection();
+            return true;
+
+        }catch (Exception e ){
+            e.printStackTrace();
+            connector.closeConnection();
+            return false;
+        }
+    }
+
+    public boolean deleteAirport(String airportID) throws SQLException{
+        try{
+
+        }
+        catch (Exception e){
+
+        }
+    }
 }
 
-	
 
-//customer rep has to choose an airline from a drop-down menu first (before adding airplane)
-	public int addToAirplane (String CraftID){
-	    try {
-	        connector.getConnected();
-	        mainConnection = connector.getMainConnector();
-	        String getter = "INSERT INTO Airplanes (CraftID, Airlines_Airline_Code)" + "VALUE (?,?))";   //Create string for searching admins
-	        PreparedStatement stmt = mainConnection.prepareStatement(getter);   //create the actual statement
-	        stmt.setString(1, CraftID);    //Adding the first parameter
-	        stmt.executeUpdate();
-	        return 1;
-	        
-	    }catch (Exception e ){
-	        e.printStackTrace();
-	        return -1;
-	    }
-	}
-}
-	
-	
-	
-//Test merge
 

@@ -263,11 +263,11 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.QueryListTest.dynamicQuery" />
-      <item itemvalue="Tomcat Server.Tomcat 9.0.27" />
       <item itemvalue="JUnit.QueryListTest.addTicketentry" />
       <item itemvalue="JUnit.QueryListTest.getSalesReportForMonth" />
       <item itemvalue="JUnit.QueryListTest.getCustomersOnWaitlist" />
       <item itemvalue="JUnit.QueryListTest.getSalesReport" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.27" />
     </list>
     <recent_temporary>
       <list>
