@@ -1,6 +1,7 @@
 package BackEndStuff;
 
 import com.mysql.cj.protocol.Resultset;
+import com.mysql.cj.result.SqlDateValueFactory;
 
 import javax.naming.PartialResultException;
 import javax.servlet.http.HttpSession;
@@ -356,7 +357,7 @@ public class QueryList {
 
     }
 
-    public List<List<String>> getDeparturesFromAirport (String AirportCode) throws SQLException {
+    public List<List<String>> getDeparturesFromAirport(String AirportCode) throws SQLException {
         List<List<String>> departureFlights = new ArrayList<List<String>>();
         connector.getConnected();
         mainConnection = connector.getMainConnector();
@@ -364,7 +365,7 @@ public class QueryList {
         PreparedStatement findDepart = mainConnection.prepareStatement(departing);
         findDepart.setString(1, AirportCode);
         ResultSet res = findDepart.executeQuery();
-        while(res.next()){
+        while (res.next()) {
             List<String> departDetail = new ArrayList<String>();
             departDetail.add(res.getString("Date"));
             departDetail.add(res.getString("Time"));
@@ -379,7 +380,7 @@ public class QueryList {
         return departureFlights;
     }
 
-    public List<List<String>> getArrivalToAirport (String AirportCode) throws SQLException {
+    public List<List<String>> getArrivalToAirport(String AirportCode) throws SQLException {
         List<List<String>> arrivalFlights = new ArrayList<List<String>>();
         connector.getConnected();
         mainConnection = connector.getMainConnector();
@@ -387,7 +388,7 @@ public class QueryList {
         PreparedStatement findArrivals = mainConnection.prepareStatement(arriving);
         findArrivals.setString(1, AirportCode);
         ResultSet res = findArrivals.executeQuery();
-        while(res.next()){
+        while (res.next()) {
             List<String> arrivalDetails = new ArrayList<String>();
             arrivalDetails.add(res.getString("Date"));
             arrivalDetails.add(res.getString("Time"));
@@ -405,13 +406,21 @@ public class QueryList {
         return arrivalFlights;
     }
 
-    public boolean adminDelete (String table, String email) throws SQLException {
+    public boolean adminDelete(String table, String email) throws SQLException {
 
         try {
             connector.getConnected();
             mainConnection = connector.getMainConnector();
             if (table.equals("Clients")) {
-                String deletingTable = "Delete FROM `"+table+"` where `Email` = ?";
+                String deletingTable = "Delete FROM `" + table + "` where `Email` = ?";
+                PreparedStatement deleter = mainConnection.prepareStatement(deletingTable);
+                deleter.setString(1, email);
+                deleter.executeUpdate();
+                deleter.close();
+                connector.closeConnection();
+                return true;
+            } else if (table.equals("CustomerRep")) {
+                String deletingTable = "Delete FROM `" + table + "` where `CustomerRep_Username` = ?";
                 PreparedStatement deleter = mainConnection.prepareStatement(deletingTable);
                 deleter.setString(1, email);
                 deleter.executeUpdate();
@@ -419,16 +428,7 @@ public class QueryList {
                 connector.closeConnection();
                 return true;
             }
-            else if (table.equals("CustomerRep")) {
-                String deletingTable = "Delete FROM `"+table+"` where `CustomerRep_Username` = ?";
-                PreparedStatement deleter = mainConnection.prepareStatement(deletingTable);
-                deleter.setString(1, email);
-                deleter.executeUpdate();
-                deleter.close();
-                connector.closeConnection();
-                return true;
-            }
-        } catch (Exception e){
+        } catch (Exception e) {
             connector.closeConnection();
             return false;
         }
@@ -436,7 +436,7 @@ public class QueryList {
     }
 
 
-    public List<List<String>> flexableNoFilter (String departureDate, String departureLocation, String destinationLocation){
+    public List<List<String>> flexableNoFilter(String departureDate, String departureLocation, String destinationLocation) {
         List<List<String>> flexableTiickets = new ArrayList<List<String>>();
         try {
             connector.getConnected();
@@ -448,7 +448,7 @@ public class QueryList {
             PreparedStatement searchFlights = mainConnection.prepareStatement(tickets);
 
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            Calendar c =Calendar.getInstance();
+            Calendar c = Calendar.getInstance();
             c.setTime(sdf.parse(departureDate));
             c.add(Calendar.DAY_OF_MONTH, -3);
             searchFlights.setString(1, sdf.format(c.getTime()));
@@ -488,18 +488,18 @@ public class QueryList {
         }
     }
 
-    public List<List<String>> dynamicQuery  (String departureDate, String departureLocation, String destinationLocation, String priceLow,
-                                                String priceHigh, String Airline, boolean Flex, String Sort){
+    public List<List<String>> dynamicQuery(String departureDate, String departureLocation, String destinationLocation, String priceLow,
+                                           String priceHigh, String Airline, boolean Flex, String Sort) {
         List<List<String>> flightsResult = new ArrayList<List<String>>();
         try {
-            StringBuilder dynamicQuery =new StringBuilder("Select * From Flight where" +
+            StringBuilder dynamicQuery = new StringBuilder("Select * From Flight where" +
                     " `Departure_Location` = ? and" +
                     " `Destination Location` = ?");
             connector.getConnected();
             mainConnection = connector.getMainConnector();
-            if(Flex){
+            if (Flex) {
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-                Calendar c =Calendar.getInstance();
+                Calendar c = Calendar.getInstance();
                 c.setTime(sdf.parse(departureDate));
                 c.add(Calendar.DAY_OF_MONTH, -3);
                 String threeLess = sdf.format(c.getTime());
@@ -507,24 +507,24 @@ public class QueryList {
                 c.add(Calendar.DAY_OF_MONTH, 3);
                 String threeMore = sdf.format((c.getTime()));
                 dynamicQuery.append(" and " +
-                        "`Departure Date` between \'"+threeLess+"\' and \'"+
-                        threeMore+"\'");
+                        "`Departure Date` between \'" + threeLess + "\' and \'" +
+                        threeMore + "\'");
             }
-            if(!Flex){
-                dynamicQuery.append(" and `Departure Date` = \'"+departureDate+"\'");
+            if (!Flex) {
+                dynamicQuery.append(" and `Departure Date` = \'" + departureDate + "\'");
             }
-            if(Airline != null){
-                dynamicQuery.append(" and `Airline` = \""+Airline+"\"");
+            if (Airline != null) {
+                dynamicQuery.append(" and `Airline` = \"" + Airline + "\"");
             }
-            if (priceLow!= null){
-                dynamicQuery.append(" and `Price` >= "+priceLow);
+            if (priceLow != null) {
+                dynamicQuery.append(" and `Price` >= " + priceLow);
 
             }
-            if (priceHigh != null){
-                dynamicQuery.append(" and `Price` <= "+ priceHigh);
+            if (priceHigh != null) {
+                dynamicQuery.append(" and `Price` <= " + priceHigh);
             }
-            if(Sort != null){
-                dynamicQuery.append(" order by `"+Sort+"`;");
+            if (Sort != null) {
+                dynamicQuery.append(" order by `" + Sort + "`;");
             }
             String finalQuery = dynamicQuery.toString();
             PreparedStatement searchFlights = mainConnection.prepareStatement(finalQuery);
@@ -551,7 +551,7 @@ public class QueryList {
             connector.closeConnection();
             return flightsResult;
         } catch (Exception e) {
-        e.printStackTrace();
+            e.printStackTrace();
             connector.closeConnection();
             List<String> failed = new ArrayList<String>();
             failed.add("Something went wrong");
@@ -559,6 +559,7 @@ public class QueryList {
             return flightsResult;
         }
     }
+
     public List<String> airportList() throws SQLException {
         List<String> airportList = new ArrayList<String>();
         connector.getConnected();
@@ -566,13 +567,13 @@ public class QueryList {
         String search = "Select * From Airport ";   //Create string for searching admins
         PreparedStatement stmt = mainConnection.prepareStatement(search);
         ResultSet res = stmt.executeQuery();
-        while(res.next()){
+        while (res.next()) {
             airportList.add(res.getString("AirportID"));
         }
         stmt.close();
         res.close();
         connector.closeConnection();
-    return airportList;
+        return airportList;
     }
 
     public List<String> airlineList() throws SQLException {
@@ -582,7 +583,7 @@ public class QueryList {
         String search = "Select * From Airlines ";   //Create string for searching admins
         PreparedStatement stmt = mainConnection.prepareStatement(search);
         ResultSet res = stmt.executeQuery();
-        while(res.next()){
+        while (res.next()) {
             airlines.add(res.getString("Airline_Code"));
         }
         stmt.close();
@@ -593,19 +594,19 @@ public class QueryList {
     }
 
     // Get sales report
-    public List<List<String>> getSalesReport(String queryType, String input) throws SQLException{
+    public List<List<String>> getSalesReport(String queryType, String input) throws SQLException {
         List<List<String>> queryResult = new ArrayList<List<String>>();
         connector.getConnected();
         mainConnection = connector.getMainConnector();
         String query = "";
-        if(queryType.equals("flight")){
+        if (queryType.equals("flight")) {
             query = "select Flight.`Flight#`, count(Ticket.`Flight#`) as `Tickets Sold`, Ticket.`Total Price` * 0.25 as `Total Revenue`" +
                     " from Ticket join\n" +
                     "Flight on Ticket.`Flight#` = Flight.`Flight#` where Flight.`Flight#` = ?";
             PreparedStatement findCustomers = mainConnection.prepareStatement(query);
             findCustomers.setString(1, input);
             ResultSet res = findCustomers.executeQuery();
-            while(res.next()){
+            while (res.next()) {
                 List<String> customerDetails = new ArrayList<String>();
                 customerDetails.add(res.getString("Flight#"));
                 customerDetails.add(res.getString("Tickets Sold"));
@@ -616,14 +617,13 @@ public class QueryList {
             findCustomers.close();
             connector.closeConnection();
             return queryResult;
-        }
-        else if(queryType.equals("customer")){
+        } else if (queryType.equals("customer")) {
             query = "SELECT Name, count(ClientEmail) as `Tickets Sold`, sum(`Total Price`*0.25) as `Total Revenue`" +
                     "FROM Ticket JOIN Clients on ClientEmail = Email where `ClientEmail` = ?";
             PreparedStatement findCustomers = mainConnection.prepareStatement(query);
             findCustomers.setString(1, input);
             ResultSet res = findCustomers.executeQuery();
-            while(res.next()){
+            while (res.next()) {
                 List<String> customerDetails = new ArrayList<String>();
                 customerDetails.add(res.getString("Name"));
                 customerDetails.add(res.getString("Tickets Sold"));
@@ -634,14 +634,13 @@ public class QueryList {
             findCustomers.close();
             connector.closeConnection();
             return queryResult;
-        }
-        else if(queryType.equals("airline")){
+        } else if (queryType.equals("airline")) {
             query = "select Flight.Airline, count(`Airline`)as `Tickets Sold`,sum(`Total Price`) * 0.25 as `Total Revenue` from Ticket join " +
                     "Flight on Ticket.`Flight#` = Flight.`Flight#` where Flight.Airline = ? group by Flight.Airline";
             PreparedStatement findCustomers = mainConnection.prepareStatement(query);
             findCustomers.setString(1, input);
             ResultSet res = findCustomers.executeQuery();
-            while(res.next()){
+            while (res.next()) {
                 List<String> customerDetails = new ArrayList<String>();
                 customerDetails.add(res.getString("Airline"));
                 customerDetails.add(res.getString("Tickets Sold"));
@@ -657,7 +656,7 @@ public class QueryList {
         return queryResult;
     }
 
-    public boolean addToWaitlist (String flightNum, String userEmail) {
+    public boolean addToWaitlist(String flightNum, String userEmail) {
         try {
             connector.getConnected();
             mainConnection = connector.getMainConnector();
@@ -680,17 +679,43 @@ public class QueryList {
         }
     }
 
-    public List<String> getGreatestTotalRevenue() throws SQLException{
+    public List<String> getGreatestTotalRevenue() throws SQLException {
+        List<String> greatestRevenue = new ArrayList<String>();
+        try {
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            String query = "Select t1.Name, max(t1.`Total Revenue`) as `Total Revenue` " +
+                    "from (select Name, sum(`Total Price`) * 0.25 as `Total Revenue` " +
+                    "from Ticket Join Clients on Email=ClientEmail group by ClientEmail) as t1";
+            PreparedStatement findGreatest = mainConnection.prepareStatement(query);
+            ResultSet res = findGreatest.executeQuery();
+            while (res.next()) {
+                greatestRevenue.add(res.getString("Name"));
+                greatestRevenue.add(res.getString("Total Revenue"));
+            }
+            res.close();
+            findGreatest.close();
+            connector.closeConnection();
+            return greatestRevenue;
+        }
+        catch (Exception e){
+            connector.closeConnection();
+            return greatestRevenue;
+        }
+
+    }
+
+    public List<String> getGreatestTotalFlightRevenue() throws SQLException {
         List<String> greatestRevenue = new ArrayList<String>();
         connector.getConnected();
         mainConnection = connector.getMainConnector();
-        String query = "Select t1.Name, max(t1.`Total Revenue`) as `Total Revenue` " +
-                "from (select Name, sum(`Total Price`) * 0.25 as `Total Revenue` " +
-                            "from Ticket Join Clients on Email=ClientEmail group by ClientEmail) as t1";
+        String query = "Select t1.`Flight#` as `Flight#`, max(t1.`Total Revenue`) as `Total Revenue` " +
+                "from (select Flight.`Flight#`, sum(`Total Price`) * 0.25 as `Total Revenue` " +
+                "from Ticket Join Flight on Flight.`Flight#`=Ticket.`Flight#` group by Flight.`Flight#`) as t1";
         PreparedStatement findGreatest = mainConnection.prepareStatement(query);
         ResultSet res = findGreatest.executeQuery();
-        while(res.next()){
-            greatestRevenue.add(res.getString("Name"));
+        while (res.next()) {
+            greatestRevenue.add(res.getString("Flight#"));
             greatestRevenue.add(res.getString("Total Revenue"));
         }
         res.close();
@@ -700,7 +725,7 @@ public class QueryList {
 
     }
 
-    public List<List<String>> getSalesReportForMonth(String month) throws SQLException{
+    public List<List<String>> getSalesReportForMonth(String month) throws SQLException {
         List<List<String>> queryResult = new ArrayList<List<String>>();
         List<String> months = new ArrayList<String>();
         months.add("January");
@@ -720,30 +745,25 @@ public class QueryList {
 
         int monthIndex = months.indexOf(month) + 1;
 
-        if(monthIndex==2){
+        if (monthIndex == 2) {
             startDate = "2019-02-01";
             endDate = "2019-02-28";
-        }
-        else if(monthIndex <= 7){
+        } else if (monthIndex <= 7) {
             startDate = "2019-0" + monthIndex + "-01";
-            if(monthIndex % 2 != 0){
+            if (monthIndex % 2 != 0) {
                 endDate = "2019-0" + monthIndex + "-31";
-            }
-            else{
+            } else {
                 endDate = "2019-0" + monthIndex + "-30";
             }
-        }
-        else if(monthIndex > 7){
-            if(monthIndex >= 10){
+        } else if (monthIndex > 7) {
+            if (monthIndex >= 10) {
                 startDate = "2019-" + monthIndex + "-01";
-            }
-            else{
+            } else {
                 startDate = "2019-0" + monthIndex + "01";
             }
-            if(monthIndex % 2 != 0){
+            if (monthIndex % 2 != 0) {
                 endDate = "2019-0" + monthIndex + "-30";
-            }
-            else{
+            } else {
                 endDate = "2019-0" + monthIndex + "-31";
             }
         }
@@ -768,15 +788,14 @@ public class QueryList {
             res.close();
             inserter.close();
             connector.closeConnection();
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return queryResult;
     }
 
-    public boolean addTicketentry (String clientEmail, String FlightNum, String totalPrice, String type, String roundRef){
-        if (roundRef != null){
+    public boolean addTicketentry(String clientEmail, String FlightNum, String totalPrice, String type, String roundRef) {
+        if (roundRef != null) {
             try {
                 connector.getConnected();
                 mainConnection = connector.getMainConnector();
@@ -797,8 +816,7 @@ public class QueryList {
                 connector.closeConnection();
                 return false;
             }
-        }
-        else {
+        } else {
             try {
                 connector.getConnected();
                 mainConnection = connector.getMainConnector();
@@ -822,7 +840,7 @@ public class QueryList {
         }
     }
 
-    public int getCapacity (String flightNum){
+    public int getCapacity(String flightNum) {
         try {
             int capacity = 0;
             connector.getConnected();
@@ -831,17 +849,17 @@ public class QueryList {
             PreparedStatement stmt = mainConnection.prepareStatement(getter);   //create the actual statement
             stmt.setString(1, flightNum);    //Adding the first parameter
             ResultSet res = stmt.executeQuery();
-            while(res.next()){
+            while (res.next()) {
                 capacity = res.getInt("Capacity");
             }
             return capacity;
-        }catch (Exception e ){
+        } catch (Exception e) {
             e.printStackTrace();
             return -1;
         }
     }
 
-    public void updateCapacity (String flightNum, String Capacity){
+    public void updateCapacity(String flightNum, String Capacity) {
         try {
             connector.getConnected();
             mainConnection = connector.getMainConnector();
@@ -850,12 +868,12 @@ public class QueryList {
             stmt.setString(1, Capacity);//Adding the first parameter
             stmt.setString(2, flightNum);
             stmt.executeUpdate();
-        }catch (Exception e ){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public List<List<String>> querySpecFlight (String FlightNum){
+    public List<List<String>> querySpecFlight(String FlightNum) {
         List<List<String>> fullList = new ArrayList<List<String>>();
         try {
             connector.getConnected();
@@ -864,7 +882,7 @@ public class QueryList {
             PreparedStatement stmt = mainConnection.prepareStatement(getter);   //create the actual statement
             stmt.setString(1, FlightNum);    //Adding the first parameter
             ResultSet res = stmt.executeQuery();
-            while(res.next()){
+            while (res.next()) {
                 List<String> data = new ArrayList<String>();
                 data.add(res.getString("Flight#"));
                 data.add(res.getString("Departure Date"));
@@ -883,13 +901,13 @@ public class QueryList {
             res.close();
             connector.closeConnection();
             return fullList;
-        }catch (Exception e ){
+        } catch (Exception e) {
             e.printStackTrace();
             return fullList;
         }
     }
 
-    public List<List<String>> getCustomersOnWaitlist(String flightNum){
+    public List<List<String>> getCustomersOnWaitlist(String flightNum) {
         List<List<String>> fullList = new ArrayList<List<String>>();
         try {
             connector.getConnected();
@@ -901,7 +919,7 @@ public class QueryList {
             PreparedStatement stmt = mainConnection.prepareStatement(getter);   //create the actual statement
             stmt.setString(1, flightNum);    //Adding the first parameter
             ResultSet res = stmt.executeQuery();
-            while(res.next()){
+            while (res.next()) {
                 List<String> data = new ArrayList<String>();
                 data.add(res.getString("Name"));
                 data.add(res.getString("Email"));
@@ -911,13 +929,13 @@ public class QueryList {
             res.close();
             connector.closeConnection();
             return fullList;
-        }catch (Exception e ){
+        } catch (Exception e) {
             e.printStackTrace();
             return fullList;
         }
     }
 
-    public int addToAirport (String AirportID){
+    public int addToAirport(String AirportID) {
         try {
             connector.getConnected();
             mainConnection = connector.getMainConnector();
@@ -925,16 +943,76 @@ public class QueryList {
             PreparedStatement stmt = mainConnection.prepareStatement(getter);   //create the actual statement
             stmt.setString(1, AirportID);    //Adding the first parameter
             stmt.executeUpdate();
+            stmt.close();
+            connector.closeConnection();
             return 1;
 
-        }catch (Exception e ){
+        } catch (Exception e) {
             e.printStackTrace();
+            connector.closeConnection();
             return -1;
         }
     }
 
+    public boolean deleteFlight(String Date, String Time, String airPortID, String airlines, String CraftID) {
+        try {
+            connector.getConnected();
+            mainConnection = connector.getMainConnector();
+            String getter = "DELETE From Departure " +
+                    "where `Date` = ? " +
+                    "and `Time` = ? " +
+                    "and `Airport_AirportID` = ? " +
+                    "and `Airline_Code` = ? " +
+                    "and `CraftID` = ? ";   //Create string for searching admins
+            PreparedStatement stmt = mainConnection.prepareStatement(getter);   //create the actual statement
+            stmt.setString(1, Date);    //Adding the first parameter
+            stmt.setString(2, Time);
+            stmt.setString(3, airPortID);
+            stmt.setString(4, airlines);
+            stmt.setString(5, CraftID);
 
+            stmt.executeUpdate();
+
+            stmt.close();
+            connector.closeConnection();
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            connector.closeConnection();
+            return false;
+        }
+    }
+
+//    public boolean deleteAirport(String airportID) throws SQLException {
+//        try {
+//
+//        } catch (Exception e) {
+//        }
+//
+//    }
+
+    //customer rep has to choose an airline from a drop-down menu first (before adding airplane)
+    public int addToAirplane(String CraftID, String airlines) {
+        try {
+            connector.getConnected(); //asdflkaj
+            mainConnection = connector.getMainConnector();
+            String getter = "INSERT INTO Airplanes (CraftID, Airlines_Airline_Code)" + "VALUE (?,?)";   //Create string for searching admins
+            PreparedStatement stmt = mainConnection.prepareStatement(getter);   //create the actual statement
+            stmt.setString(1, CraftID);
+            stmt.setString(2, airlines);//Adding the first parameter
+            stmt.executeUpdate();
+            stmt.close();
+            connector.closeConnection();
+            return 1;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            connector.closeConnection();
+            return -1;
+        }
+    }
 }
 
-	
+
 
