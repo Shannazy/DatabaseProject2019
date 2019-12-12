@@ -18,17 +18,11 @@
 <h1>Flights from Airport <% out.print(session.getAttribute("airport")); %>:</h1>
 <table>
     <tr>
-        <th>Flight Number</th>
         <th>Departure Date</th>
         <th>Departure Time</th>
         <th>Departure Location</th>
-        <th>Destination Date</th>
-        <th>Destination Time</th>
-        <th>Destination Location</th>
-        <th>Class</th>
         <th>Airline</th>
         <th>Flight ID</th>
-        <th>Price</th>
     </tr>
     <%
         ArrayList<ArrayList<String>> arrivals = (ArrayList<ArrayList<String>>) session.getAttribute("arrive");

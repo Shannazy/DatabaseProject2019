@@ -18,8 +18,12 @@ public class MostActiveServlet extends HttpServlet {
         QueryList searcher = new QueryList(myConnection);
         String username = request.getParameter("username");
         System.out.println(username);
-
         ArrayList<ArrayList<String>> mostActive = new ArrayList<ArrayList<String>>();
+        try {
+            mostActive = (ArrayList<String>) searcher.get;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         HttpSession session = request.getSession(true);
         session.setAttribute("username", request.getParameter("username"));
