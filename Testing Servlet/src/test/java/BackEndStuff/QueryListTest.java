@@ -251,5 +251,12 @@ class QueryListTest {
             System.out.println();
         }
     }
+
+    @Test
+    void editFlight() throws SQLException {
+        DatabaseConnection tester = new DatabaseConnection();
+        QueryList searchForTicket = new QueryList(tester);
+        searchForTicket.editReservation("7","4");
+    }
 }
 

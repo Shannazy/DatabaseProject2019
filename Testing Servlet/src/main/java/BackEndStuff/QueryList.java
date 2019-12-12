@@ -990,6 +990,21 @@ public class QueryList {
         }
     }
 
+//    public int addToFlight(String dateDepart, String timeDepart, String dateArrival, String timeArrival, String airportID,
+//                           String airlineCode, String craftID) throws SQLException{
+//        try{
+//            connector.getConnected();
+//            mainConnection = connector.getMainConnector();
+//            String departureUpdate = "INSERT INTO Airport (AirportID) " + " VALUE (?)";   //Create string for searching admins
+//            PreparedStatement stmt = mainConnection.prepareStatement(getter);   //create the actual statement
+//            stmt.setString(1, AirportID);    //Adding the first parameter
+//            stmt.executeUpdate();
+//            stmt.close();
+//            connector.closeConnection();
+//            return 1;
+//        }
+//    }
+
     public boolean deleteFlight(String Date, String Time, String airPortID, String airlines, String CraftID) {
         try {
             connector.getConnected();
@@ -1060,13 +1075,37 @@ public class QueryList {
         }
     }
 
-
+    public int editReservation(String ticketNumber, String flightNumber) throws SQLException{
+        try{
+            connector.getConnected(); //asdflkaj
+            mainConnection = connector.getMainConnector();
+            String getter = "UPDATE Ticket Set `Flight#` = ?, `Total Price` = ? WHERE Ticket.`TicketNumber` = ?";   //Create string for searching admins
+            PreparedStatement stmt = mainConnection.prepareStatement(getter);   //create the actual statement
+            stmt.setString(1, flightNumber); //Adding the first parameter
+                { String inner = "Select `Price` from Flight where `Flight#` = \'"+flightNumber+"\'";
+                    PreparedStatement stmtInner = mainConnection.prepareStatement(inner);
+                    ResultSet res = stmtInner.executeQuery();
+                    res.next();
+                    stmt.setString(2, res.getString("Price"));
+                    stmtInner.close();
+                    res.close();
+                }
+            stmt.setString(3, ticketNumber);
+            stmt.executeUpdate();
+            stmt.close();
+            connector.closeConnection();
+            return 1;
+        }
+        catch(Exception e){
+            return 0;
+        }
+    }
 
 	public int editFlight (String newPrice, String oldPrice){
 	    try {
 	        connector.getConnected(); //asdflkaj
 	        mainConnection = connector.getMainConnector();
-	        String getter = "INSERT INTO Airplanes (UPDATE Flight " + " SET Flight.`Price` = ?" + "WHERE Flight.`Price` = ?";   //Create string for searching admins
+	        String getter = "UPDATE Flight " + " SET Flight.`Price` = ?" + "WHERE Flight.`Price` = ?";   //Create string for searching admins
 	        PreparedStatement stmt = mainConnection.prepareStatement(getter);   //create the actual statement
 	        stmt.setString(1, newPrice); //Adding the first parameter
             stmt.setString(2, oldPrice);
